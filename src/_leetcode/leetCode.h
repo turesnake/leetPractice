@@ -64,6 +64,7 @@ namespace leet_111 { void main_(); }
 
 namespace leet_121 { void main_(); }
 
+namespace leet_130 { void main_(); }
 namespace leet_138 { void main_(); }
 
 namespace leet_141 { void main_(); }
@@ -127,7 +128,7 @@ namespace leet_m01_06 { void main_(); }
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_200::main_();
+    leet_130::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }

@@ -13,7 +13,7 @@
 
 
 
-class UF{
+class UnionFindSets{
 
     // 根节点 parentIdx < 0, 绝对值表示 本树高度, 比如 -1,-4
     std::vector<std::pair<int,int>> datas {}; // <val,parentIdx>
