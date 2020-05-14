@@ -4,7 +4,7 @@
  *                                        CREATE -- 2020.04.14
  *                                        MODIFY -- 
  * ----------------------------------------------------------
- * 面试题40. 最小的k个数
+ * 53. 最大子序和
  */
 #include "innLeet.h"
 
@@ -14,21 +14,10 @@ namespace leet_53 {//~
 
 int maxSubArray( std::vector<int> &nums ){
 
-    int lo = 0;
-    int hi = 0;
-    int mmax = INT_MIN;
-    int sum = 0;
-
-
-    while( true ){
-
-
-
-
-    }
-
-        
     
+
+
+    return 0; 
 }
 
 
