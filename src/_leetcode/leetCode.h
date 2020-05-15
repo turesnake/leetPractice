@@ -71,6 +71,8 @@ namespace leet_141 { void main_(); }
 
 namespace leet_155 { void main_(); }
 
+namespace leet_169 { void main_(); }// Boyer-Moore Algorithm 多数投票算法
+
 namespace leet_200 { void main_(); }
 namespace leet_202 { void main_(); }
 
@@ -87,7 +89,7 @@ namespace leet_257 { void main_(); }
 namespace leet_283 { void main_(); }
 
 namespace leet_300 { void main_(); }
-
+namespace leet_307 { void main_(); }
 namespace leet_314 { void main_(); }
 
 namespace leet_347 { void main_(); }
@@ -128,7 +130,7 @@ namespace leet_m01_06 { void main_(); }
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_130::main_();
+    leet_169::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }
