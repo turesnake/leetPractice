@@ -26,17 +26,20 @@ namespace leet_3 { void main_(); }
 namespace leet_6 { void main_(); }
 namespace leet_7 { void main_(); }
 namespace leet_8 { void main_(); }
+namespace leet_9 { void main_(); }// 回文数，待新方案：8.02%, 5.95% 
 
 namespace leet_11 { void main_(); }
 
+namespace leet_13 { void main_(); }
 namespace leet_14 { void main_(); }
 namespace leet_15 { void main_(); }
 namespace leet_16 { void main_(); }
 namespace leet_17 { void main_(); }
 
+
 namespace leet_20 { void main_(); }
 namespace leet_21 { void main_(); }
-namespace leet_22 { void main_(); }
+namespace leet_22 { void main_(); }// 回溯
 namespace leet_23 { void main_(); }
 
 namespace leet_26 { void main_(); }
@@ -64,13 +67,14 @@ namespace leet_111 { void main_(); }
 
 namespace leet_121 { void main_(); }
 
-namespace leet_130 { void main_(); }
+namespace leet_130 { void main_(); }// 广度优先
 namespace leet_138 { void main_(); }
 
 namespace leet_141 { void main_(); }
 
 namespace leet_155 { void main_(); }
 
+namespace leet_167 { void main_(); }
 namespace leet_169 { void main_(); }// Boyer-Moore Algorithm 多数投票算法
 
 namespace leet_200 { void main_(); }
@@ -82,17 +86,23 @@ namespace leet_209 { void main_(); }
 
 namespace leet_215 { void main_(); }
 
+namespace leet_225 { void main_(); }
 namespace leet_226 { void main_(); }
 
 namespace leet_257 { void main_(); }
 
 namespace leet_283 { void main_(); }
 
-namespace leet_300 { void main_(); }
-namespace leet_307 { void main_(); }
+namespace leet_287 { void main_(); }
+
+namespace leet_295 { void main_(); }// 最大堆+最小堆 求中位数
+
+namespace leet_300 { void main_(); }// **难**
+namespace leet_307 { void main_(); }// 树状数组
 namespace leet_314 { void main_(); }
 
 namespace leet_347 { void main_(); }
+namespace leet_349 { void main_(); }
 
 namespace leet_357 { void main_(); }
 
@@ -116,7 +126,7 @@ namespace leet_784 { void main_(); }
 
 namespace leet_876 { void main_(); }
 
-namespace leet_912 { void main_(); } // sorts
+namespace leet_912 { void main_(); }// sorts
 
 namespace leet_945 { void main_(); }
 
@@ -124,13 +134,14 @@ namespace leet_m40 { void main_(); }
 
 namespace leet_m62 { void main_(); }
 
+namespace leet_m01_01 { void main_(); }
 namespace leet_m01_06 { void main_(); }
 
 
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_169::main_();
+    leet_13::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }

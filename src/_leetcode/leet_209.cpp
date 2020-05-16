@@ -12,44 +12,39 @@
 namespace leet_209 {//~
 
 
-
+// 双指针法
 int minSubArrayLen(int s, std::vector<int>& nums) {
 
-    int left  {0}; // window tail idx
-    int right {0}; // window head idx
+    if( nums.empty() ){ return 0; }
 
+    int left  {0}; // window lst elem
+    int right {0}; // window fst elem
     int sum {0};
-    int  minSize { 0x7fffffff };
-    bool isMinSize {false};
+    int minLen { INT_MAX };
 
+    // 每一循环都固定递进 right，然后动态收缩 left
     for( ; right<static_cast<int>(nums.size()); right++ ){
 
         sum += nums.at(right);
-
         if( sum == s ){// perfect
-            minSize = std::min( minSize, right-left+1 );
-            if( !isMinSize ){ isMinSize = true; }
-
+            minLen = std::min( minLen, right-left+1 );
         }else if( sum > s ){
 
             while( left <= right ){
-
                 sum -= nums.at(left);
                 left++;
+                // 现在，窗口收缩了一格，left 重新指向新区间 lst elem
                 if( sum == s ){// perfect
-                    minSize = std::min( minSize, right-left+1 );
-                    if( !isMinSize ){ isMinSize = true; }
+                    minLen = std::min( minLen, right-left+1 );
                     break;
                 }else if( sum < s ){// last time is ok
-                    minSize = std::min( minSize, right-left+2 );
-                    if( !isMinSize ){ isMinSize = true; }
+                    minLen = std::min( minLen, right-left+2 );
                     break;
                 }
             }
         }
     }
-
-    return isMinSize ? minSize : 0;
+    return (minLen==INT_MAX) ? 0 : minLen;
 }
 
 
@@ -61,9 +56,10 @@ int minSubArrayLen(int s, std::vector<int>& nums) {
 //=========================================================//
 void main_(){
 
-    std::vector<int> v {};
-    //std::vector<int> v { 2,3,1,2,4,3 };
+    //std::vector<int> v {};
+    std::vector<int> v { 2,3,1,2,4,3 };
 
+    //int ret = minSubArrayLen( 7, v );
     int ret = minSubArrayLen( 7, v );
     
     cout << "ret = " << ret << endl;
