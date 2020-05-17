@@ -23,9 +23,8 @@ inline ListNode* create_list( std::vector<int> v_ ){
 
     ListNode* root {nullptr};
     ListNode* p {nullptr};
-
-    size_t idx {0};
-    while( idx < v_.size() ){
+    
+    for( size_t idx =0; idx<v_.size(); idx++ ){
 
         ListNode* newP = new ListNode ( v_.at(idx) );
         if( idx == 0 ){
@@ -35,10 +34,7 @@ inline ListNode* create_list( std::vector<int> v_ ){
             p->next = newP;
             p = p->next;
         }
-        //-----//
-        idx++;
     }
-
     return root;
 }
 

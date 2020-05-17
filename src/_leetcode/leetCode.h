@@ -79,6 +79,7 @@ namespace leet_169 { void main_(); }// Boyer-Moore Algorithm 多数投票算法
 
 namespace leet_200 { void main_(); }
 namespace leet_202 { void main_(); }
+namespace leet_203 { void main_(); }
 
 namespace leet_206 { void main_(); }
 
@@ -86,7 +87,7 @@ namespace leet_209 { void main_(); }
 
 namespace leet_215 { void main_(); }
 
-namespace leet_225 { void main_(); }
+namespace leet_225 { void main_(); }//--无脑--
 namespace leet_226 { void main_(); }
 
 namespace leet_257 { void main_(); }
@@ -108,16 +109,21 @@ namespace leet_357 { void main_(); }
 
 namespace leet_401 { void main_(); }
 namespace leet_402 { void main_(); }
+namespace leet_409 { void main_(); }
 
+namespace leet_415 { void main_(); }
 
 namespace leet_451 { void main_(); }
 namespace leet_452 { void main_(); }
 namespace leet_455 { void main_(); }
 
+namespace leet_504 { void main_(); }
+
 namespace leet_543 { void main_(); }
 
 namespace leet_617 { void main_(); }
 
+namespace leet_696 { void main_(); }
 namespace leet_698 { void main_(); }
 
 namespace leet_763 { void main_(); }
@@ -130,8 +136,15 @@ namespace leet_912 { void main_(); }// sorts
 
 namespace leet_945 { void main_(); }
 
-namespace leet_m40 { void main_(); }
+namespace leet_997 { void main_(); }// 5.12%, 16.67%
 
+namespace leet_1071 { void main_(); }
+
+
+namespace leet_m09 { void main_(); }// 用两栈实现队列，--无脑--
+namespace leet_m24 { void main_(); }
+namespace leet_m25 { void main_(); }
+namespace leet_m40 { void main_(); }
 namespace leet_m62 { void main_(); }
 
 namespace leet_m01_01 { void main_(); }
@@ -141,7 +154,7 @@ namespace leet_m01_06 { void main_(); }
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_13::main_();
+    leet_504::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }
