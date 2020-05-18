@@ -53,6 +53,7 @@ namespace leet_53 { void main_(); }
 namespace leet_54 { void main_(); }
 namespace leet_56 { void main_(); }
 
+namespace leet_70 { void main_(); }//=*--动态规划--*=
 namespace leet_72 { void main_(); }
 namespace leet_73 { void main_(); }
 
@@ -90,7 +91,9 @@ namespace leet_215 { void main_(); }
 namespace leet_225 { void main_(); }//--无脑--
 namespace leet_226 { void main_(); }
 
+namespace leet_256 { void main_(); }//=*--动态规划--*=
 namespace leet_257 { void main_(); }
+namespace leet_258 { void main_(); }
 
 namespace leet_283 { void main_(); }
 
@@ -102,6 +105,7 @@ namespace leet_300 { void main_(); }// **难**
 namespace leet_307 { void main_(); }// 树状数组
 namespace leet_314 { void main_(); }
 
+namespace leet_346 { void main_(); }
 namespace leet_347 { void main_(); }
 namespace leet_349 { void main_(); }
 
@@ -118,6 +122,7 @@ namespace leet_452 { void main_(); }
 namespace leet_455 { void main_(); }
 
 namespace leet_504 { void main_(); }
+namespace leet_509 { void main_(); }
 
 namespace leet_543 { void main_(); }
 
@@ -130,6 +135,7 @@ namespace leet_763 { void main_(); }
 
 namespace leet_784 { void main_(); }
 
+namespace leet_821 { void main_(); }
 namespace leet_876 { void main_(); }
 
 namespace leet_912 { void main_(); }// sorts
@@ -138,13 +144,20 @@ namespace leet_945 { void main_(); }
 
 namespace leet_997 { void main_(); }// 5.12%, 16.67%
 
+namespace leet_1047 { void main_(); }
 namespace leet_1071 { void main_(); }
 
 
+namespace leet_1160 { void main_(); }// 5.15% 20%
+
+
+namespace leet_m03 { void main_(); }
 namespace leet_m09 { void main_(); }// 用两栈实现队列，--无脑--
 namespace leet_m24 { void main_(); }
 namespace leet_m25 { void main_(); }
 namespace leet_m40 { void main_(); }
+namespace leet_m57 { void main_(); }
+namespace leet_m57_2 { void main_(); }
 namespace leet_m62 { void main_(); }
 
 namespace leet_m01_01 { void main_(); }
@@ -154,7 +167,8 @@ namespace leet_m01_06 { void main_(); }
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_504::main_();
+
+    leet_70::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }
