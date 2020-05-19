@@ -49,7 +49,7 @@ namespace leet_39 { void main_(); }
 namespace leet_42 { void main_(); }
 namespace leet_46 { void main_(); }
 
-namespace leet_53 { void main_(); }
+namespace leet_53 { void main_(); }//=*--动态规划--*=
 namespace leet_54 { void main_(); }
 namespace leet_56 { void main_(); }
 
@@ -78,6 +78,7 @@ namespace leet_155 { void main_(); }
 namespace leet_167 { void main_(); }
 namespace leet_169 { void main_(); }// Boyer-Moore Algorithm 多数投票算法
 
+namespace leet_198 { void main_(); }//=*--动态规划--*=
 namespace leet_200 { void main_(); }
 namespace leet_202 { void main_(); }
 namespace leet_203 { void main_(); }
@@ -102,8 +103,11 @@ namespace leet_287 { void main_(); }
 namespace leet_295 { void main_(); }// 最大堆+最小堆 求中位数
 
 namespace leet_300 { void main_(); }// **难**
+namespace leet_303 { void main_(); }// 树状数组
 namespace leet_307 { void main_(); }// 树状数组
 namespace leet_314 { void main_(); }
+
+namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
 
 namespace leet_346 { void main_(); }
 namespace leet_347 { void main_(); }
@@ -144,6 +148,7 @@ namespace leet_945 { void main_(); }
 
 namespace leet_997 { void main_(); }// 5.12%, 16.67%
 
+namespace leet_1025 { void main_(); }//=*--动态规划--*=
 namespace leet_1047 { void main_(); }
 namespace leet_1071 { void main_(); }
 
@@ -164,11 +169,15 @@ namespace leet_m01_01 { void main_(); }
 namespace leet_m01_06 { void main_(); }
 
 
+// oths:
+namespace leet_knapsack_problems { void main_(); }// 背包问题练习
+
+
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_70::main_();
+    leet_338::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }
