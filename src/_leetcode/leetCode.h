@@ -15,7 +15,15 @@
  * INT_MIN, INT_MAX  <limits.h>
  * -----
  * int 转 string: std::to_string()
- * 
+ * -----
+ * 容器可以直接用 一对迭代器来初始化
+ * -----
+ * 消除成对的元素方法[1]
+ *     if( set.erase(i)==0 ){ set.insert( i ); }
+ * 消除成对的元素方法[2]
+ *     异或运算 a^b^b = a
+ *     可以将一整组数据都 异或起来，最后成对的元素都会被自动 对消掉
+ *    
  */
 
 
@@ -52,6 +60,9 @@ namespace leet_46 { void main_(); }
 namespace leet_53 { void main_(); }//=*--动态规划--*=
 namespace leet_54 { void main_(); }
 namespace leet_56 { void main_(); }
+namespace leet_58 { void main_(); }//...无脑...
+
+namespace leet_67 { void main_(); }
 
 namespace leet_70 { void main_(); }//=*--动态规划--*=
 namespace leet_72 { void main_(); }
@@ -69,6 +80,7 @@ namespace leet_111 { void main_(); }
 namespace leet_121 { void main_(); }
 
 namespace leet_130 { void main_(); }// 广度优先
+namespace leet_136 { void main_(); }// 异或消除成对元素
 namespace leet_138 { void main_(); }
 
 namespace leet_141 { void main_(); }
@@ -89,7 +101,7 @@ namespace leet_209 { void main_(); }
 
 namespace leet_215 { void main_(); }
 
-namespace leet_225 { void main_(); }//--无脑--
+namespace leet_225 { void main_(); }//...无脑...
 namespace leet_226 { void main_(); }
 
 namespace leet_256 { void main_(); }//=*--动态规划--*=
@@ -109,6 +121,7 @@ namespace leet_314 { void main_(); }
 
 namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
 
+namespace leet_344 { void main_(); }//...无脑...
 namespace leet_346 { void main_(); }
 namespace leet_347 { void main_(); }
 namespace leet_349 { void main_(); }
@@ -156,13 +169,18 @@ namespace leet_1071 { void main_(); }
 namespace leet_1160 { void main_(); }// 5.15% 20%
 
 
+namespace leet_LCP_01 { void main_(); }//...无脑...
+
+
 namespace leet_m03 { void main_(); }
-namespace leet_m09 { void main_(); }// 用两栈实现队列，--无脑--
+namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
 namespace leet_m24 { void main_(); }
 namespace leet_m25 { void main_(); }
 namespace leet_m40 { void main_(); }
 namespace leet_m57 { void main_(); }
 namespace leet_m57_2 { void main_(); }
+namespace leet_m58_1 { void main_(); }//...无脑...
+namespace leet_m58_2 { void main_(); }//...无脑...
 namespace leet_m62 { void main_(); }
 
 namespace leet_m01_01 { void main_(); }
@@ -177,7 +195,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_338::main_();
+    leet_136::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }
