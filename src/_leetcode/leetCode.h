@@ -62,6 +62,8 @@ namespace leet_54 { void main_(); }
 namespace leet_56 { void main_(); }
 namespace leet_58 { void main_(); }//...无脑...
 
+namespace leet_64 { void main_(); }//=*--动态规划--*=
+
 namespace leet_67 { void main_(); }
 
 namespace leet_70 { void main_(); }//=*--动态规划--*=
@@ -71,12 +73,16 @@ namespace leet_73 { void main_(); }
 namespace leet_78 { void main_(); }
 namespace leet_88 { void main_(); }
 
+namespace leet_95 { void main_(); }//=*--动态规划--*=
+namespace leet_96 { void main_(); }//=*--动态规划--*=
+
 namespace leet_101 { void main_(); }
 namespace leet_102 { void main_(); }
 namespace leet_104 { void main_(); }
 namespace leet_110 { void main_(); }
 namespace leet_111 { void main_(); }
 
+namespace leet_120 { void main_(); }//=*--动态规划--*=
 namespace leet_121 { void main_(); }
 
 namespace leet_130 { void main_(); }// 广度优先
@@ -107,6 +113,9 @@ namespace leet_226 { void main_(); }
 namespace leet_256 { void main_(); }//=*--动态规划--*=
 namespace leet_257 { void main_(); }
 namespace leet_258 { void main_(); }
+
+namespace leet_263 { void main_(); }
+namespace leet_264 { void main_(); }
 
 namespace leet_283 { void main_(); }
 
@@ -148,6 +157,8 @@ namespace leet_617 { void main_(); }
 namespace leet_696 { void main_(); }
 namespace leet_698 { void main_(); }
 
+namespace leet_712 { void main_(); }//=*--动态规划--*= 5.28%  55.56%
+
 namespace leet_763 { void main_(); }
 
 namespace leet_784 { void main_(); }
@@ -168,6 +179,10 @@ namespace leet_1071 { void main_(); }
 
 namespace leet_1160 { void main_(); }// 5.15% 20%
 
+namespace leet_1277 { void main_(); }//=*--动态规划--*= 5.07%， 50%
+
+namespace leet_1314 { void main_(); }//=*--动态规划--*=
+
 
 namespace leet_LCP_01 { void main_(); }//...无脑...
 
@@ -177,6 +192,7 @@ namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
 namespace leet_m24 { void main_(); }
 namespace leet_m25 { void main_(); }
 namespace leet_m40 { void main_(); }
+namespace leet_m47 { void main_(); }//=*--动态规划--*=
 namespace leet_m57 { void main_(); }
 namespace leet_m57_2 { void main_(); }
 namespace leet_m58_1 { void main_(); }//...无脑...
@@ -194,8 +210,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-
-    leet_136::main_();
+    leet_264::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }

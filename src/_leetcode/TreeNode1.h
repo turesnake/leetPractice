@@ -27,6 +27,7 @@ struct TreeNode{
     TreeNode *right;
 };
 
+constexpr int niln = INT_MIN; // null 节点
 
 
 // 空节点标记为 INT_MIN 
@@ -79,6 +80,36 @@ inline void print_a_tree( TreeNode *tree_ ){
     }
 }
 
+
+// 遍历一棵树，生成符合输出要求的 指针数组
+inline std::vector<TreeNode*> tree_2_vector( TreeNode *root ){
+
+    std::vector<TreeNode*> out {};
+    std::deque<TreeNode*> que {};
+    que.push_back( root );
+
+    while( !que.empty() ){
+        TreeNode *p = que.front();
+        que.pop_front();
+        if( !p ){
+            //if( out.back()!=nullptr ){ out.push_back(nullptr); }//只需要一个 nullptr
+            // 先无脑清理掉所有 尾部的 nullptr
+            //while( !out.empty() && out.back()==nullptr ){
+            //    out.pop_back(); 
+            //}
+            out.push_back(nullptr); // 再添加唯一的一个 nullptr
+                // 目前为止，这是符合 leetcode 题目中 示范的打印效果 ...
+            continue;
+        }
+        out.push_back( p );
+        que.push_back( p->left );  // maybe nullptr
+        que.push_back( p->right ); // maybe nullptr
+    }
+    while( !out.empty() && out.back()==nullptr ){ 
+        out.pop_back(); 
+    }
+    return out;
+}
 
 
 
