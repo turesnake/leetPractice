@@ -12,8 +12,6 @@
 namespace leet_53 {//~
 
 
-
-
 // 动态规划
 // 原始版本，未做空间优化
 int maxSubArray( std::vector<int> &nums ){
