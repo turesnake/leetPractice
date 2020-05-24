@@ -31,6 +31,7 @@ namespace leet_1 { void main_(); }
 
 namespace leet_3 { void main_(); }
 
+namespace leet_5 { void main_(); }
 namespace leet_6 { void main_(); }
 namespace leet_7 { void main_(); }
 namespace leet_8 { void main_(); }
@@ -154,15 +155,25 @@ namespace leet_455 { void main_(); }
 
 namespace leet_464 { void main_(); }
 
+namespace leet_474 { void main_(); }
+
 namespace leet_486 { void main_(); }//=*--动态规划--*= 100%  100%
 
 namespace leet_500 { void main_(); }//...无脑...
 namespace leet_504 { void main_(); }
 namespace leet_509 { void main_(); }
 
+namespace leet_516 { void main_(); }//=*--动态规划--*= 5.34% 75% 
+
+namespace leet_520 { void main_(); }//...无脑...
+
 namespace leet_543 { void main_(); }
 
+namespace leet_557 { void main_(); }
+
 namespace leet_617 { void main_(); }
+
+namespace leet_647 { void main_(); }//=*--动态规划--*= // 27% 78%
 
 namespace leet_696 { void main_(); }
 namespace leet_698 { void main_(); }
@@ -216,8 +227,12 @@ namespace leet_m58_1 { void main_(); }//...无脑...
 namespace leet_m58_2 { void main_(); }//...无脑...
 namespace leet_m62 { void main_(); }
 
-namespace leet_m01_01 { void main_(); }
+namespace leet_m01_01 { void main_(); }//...无脑...
 namespace leet_m01_06 { void main_(); }
+
+namespace leet_m03_04 { void main_(); }//...无脑...
+
+namespace leet_m10_01 { void main_(); }
 
 namespace leet_m16_17 { void main_(); }//=*--动态规划--*= 34.46%，100%
 
@@ -230,7 +245,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_1064::main_();
+    leet_520::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }
