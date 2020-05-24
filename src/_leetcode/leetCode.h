@@ -156,6 +156,7 @@ namespace leet_464 { void main_(); }
 
 namespace leet_486 { void main_(); }//=*--动态规划--*= 100%  100%
 
+namespace leet_500 { void main_(); }//...无脑...
 namespace leet_504 { void main_(); }
 namespace leet_509 { void main_(); }
 
@@ -185,7 +186,10 @@ namespace leet_997 { void main_(); }// 5.12%, 16.67%
 
 namespace leet_1025 { void main_(); }//=*--动态规划--*=
 namespace leet_1047 { void main_(); }
+namespace leet_1064 { void main_(); }// 17.22%  33.33% 未来精进
 namespace leet_1071 { void main_(); }
+
+namespace leet_1130 { void main_(); }//=*--动态规划--*= 29.51%, 50%
 
 namespace leet_1143 { void main_(); }//=*--动态规划--*= 8.93%, 100%
 
@@ -226,7 +230,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_1143::main_();
+    leet_1064::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }
