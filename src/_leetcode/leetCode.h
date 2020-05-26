@@ -77,12 +77,14 @@ namespace leet_73 { void main_(); }
 namespace leet_78 { void main_(); }
 namespace leet_88 { void main_(); }
 
+namespace leet_94 { void main_(); }
 namespace leet_95 { void main_(); }//=*--动态规划--*=
 namespace leet_96 { void main_(); }//=*--动态规划--*=
 
 namespace leet_101 { void main_(); }
 namespace leet_102 { void main_(); }
 namespace leet_104 { void main_(); }
+namespace leet_107 { void main_(); }
 namespace leet_110 { void main_(); }
 namespace leet_111 { void main_(); }
 
@@ -94,6 +96,8 @@ namespace leet_136 { void main_(); }// 异或消除成对元素
 namespace leet_138 { void main_(); }
 
 namespace leet_141 { void main_(); }
+namespace leet_144 { void main_(); }
+namespace leet_145 { void main_(); }
 
 namespace leet_155 { void main_(); }
 
@@ -104,6 +108,7 @@ namespace leet_198 { void main_(); }//=*--动态规划--*=
 namespace leet_200 { void main_(); }
 namespace leet_202 { void main_(); }
 namespace leet_203 { void main_(); }
+namespace leet_204 { void main_(); }// 18.16%，84.62%
 
 namespace leet_206 { void main_(); }
 
@@ -120,6 +125,8 @@ namespace leet_258 { void main_(); }
 
 namespace leet_263 { void main_(); }
 namespace leet_264 { void main_(); }
+
+namespace leet_279 { void main_(); }// bfs
 
 namespace leet_283 { void main_(); }
 
@@ -152,6 +159,8 @@ namespace leet_409 { void main_(); }
 
 namespace leet_415 { void main_(); }
 
+namespace leet_429 { void main_(); }
+
 namespace leet_451 { void main_(); }
 namespace leet_452 { void main_(); }
 namespace leet_455 { void main_(); }
@@ -166,6 +175,9 @@ namespace leet_500 { void main_(); }//...无脑...
 namespace leet_504 { void main_(); }
 namespace leet_509 { void main_(); }
 
+namespace leet_513 { void main_(); }
+namespace leet_515 { void main_(); }// 27%, 25%
+
 namespace leet_516 { void main_(); }//=*--动态规划--*= 5.34% 75% 
 
 namespace leet_520 { void main_(); }//...无脑...
@@ -173,11 +185,18 @@ namespace leet_520 { void main_(); }//...无脑...
 namespace leet_543 { void main_(); }
 
 namespace leet_557 { void main_(); }
+namespace leet_559 { void main_(); }
+
+namespace leet_589 { void main_(); }
+namespace leet_590 { void main_(); }
 
 namespace leet_617 { void main_(); }
 
+namespace leet_637 { void main_(); }
+
 namespace leet_647 { void main_(); }//=*--动态规划--*= // 27% 78%
 
+namespace leet_653 { void main_(); }
 namespace leet_654 { void main_(); }// 5.13%, 7.69%
 
 namespace leet_696 { void main_(); }
@@ -245,6 +264,9 @@ namespace leet_m16_17 { void main_(); }//=*--动态规划--*= 34.46%，100%
 
 namespace leet_m17_16 { void main_(); }//=*--动态规划--*=
 
+namespace leet_m32_1 { void main_(); }
+namespace leet_m32_2 { void main_(); }
+
 // oths:
 namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 
@@ -252,7 +274,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_m50::main_();
+    leet_653::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }

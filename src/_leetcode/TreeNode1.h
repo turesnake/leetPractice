@@ -31,7 +31,7 @@ constexpr int niln = INT_MIN; // null 节点
 
 
 // 空节点标记为 INT_MIN 
-inline TreeNode *create_a_tree( std::vector<int> &v_ ){
+inline TreeNode *create_a_tree( std::vector<int> v_ ){
 
     if( v_.empty() ){ return nullptr; }
     TreeNode *sentry = new TreeNode(0);// root = sentry->right
