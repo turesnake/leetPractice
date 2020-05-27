@@ -23,6 +23,12 @@
  * 消除成对的元素方法[2]
  *     异或运算 a^b^b = a
  *     可以将一整组数据都 异或起来，最后成对的元素都会被自动 对消掉
+ * 
+ * =============== 需要复习的内容 =================
+ * -- 94:  二叉树中序遍历的 迭代实现
+ * -- 974: 前缀和+模 计算区间和是否被整除 
+ * 
+ * 
  *    
  */
 
@@ -56,6 +62,7 @@ namespace leet_27 { void main_(); }
 
 namespace leet_39 { void main_(); }
 namespace leet_42 { void main_(); }
+namespace leet_43 { void main_(); }// 19.69% 40.74%
 namespace leet_46 { void main_(); }
 
 namespace leet_53 { void main_(); }//=*--动态规划--*=
@@ -199,6 +206,8 @@ namespace leet_647 { void main_(); }//=*--动态规划--*= // 27% 78%
 namespace leet_653 { void main_(); }
 namespace leet_654 { void main_(); }// 5.13%, 7.69%
 
+namespace leet_671 { void main_(); }
+
 namespace leet_696 { void main_(); }
 namespace leet_698 { void main_(); }
 
@@ -217,12 +226,18 @@ namespace leet_931 { void main_(); }//=*--动态规划--*=
 
 namespace leet_945 { void main_(); }
 
+namespace leet_974 { void main_(); }
+
+namespace leet_989 { void main_(); }
+
 namespace leet_997 { void main_(); }// 5.12%, 16.67%
 
 namespace leet_1025 { void main_(); }//=*--动态规划--*=
 namespace leet_1047 { void main_(); }
 namespace leet_1064 { void main_(); }// 17.22%  33.33% 未来精进
 namespace leet_1071 { void main_(); }
+
+namespace leet_1114 { void main_(); }// threads
 
 namespace leet_1130 { void main_(); }//=*--动态规划--*= 29.51%, 50%
 
@@ -239,6 +254,7 @@ namespace leet_LCP_01 { void main_(); }//...无脑...
 
 
 namespace leet_m03 { void main_(); }
+namespace leet_m06 { void main_(); }
 namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
 namespace leet_m24 { void main_(); }
 namespace leet_m25 { void main_(); }
@@ -257,6 +273,8 @@ namespace leet_m01_01 { void main_(); }//...无脑...
 namespace leet_m01_06 { void main_(); }
 
 namespace leet_m03_04 { void main_(); }//...无脑...
+namespace leet_m04_02 { void main_(); }
+namespace leet_m04_03 { void main_(); }
 
 namespace leet_m10_01 { void main_(); }
 
@@ -267,6 +285,8 @@ namespace leet_m17_16 { void main_(); }//=*--动态规划--*=
 namespace leet_m32_1 { void main_(); }
 namespace leet_m32_2 { void main_(); }
 
+namespace leet_m59_1 { void main_(); }// 单调队列 [罕见]
+
 // oths:
 namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 
@@ -274,7 +294,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_653::main_();
+    leet_m04_02::main_();
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
 }

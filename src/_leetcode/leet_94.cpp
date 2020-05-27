@@ -33,7 +33,6 @@ public:
 
 
 // 迭代 stack
-/*
 class S2{
 public:
     std::vector<int> inorderTraversal( TreeNode* root ){
@@ -41,37 +40,21 @@ public:
         if( !root ){ return {}; }
         std::vector<int> elems {};
         std::stack<TreeNode*> stk {};
-        //stk.push( root );
-
+        // 这个过程不好理解...
         TreeNode *ptr = root; 
-
-        while( ptr!=nullptr && !stk.empty() ){
-
+        while( ptr!=nullptr || !stk.empty() ){
             while( ptr!=nullptr ){
                 stk.push(ptr);
                 ptr = ptr->left;
             }
-
             ptr = stk.top();
-
-
-
-            if( tp->left ){
-                stk.push(tp->left);
-                continue;
-            }else{
-
-
-
-            }
-
+            stk.pop();
+            elems.push_back( ptr->val );
+            ptr = ptr->right; // maybe nullptr
         }
-
+        return elems;
     }
 };
-*/
-
-
 
 
 
@@ -83,7 +66,12 @@ void main_(){
     print_a_tree(t);
     cout << "\n======"<<endl;
 
+    auto ret = S2{}.inorderTraversal( t );
 
+    for( int i : ret ){
+        cout << i << ", ";
+    }
+    cout <<endl;
     
 
     debug::log( "\n~~~~ leet: 94 :end ~~~~\n" );
