@@ -29,6 +29,18 @@
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
  * 
+ * 
+ * =============== 二分查找 =================
+ * -1- 明确每次细分，需要剔除的是那一部分元素
+ *     含糊的元素，则要保留到下一回合，继续检查
+ * -2- 寻找左边界，还是右边界，要使用不同的 mid 计算法
+ *     寻找左侧边界时，mid偏左
+ *     寻找右侧边界时，mid偏右
+ * 
+ * ------ 题：
+ * - 34
+ * - 35
+ * - 278
  *    
  */
 
@@ -59,6 +71,9 @@ namespace leet_23 { void main_(); }
 
 namespace leet_26 { void main_(); }
 namespace leet_27 { void main_(); }
+
+namespace leet_34 { void main_(); }
+namespace leet_35 { void main_(); }// 二分查找 
 
 namespace leet_39 { void main_(); }
 namespace leet_42 { void main_(); }
@@ -93,6 +108,8 @@ namespace leet_100 { void main_(); }
 namespace leet_101 { void main_(); }
 namespace leet_102 { void main_(); }
 namespace leet_104 { void main_(); }
+namespace leet_105 { void main_(); }
+namespace leet_106 { void main_(); }
 namespace leet_107 { void main_(); }
 namespace leet_108 { void main_(); }
 namespace leet_110 { void main_(); }
@@ -114,6 +131,8 @@ namespace leet_155 { void main_(); }
 
 namespace leet_167 { void main_(); }
 namespace leet_169 { void main_(); }// Boyer-Moore Algorithm 多数投票算法
+
+namespace leet_173 { void main_(); }
 
 namespace leet_198 { void main_(); }//=*--动态规划--*=
 namespace leet_200 { void main_(); }
@@ -143,6 +162,7 @@ namespace leet_258 { void main_(); }
 namespace leet_263 { void main_(); }
 namespace leet_264 { void main_(); }
 
+namespace leet_278 { void main_(); }
 namespace leet_279 { void main_(); }// bfs
 
 namespace leet_283 { void main_(); }
@@ -174,6 +194,7 @@ namespace leet_401 { void main_(); }
 namespace leet_402 { void main_(); }
 namespace leet_409 { void main_(); }
 
+namespace leet_414 { void main_(); }
 namespace leet_415 { void main_(); }
 
 namespace leet_429 { void main_(); }
@@ -265,6 +286,7 @@ namespace leet_1071 { void main_(); }
 namespace leet_1114 { void main_(); }// threads
 
 namespace leet_1130 { void main_(); }//=*--动态规划--*= 29.51%, 50%
+namespace leet_1133 { void main_(); }
 
 namespace leet_1143 { void main_(); }//=*--动态规划--*= 8.93%, 100%
 
@@ -276,6 +298,8 @@ namespace leet_1302 { void main_(); }
 
 namespace leet_1313 { void main_(); }//...无脑...
 namespace leet_1314 { void main_(); }//=*--动态规划--*=
+
+namespace leet_1365 { void main_(); }
 
 namespace leet_1382 { void main_(); }
 
@@ -328,7 +352,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_75::main_();
+    leet_173::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
