@@ -28,7 +28,7 @@ public:
         while( !que.empty() ){
             auto [tp,deep] = que.front();
             que.pop_front();
-            if( outs.size() < deep+1 ){
+            if( static_cast<int>(outs.size()) < deep+1 ){
                 outs.push_back( tp->val ); // 只被写入一次，就是最右侧的
             }
             if(tp->right){ que.push_back(Elem{tp->right,deep+1}); }

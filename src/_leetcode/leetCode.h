@@ -104,6 +104,8 @@ namespace leet_94 { void main_(); }
 namespace leet_95 { void main_(); }//=*--动态规划--*=
 namespace leet_96 { void main_(); }//=*--动态规划--*=
 
+namespace leet_98 { void main_(); }
+
 namespace leet_100 { void main_(); }
 namespace leet_101 { void main_(); }
 namespace leet_102 { void main_(); }
@@ -115,6 +117,8 @@ namespace leet_108 { void main_(); }
 namespace leet_110 { void main_(); }
 namespace leet_111 { void main_(); }
 namespace leet_112 { void main_(); }
+
+namespace leet_116 { void main_(); }
 
 namespace leet_120 { void main_(); }//=*--动态规划--*=
 namespace leet_121 { void main_(); }
@@ -146,9 +150,14 @@ namespace leet_209 { void main_(); }
 
 namespace leet_215 { void main_(); }
 
+namespace leet_222 { void main_(); }
 namespace leet_225 { void main_(); }//...无脑...
 namespace leet_226 { void main_(); }
 
+namespace leet_232 { void main_(); }
+
+namespace leet_235 { void main_(); }
+namespace leet_236 { void main_(); }
 
 namespace leet_243 { void main_(); }
 namespace leet_244 { void main_(); }
@@ -161,6 +170,8 @@ namespace leet_258 { void main_(); }
 
 namespace leet_263 { void main_(); }
 namespace leet_264 { void main_(); }
+
+namespace leet_270 { void main_(); }
 
 namespace leet_278 { void main_(); }
 namespace leet_279 { void main_(); }// bfs
@@ -228,6 +239,8 @@ namespace leet_543 { void main_(); }
 
 namespace leet_557 { void main_(); }
 namespace leet_559 { void main_(); }
+
+namespace leet_572 { void main_(); }
 
 namespace leet_589 { void main_(); }
 namespace leet_590 { void main_(); }
@@ -309,10 +322,13 @@ namespace leet_LCP_01 { void main_(); }//...无脑...
 
 
 namespace leet_m03 { void main_(); }
+namespace leet_m03_02 { void main_(); }
 namespace leet_m06 { void main_(); }
 namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
 namespace leet_m24 { void main_(); }
 namespace leet_m25 { void main_(); }
+namespace leet_m27 { void main_(); }
+namespace leet_m28 { void main_(); }
 namespace leet_m40 { void main_(); }
 namespace leet_m42 { void main_(); }//=*--动态规划--*=
 namespace leet_m47 { void main_(); }//=*--动态规划--*=
@@ -330,6 +346,7 @@ namespace leet_m01_06 { void main_(); }
 namespace leet_m03_04 { void main_(); }//...无脑...
 namespace leet_m04_02 { void main_(); }
 namespace leet_m04_03 { void main_(); }
+namespace leet_m04_04 { void main_(); }
 
 namespace leet_m10_01 { void main_(); }
 
@@ -352,7 +369,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_173::main_();
+    leet_222::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
