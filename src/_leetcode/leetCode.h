@@ -29,7 +29,7 @@
  * -- 169: Boyer-Moore Algorithm 多数投票算法
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
- * 
+ * -- m64: -1- 借助 逻辑运算符的短路特性，实现条件判断。-2- 快速乘
  * 
  * 
  * =============== 二分查找 =================
@@ -268,6 +268,8 @@ namespace leet_687 { void main_(); }
 namespace leet_696 { void main_(); }
 namespace leet_698 { void main_(); }
 
+namespace leet_704 { void main_(); }
+
 namespace leet_712 { void main_(); }//=*--动态规划--*= 5.28%  55.56%
 
 namespace leet_763 { void main_(); }
@@ -314,6 +316,7 @@ namespace leet_1133 { void main_(); }
 
 namespace leet_1143 { void main_(); }//=*--动态规划--*= 8.93%, 100%
 
+namespace leet_1150 { void main_(); }
 namespace leet_1160 { void main_(); }// 5.15% 20%
 
 namespace leet_1214 { void main_(); }
@@ -321,9 +324,12 @@ namespace leet_1214 { void main_(); }
 namespace leet_1277 { void main_(); }//=*--动态规划--*= 5.07%， 50%
 
 namespace leet_1302 { void main_(); }
+namespace leet_1305 { void main_(); }
 
 namespace leet_1313 { void main_(); }//...无脑...
 namespace leet_1314 { void main_(); }//=*--动态规划--*=
+
+namespace leet_1325 { void main_(); }
 
 namespace leet_1365 { void main_(); }
 
@@ -349,12 +355,15 @@ namespace leet_m42 { void main_(); }//=*--动态规划--*=
 namespace leet_m47 { void main_(); }//=*--动态规划--*=
 namespace leet_m50 { void main_(); }//...无脑...
 namespace leet_m53 { void main_(); }// 二分查找
+namespace leet_m53_1 { void main_(); }
 namespace leet_m57 { void main_(); }
 namespace leet_m57_2 { void main_(); }
 namespace leet_m58_1 { void main_(); }//...无脑...
 namespace leet_m58_2 { void main_(); }//...无脑...
 namespace leet_m62 { void main_(); }
+namespace leet_m64 { void main_(); }
 
+namespace leet_m01_1 { void main_(); }
 namespace leet_m01_01 { void main_(); }//...无脑...
 namespace leet_m01_06 { void main_(); }
 
@@ -365,16 +374,19 @@ namespace leet_m04_04 { void main_(); }
 
 namespace leet_m10_01 { void main_(); }
 
+namespace leet_m16_01 { void main_(); }
 namespace leet_m16_17 { void main_(); }//=*--动态规划--*= 34.46%，100%
 
 namespace leet_m17_04 { void main_(); }
 namespace leet_m17_10 { void main_(); }
+namespace leet_m17_12 { void main_(); }
 namespace leet_m17_16 { void main_(); }//=*--动态规划--*=
 
 namespace leet_m32_1 { void main_(); }
 namespace leet_m32_2 { void main_(); }
 
 namespace leet_m55_1 { void main_(); }
+namespace leet_m56_1 { void main_(); }
 
 namespace leet_m59_1 { void main_(); }// 单调队列 [罕见]
 
@@ -385,7 +397,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_1441::main_();
+    leet_1305::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
