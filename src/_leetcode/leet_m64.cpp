@@ -30,11 +30,28 @@ public:
 // 待学习...
 
 
+// 俄罗斯农民乘法
+// b 不能为 负数
+int product_1( int a, int b ){
+    int sum {0};
+    for( int i=0; b!=0; i++, b>>=1 ){
+        if(b&1){ sum += a<<i; }
+    }
+    return sum;
+}
+
+
+
+
+
 
 //=========================================================//
 void main_(){
 
-    //cout<< S{}.work<4>() <<endl;
+    cout<<"a*b = "<< product_1( 0, 7 ) <<endl;
+
+
+
 
     debug::log( "\n~~~~ leet: m64 :end ~~~~\n" );
 }

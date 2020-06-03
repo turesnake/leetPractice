@@ -12,11 +12,14 @@
 
 
 /* 惯用技巧：
+ * -----
  * INT_MIN, INT_MAX  <limits.h>
  * -----
  * int 转 string: std::to_string()
  * -----
  * 容器可以直接用 一对迭代器来初始化
+ * -----
+ * 判断奇偶性，(1)取模：val%2 (2)判断末尾: val&1
  * -----
  * 消除成对的元素方法[1]
  *     if( set.erase(i)==0 ){ set.insert( i ); }
@@ -29,7 +32,9 @@
  * -- 169: Boyer-Moore Algorithm 多数投票算法
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
+ * -- m22: 双指针 固定间距法
  * -- m64: -1- 借助 逻辑运算符的短路特性，实现条件判断。-2- 快速乘
+ * -- m08_05: 俄国农民乘法
  * 
  * 
  * =============== 二分查找 =================
@@ -70,6 +75,7 @@ namespace leet_20 { void main_(); }
 namespace leet_21 { void main_(); }
 namespace leet_22 { void main_(); }// 回溯
 namespace leet_23 { void main_(); }
+namespace leet_24 { void main_(); }
 
 namespace leet_26 { void main_(); }
 namespace leet_27 { void main_(); }
@@ -100,8 +106,11 @@ namespace leet_73 { void main_(); }
 
 namespace leet_75 { void main_(); }
 namespace leet_78 { void main_(); }
+
+namespace leet_86 { void main_(); }
 namespace leet_88 { void main_(); }
 
+namespace leet_92 { void main_(); }
 namespace leet_94 { void main_(); }
 namespace leet_95 { void main_(); }//=*--动态规划--*=
 namespace leet_96 { void main_(); }//=*--动态规划--*=
@@ -111,11 +120,13 @@ namespace leet_98 { void main_(); }
 namespace leet_100 { void main_(); }
 namespace leet_101 { void main_(); }
 namespace leet_102 { void main_(); }
+
 namespace leet_104 { void main_(); }
 namespace leet_105 { void main_(); }
 namespace leet_106 { void main_(); }
 namespace leet_107 { void main_(); }
 namespace leet_108 { void main_(); }
+namespace leet_109 { void main_(); }
 namespace leet_110 { void main_(); }
 namespace leet_111 { void main_(); }
 namespace leet_112 { void main_(); }
@@ -133,6 +144,8 @@ namespace leet_138 { void main_(); }
 namespace leet_141 { void main_(); }
 namespace leet_144 { void main_(); }
 namespace leet_145 { void main_(); }
+
+namespace leet_148 { void main_(); }
 
 namespace leet_155 { void main_(); }
 
@@ -161,6 +174,7 @@ namespace leet_232 { void main_(); }
 
 namespace leet_235 { void main_(); }
 namespace leet_236 { void main_(); }
+namespace leet_237 { void main_(); }
 
 namespace leet_243 { void main_(); }
 namespace leet_244 { void main_(); }
@@ -179,10 +193,12 @@ namespace leet_270 { void main_(); }
 namespace leet_278 { void main_(); }
 namespace leet_279 { void main_(); }// bfs
 
+namespace leet_281 { void main_(); }
 namespace leet_283 { void main_(); }
 
 namespace leet_287 { void main_(); }
 
+namespace leet_293 { void main_(); }//...无脑...
 namespace leet_295 { void main_(); }// 最大堆+最小堆 求中位数
 
 namespace leet_300 { void main_(); }// **难**
@@ -309,6 +325,8 @@ namespace leet_1047 { void main_(); }
 namespace leet_1064 { void main_(); }// 17.22%  33.33% 未来精进
 namespace leet_1071 { void main_(); }
 
+namespace leet_1104 { void main_(); }
+
 namespace leet_1114 { void main_(); }// threads
 
 namespace leet_1130 { void main_(); }//=*--动态规划--*= 29.51%, 50%
@@ -328,15 +346,20 @@ namespace leet_1305 { void main_(); }
 
 namespace leet_1313 { void main_(); }//...无脑...
 namespace leet_1314 { void main_(); }//=*--动态规划--*=
+namespace leet_1315 { void main_(); }
 
 namespace leet_1325 { void main_(); }
 
 namespace leet_1365 { void main_(); }
 
+namespace leet_1381 { void main_(); }
 namespace leet_1382 { void main_(); }
 
 namespace leet_1441 { void main_(); }
 namespace leet_1457 { void main_(); }
+
+namespace leet_1464 { void main_(); }
+
 
 namespace leet_LCP_01 { void main_(); }//...无脑...
 
@@ -345,6 +368,7 @@ namespace leet_m03 { void main_(); }
 namespace leet_m03_02 { void main_(); }
 namespace leet_m06 { void main_(); }
 namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
+namespace leet_m22 { void main_(); }// 双指针固定间距法
 namespace leet_m24 { void main_(); }
 namespace leet_m25 { void main_(); }
 namespace leet_m27 { void main_(); }
@@ -372,6 +396,9 @@ namespace leet_m04_02 { void main_(); }
 namespace leet_m04_03 { void main_(); }
 namespace leet_m04_04 { void main_(); }
 
+namespace leet_m08_05 { void main_(); }
+namespace leet_m08_07 { void main_(); }
+
 namespace leet_m10_01 { void main_(); }
 
 namespace leet_m16_01 { void main_(); }
@@ -397,7 +424,7 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_1305::main_();
+    leet_86::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
