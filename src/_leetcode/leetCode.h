@@ -13,7 +13,9 @@
 
 /* 惯用技巧：
  * -----
- * INT_MIN, INT_MAX  <limits.h>
+ * <limits.h>
+ * INT_MIN = -2147483648
+ * INT_MAX =  2147483647
  * -----
  * int 转 string: std::to_string()
  * -----
@@ -39,6 +41,7 @@
  * -- m22: 双指针 固定间距法
  * -- m64: -1- 借助 逻辑运算符的短路特性，实现条件判断。-2- 快速乘
  * -- m08_05: 俄国农民乘法
+ * -- m59_1: 单调队列
  * 
  * 
  * =============== 二分查找 =================
@@ -52,7 +55,23 @@
  * - 34
  * - 35
  * - 278
+ * - 1351
+ * 
+ * =============== dp =================
+ * 有些 dp 题思路比较奇特，记录于此
+ * 
+ * ------ 题：
+ * - 221 正方形判定
+ * - 718
  *    
+ * 
+ * =============== 单调栈 =================
+ * 需要训练的题型
+ * ------ 题：
+ * - 84
+ * 
+ * 
+ * 
  */
 
 
@@ -112,6 +131,8 @@ namespace leet_75 { void main_(); }
 namespace leet_78 { void main_(); }
 
 namespace leet_83 { void main_(); }
+namespace leet_84 { void main_(); }
+namespace leet_85 { void main_(); }
 
 namespace leet_86 { void main_(); }
 namespace leet_88 { void main_(); }
@@ -148,6 +169,7 @@ namespace leet_136 { void main_(); }// 异或消除成对元素
 namespace leet_138 { void main_(); }
 
 namespace leet_141 { void main_(); }
+namespace leet_143 { void main_(); }
 namespace leet_144 { void main_(); }
 namespace leet_145 { void main_(); }
 
@@ -174,6 +196,7 @@ namespace leet_209 { void main_(); }
 
 namespace leet_215 { void main_(); }
 
+namespace leet_221 { void main_(); }
 namespace leet_222 { void main_(); }
 namespace leet_225 { void main_(); }//...无脑...
 namespace leet_226 { void main_(); }
@@ -221,6 +244,7 @@ namespace leet_328 { void main_(); }
 
 namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
 
+namespace leet_342 { void main_(); }// 二进制/位运算
 namespace leet_344 { void main_(); }//...无脑...
 namespace leet_346 { void main_(); }
 namespace leet_347 { void main_(); }
@@ -308,6 +332,8 @@ namespace leet_709 { void main_(); }//...无脑...
 
 namespace leet_712 { void main_(); }//=*--动态规划--*= 5.28%  55.56%
 
+namespace leet_718 { void main_(); }
+
 namespace leet_763 { void main_(); }
 namespace leet_766 { void main_(); }// 矩阵
 
@@ -368,6 +394,10 @@ namespace leet_1214 { void main_(); }
 
 namespace leet_1277 { void main_(); }//=*--动态规划--*= 5.07%， 50%
 
+namespace leet_1281 { void main_(); }//...无脑...
+
+namespace leet_1290 { void main_(); }
+
 namespace leet_1302 { void main_(); }
 namespace leet_1305 { void main_(); }
 
@@ -376,6 +406,8 @@ namespace leet_1314 { void main_(); }//=*--动态规划--*=
 namespace leet_1315 { void main_(); }
 
 namespace leet_1325 { void main_(); }
+
+namespace leet_1351 { void main_(); }
 
 namespace leet_1365 { void main_(); }
 
@@ -396,11 +428,13 @@ namespace leet_m03_02 { void main_(); }
 namespace leet_m06 { void main_(); }
 namespace leet_m07 { void main_(); }
 namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
+namespace leet_m16_11 { void main_(); }
 namespace leet_m22 { void main_(); }// 双指针固定间距法
 namespace leet_m24 { void main_(); }
 namespace leet_m25 { void main_(); }
 namespace leet_m27 { void main_(); }
 namespace leet_m28 { void main_(); }
+namespace leet_m29 { void main_(); }
 namespace leet_m39 { void main_(); }
 namespace leet_m40 { void main_(); }
 namespace leet_m42 { void main_(); }//=*--动态规划--*=
@@ -454,7 +488,8 @@ namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
-    leet_371::main_();
+
+    leet_1290::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

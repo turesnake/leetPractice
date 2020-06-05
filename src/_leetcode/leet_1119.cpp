@@ -14,6 +14,7 @@
 namespace leet_1119 {//~
 
 
+
 class S{
     std::unordered_set<char> sett{ 'a','e','i','o','u' };
 public:
