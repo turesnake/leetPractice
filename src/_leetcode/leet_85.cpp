@@ -25,27 +25,14 @@ namespace leet_85 {//~
 
 
 
-// dp 
-//
-//        目前的解法不对 
-//
+// 单调栈 51%， 100%
+// 84题的 升级版
 class S{
 
 struct Elem{
-    int w {0};
-    int h {0};
+    int val {0};
+    int idx {0};
 };
-
-    std::vector<std::vector<Elem>> dp {};
-
-    void dp_resize( int w, int h ){
-        dp.resize( h, std::vector<Elem>( w, Elem{0,0} ) );
-    }
-
-    Elem &dp_at( int w, int h ){
-        return dp.at(h).at(w);
-    }
-
 
 public:
     int maximalRectangle( std::vector<std::vector<char>>& matrix ){
@@ -53,58 +40,61 @@ public:
         if( matrix.empty() || matrix.at(0).empty() ){ return 0; }
         int H = static_cast<int>(matrix.size());
         int W = static_cast<int>(matrix.at(0).size());
-        dp_resize(W,H);
-        int maxW = 0;
-        int maxH = 0;
-        // 手动实现边界
-        for( int w=1; w<W; w++ ){
-            if( matrix.at(0).at(w)=='1' ){
-                auto &elem = dp_at(w,0);
-                elem.w = dp_at(w-1,0).w + 1;
-                elem.h = 1;
-                maxW = std::max(maxW, elem.w );
-                maxH = 1;
+
+        int maxSum = 0;
+        std::stack<Elem> stk {};// 单调栈
+        std::vector<int> heights (W,0);// 记录每一层的 向上积累高
+
+        for( int h=0; h<H; h++ ){
+            // 准备 heights 数据
+            for( int w=0; w<W; w++ ){
+                ( matrix.at(h).at(w)=='1' ) ?
+                    heights.at(w)++ :
+                    heights.at(w) = 0;
             }
-        }
-        for( int h=1; h<H; h++ ){
-            if( matrix.at(h).at(0)=='1' ){
-                auto &elem = dp_at(0,h);
-                elem.w = 1;
-                elem.h = dp_at(0,h-1).h + 1;
-                maxW = std::max(maxW, elem.w );
-                maxH = std::max(maxH, elem.h);
-            }
-        }
-        // 后续数据
-        for( int h=1; h<H; h++ ){
+            // 单调栈
+            stk.empty();
+            stk.push(Elem{heights.at(0),0});
             for( int w=1; w<W; w++ ){
-                auto &elem = dp_at(w,h);
-                if( matrix.at(h).at(w)=='1' ){
-                    int tmpW = std::max(dp_at(w,h-1).w-1, 0);// 不能小于0
-                    elem.w = std::min( std::min(dp_at(w-1,h-1).w, dp_at(w-1,h).w), tmpW) + 1;
-                    int tmpH = std::max(dp_at(w-1,h).h-1, 0);// 不能小于0
-                    elem.h = std::min( std::min(dp_at(w-1,h-1).h, dp_at(w,h-1).h), tmpH) + 1;
-                    maxW = std::max( maxW, elem.w );
-                    maxH = std::max( maxH, elem.h );
-                }else{
-                    elem.w = 0;
-                    elem.h = 0;
+                int curVal = heights.at(w);
+                if( stk.empty() ){
+                    stk.push(Elem{curVal,w});
+                    continue;
+                }
+                if( curVal > stk.top().val ){
+                    stk.push(Elem{curVal,w});
+
+                }else if( curVal < stk.top().val ){
+                    while( !stk.empty() && curVal<stk.top().val ){
+                        // 将栈中，所有高于 curVal 的元素，清洗掉
+                        auto &e = stk.top();
+                        stk.pop();
+                        int l = stk.empty() ? -1 : stk.top().idx;
+                        int rectH = e.val;
+                        int rectW = w-l-1;//此区间，不含 w 和 l位
+                        //cout<<"w:"<<w<<" l:"<<l<<endl;
+                        //cout<<"rectW:"<<rectW<<" rectH:"<<rectH <<endl;
+                        maxSum = std::max( maxSum, rectW*rectH );
+                    }
+                    // 压入新值
+                    stk.push(Elem{curVal,w});
+                }else{// ==
+                    stk.top().idx = w; // 元素高度相同时，记录最右侧的 下标
                 }
             }
+            //cout<<"------"<<endl;
+            // 处理 栈尾元素
+            while( !stk.empty() ){
+                auto &e = stk.top();
+                stk.pop();
+                int l = stk.empty() ? -1 : stk.top().idx;
+                int rectH = e.val;
+                int rectW = W-l-1;//此区间，不含 W 和 l位
+                //cout<<"w:"<<rectW<<" h:"<<rectH <<endl;
+                maxSum = std::max( maxSum, rectW*rectH );
+            }
         }
-
-
-
-            cout<<"dp:"<<endl;
-            for( int h=0; h<H; h++ ){
-                for( int w=0; w<W; w++ ){
-                    auto &e = dp_at(w,h);
-                    cout<<"["<<e.w<<","<<e.h<<"], ";
-                }cout<<endl;
-            }cout<<"W:"<<maxW<<", H:"<<maxH<<endl;
-
-
-        return maxW*maxH;
+        return maxSum;
     }
 };
 
