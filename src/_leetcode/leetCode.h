@@ -84,6 +84,7 @@
  * - 85: 基于84的升级版
  * - 496:
  * - 739:
+ * - 901:
  * 
  */
 
@@ -324,6 +325,8 @@ namespace leet_563 { void main_(); }
 
 namespace leet_572 { void main_(); }
 
+namespace leet_581 { void main_(); }
+
 namespace leet_589 { void main_(); }
 namespace leet_590 { void main_(); }
 
@@ -524,7 +527,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1022::main_();
+    leet_581::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
