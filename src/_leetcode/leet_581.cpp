@@ -14,12 +14,9 @@
 namespace leet_581 {//~
 
 
-// 单调栈
-// 用逆序栈，记录一个 无序区间
-// 当栈中元素，从2+ 变为 1个时，就说明，一个无序区间 被确定/清理 了
-
-
-//    明天继续 ...
+// -- 单调栈
+// -- 双向遍历法
+// -- 简易排序法
 
 
 class S{
@@ -29,46 +26,71 @@ struct Elem{
     int idx {};
 };
 
+
 public:
+
+    // 单调栈：双栈：递增栈+递减栈 32%， 6%
+    // 分别检测 左右边界 
     // 1<= len <= 10000
     // 包含重复元素，升序的意思是<=
-    int findUnsortedSubarray( std::vector<int>& nums ){
+    int findUnsortedSubarray_3( std::vector<int>& nums ){
 
         if( nums.size()<2 ){ return 0; }
         int N = static_cast<int>(nums.size());
-
-        std::stack<Elem> stk {};
-
+        std::stack<Elem> rise {};// 递增栈
+        std::stack<Elem> down {};// 递减栈
         int minL = INT_MAX;// idx
         int maxR = INT_MIN;// idx
-        bool isLSet = false; // minL 只被设置一次 
+        bool isFind = false; // 是否找到 无序区间
 
         for( int i=0; i<N; i++ ){
             int curVal = nums.at(i);
+            //=== rise ===//
+            if( rise.empty() ){
+                rise.push(Elem{curVal,i});
+            }else{
+                if( curVal > rise.top().val ){
+                    rise.push(Elem{curVal,i});
 
-            if( stk.empty() ){
-                stk.push(Elem{curVal,i});
-                continue;
+                }else if( curVal < rise.top().val ){
+                    while( !rise.empty() && curVal<rise.top().val ){
+                        isFind = true;
+                        minL = std::min(minL, rise.top().idx);
+                        rise.pop();
+                    }
+                    rise.push(Elem{curVal,i});
+                }// 值相等时，不做操作 
             }
+            //=== down ===//
+            if( down.empty() ){
+                down.push(Elem{curVal,i});
+            }else{
+                if( curVal < down.top().val ){
+                    down.push(Elem{curVal,i});
 
-            
-            while( !stk.empty() && curVal>=stk.top().val ){
-
-
-
-
+                }else if( curVal > down.top().val ){
+                    bool isStkMulti = down.size()>1;// 执行清洗之前，栈元素是否为2个或以上
+                    while( !down.empty() && curVal>=down.top().val ){
+                        down.pop();
+                    }// 可能会把整个栈删空
+                    if( down.empty() && isStkMulti ){// 原有的逆序区间 被彻底清楚了
+                        maxR = std::max( maxR, i-1);
+                    }
+                    down.push(Elem{curVal,i});
+                }// 相等时，不做操作
             }
-
         }
-
-        return 0;
-
+        if( down.size()>1 ){//仍有逆序区 没有被消除 
+            //cout<<"NN"<<endl;
+            maxR = N-1;
+        }
+        //cout<<"l:"<<minL << "  r:"<<maxR<<endl;
+        return isFind ? (maxR-minL+1) : 0;
     }
 
 
 
-
-    // 简易法  11%, 6%
+    // 简易排序法  11%, 6%
     // 使用了 sort， 性能很差
     int findUnsortedSubarray_2( std::vector<int>& nums ){
 
@@ -91,6 +113,39 @@ public:
     }
 
 
+    // 双向遍历法 68%, 6%
+    // 正序遍历，维护当前找到的最大值，确定无序区间右边界
+    // 反向遍历，维护当前找到的最小值，确定无序区间左边界
+    int findUnsortedSubarray_4( std::vector<int>& nums ){
+
+        if( nums.size()<2 ){ return 0; }
+        int N = static_cast<int>(nums.size());
+        int l = 0;
+        int r = 0;
+        bool isFind = false; // 是否找到无序区间
+        int mmax = nums.at(0); // 当前找到的最大值
+        for( int i=1; i<N; i++ ){
+            int curVal = nums.at(i);
+            if( curVal > mmax ){
+                mmax = curVal;
+            }else if( curVal < mmax ){
+                isFind = true;
+                r = i;
+            }
+        }
+        if( !isFind ){ return 0; }
+        int mmin = nums.at(N-1); // 当前找到的最小值
+        for( int i=N-2; i>=0; i-- ){
+            int curVal = nums.at(i);
+            if( curVal < mmin ){
+                mmin = curVal;
+            }else if( curVal > mmin ){
+                l = i;
+            }
+        }
+        return r-l+1;
+    }
+
 };
 
 
@@ -99,9 +154,14 @@ public:
 //=========================================================//
 void main_(){
 
-    std::vector<int> v { 2,6,4,8,10,9,15 };
+    std::vector<int> v { 1,3,2,3,3 };
+    //std::vector<int> v { 1,2,3,4 };
+    //std::vector<int> v { 1,2,4,5,3 };
+    //std::vector<int> v { 2,6,4,8,10,9,15 };
+    //std::vector<int> v { 2,6,6,6,4,8,10,9,15 };
 
-    cout<<S{}.findUnsortedSubarray_2(v)<<endl;
+
+    cout<<S{}.findUnsortedSubarray_4(v)<<endl;
 
     
     debug::log( "\n~~~~ leet: 581 :end ~~~~\n" );

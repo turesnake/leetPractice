@@ -83,8 +83,21 @@
  * - 84:
  * - 85: 基于84的升级版
  * - 496:
+ * - 581:
  * - 739:
  * - 901:
+ * 
+ * =============== 双向遍历法 =================
+ * ------ 题：
+ * - 581:
+ * 
+ * =============== 并查集 =================
+ * - [0]空置，[i]=i; 初始值指向自己，这样，每个元素互不联通
+ * - find(a) 时，顺带执行 路径压缩，让 a 指向 root，加速后面的查找
+ * - merge 操作时，改写的是 rootA 或 rootB
+ * 
+ * ------ 题：
+ * - 990: 未完成
  * 
  */
 
@@ -317,6 +330,7 @@ namespace leet_530 { void main_(); }
 namespace leet_538 { void main_(); }// 倒置的 中序遍历 26% 7%
 
 namespace leet_543 { void main_(); }
+namespace leet_547 { void main_(); }// 并查集
 
 namespace leet_557 { void main_(); }
 namespace leet_559 { void main_(); }
@@ -325,7 +339,7 @@ namespace leet_563 { void main_(); }
 
 namespace leet_572 { void main_(); }
 
-namespace leet_581 { void main_(); }
+namespace leet_581 { void main_(); }// 双向遍历法
 
 namespace leet_589 { void main_(); }
 namespace leet_590 { void main_(); }
@@ -343,6 +357,7 @@ namespace leet_663 { void main_(); }
 
 namespace leet_671 { void main_(); }
 
+namespace leet_684 { void main_(); }// 并查集
 namespace leet_687 { void main_(); }
 
 namespace leet_696 { void main_(); }
@@ -355,6 +370,8 @@ namespace leet_709 { void main_(); }//...无脑...
 namespace leet_712 { void main_(); }//=*--动态规划--*= 5.28%  55.56%
 
 namespace leet_718 { void main_(); }
+
+namespace leet_721 { void main_(); }// 并查集
 
 namespace leet_739 { void main_(); }
 
@@ -391,6 +408,7 @@ namespace leet_974 { void main_(); }
 namespace leet_977 { void main_(); }
 
 namespace leet_989 { void main_(); }
+namespace leet_990 { void main_(); }
 
 namespace leet_997 { void main_(); }// 5.12%, 16.67%
 namespace leet_998 { void main_(); }
@@ -527,7 +545,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_581::main_();
+    leet_721::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
