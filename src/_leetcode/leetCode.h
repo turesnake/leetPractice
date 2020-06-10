@@ -17,6 +17,9 @@
  * INT_MIN = -2147483648
  * INT_MAX =  2147483647
  * -----
+ * 字符串转 int
+ * int val = std::stoi("-123");
+ * -----
  * int 转 string: std::to_string()
  * -----
  * 容器可以直接用 一对迭代器来初始化
@@ -190,6 +193,9 @@ namespace leet_116 { void main_(); }
 namespace leet_120 { void main_(); }//=*--动态规划--*=
 namespace leet_121 { void main_(); }
 
+namespace leet_124 { void main_(); }
+
+namespace leet_128 { void main_(); }
 namespace leet_129 { void main_(); }
 namespace leet_130 { void main_(); }// 广度优先
 namespace leet_136 { void main_(); }// 异或消除成对元素
@@ -264,6 +270,8 @@ namespace leet_287 { void main_(); }
 
 namespace leet_293 { void main_(); }//...无脑...
 namespace leet_295 { void main_(); }// 最大堆+最小堆 求中位数
+namespace leet_297 { void main_(); }
+namespace leet_298 { void main_(); }
 
 namespace leet_300 { void main_(); }// **难**
 namespace leet_303 { void main_(); }// 树状数组
@@ -292,14 +300,18 @@ namespace leet_375 { void main_(); }//=*--动态规划--*= **难**
 
 namespace leet_401 { void main_(); }
 namespace leet_402 { void main_(); }
+namespace leet_407 { void main_(); }
 namespace leet_409 { void main_(); }
 
 namespace leet_414 { void main_(); }
 namespace leet_415 { void main_(); }
 
+namespace leet_421 { void main_(); }
+
 namespace leet_429 { void main_(); }
 
 namespace leet_445 { void main_(); }
+namespace leet_449 { void main_(); }
 
 namespace leet_451 { void main_(); }
 namespace leet_452 { void main_(); }
@@ -350,6 +362,7 @@ namespace leet_637 { void main_(); }
 
 namespace leet_647 { void main_(); }//=*--动态规划--*= // 27% 78%
 
+namespace leet_652 { void main_(); }// 序列化 5%
 namespace leet_653 { void main_(); }
 namespace leet_654 { void main_(); }// 5.13%, 7.69%
 
@@ -371,6 +384,7 @@ namespace leet_712 { void main_(); }//=*--动态规划--*= 5.28%  55.56%
 
 namespace leet_718 { void main_(); }
 
+namespace leet_720 { void main_(); }// 字典树
 namespace leet_721 { void main_(); }// 并查集
 
 namespace leet_739 { void main_(); }
@@ -406,6 +420,8 @@ namespace leet_945 { void main_(); }
 
 namespace leet_974 { void main_(); }
 namespace leet_977 { void main_(); }
+
+namespace leet_980 { void main_(); }
 
 namespace leet_989 { void main_(); }
 namespace leet_990 { void main_(); }
@@ -493,6 +509,7 @@ namespace leet_m29 { void main_(); }
 namespace leet_m39 { void main_(); }
 namespace leet_m40 { void main_(); }
 namespace leet_m42 { void main_(); }//=*--动态规划--*=
+namespace leet_m46 { void main_(); }
 namespace leet_m47 { void main_(); }//=*--动态规划--*=
 namespace leet_m50 { void main_(); }//...无脑...
 namespace leet_m53 { void main_(); }// 二分查找
@@ -532,6 +549,8 @@ namespace leet_m17_16 { void main_(); }//=*--动态规划--*=
 namespace leet_m32_1 { void main_(); }
 namespace leet_m32_2 { void main_(); }
 
+namespace leet_m37 { void main_(); }
+
 namespace leet_m55_1 { void main_(); }
 namespace leet_m56_1 { void main_(); }
 
@@ -545,7 +564,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_721::main_();
+    leet_421::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
