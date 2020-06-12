@@ -34,6 +34,7 @@
  * 
  * 
  * =============== 需要复习的内容 =================
+ * -- 15:  三数之和，很麻烦...
  * -- 69:  求平方根: 二分查找，牛顿法
  * -- 94:  二叉树中序遍历的 迭代实现
  * -- 160: 双指针轮回遍历链表法
@@ -48,14 +49,12 @@
  * -- m08_05: 俄国农民乘法
  * -- m59_1: 单调队列
  * 
- * 
  * =============== 排序 =================
  * 有些题表面上没啥特征，但用朴素法实现后成绩并不好看
  * 也许它在要求你实现更精准的排序
  * 
  * ------ 题：
  * - 977:
- * 
  * 
  * =============== 二分查找 =================
  * -1- 明确每次细分，需要剔除的是那一部分元素
@@ -103,6 +102,11 @@
  * ------ 题：
  * - 990: 未完成
  * 
+ * =============== 前缀和/积 =================
+ * 并不容易想到的方法
+ * ------ 题：
+ * - 523：
+ * - 560:
  */
 
 
@@ -141,6 +145,7 @@ namespace leet_39 { void main_(); }
 namespace leet_42 { void main_(); }
 namespace leet_43 { void main_(); }// 19.69% 40.74%
 namespace leet_46 { void main_(); }
+namespace leet_48 { void main_(); }// 矩阵
 
 namespace leet_53 { void main_(); }//=*--动态规划--*=
 namespace leet_54 { void main_(); }
@@ -340,6 +345,7 @@ namespace leet_515 { void main_(); }// 27%, 25%
 namespace leet_516 { void main_(); }//=*--动态规划--*= 5.34% 75% 
 
 namespace leet_520 { void main_(); }//...无脑...
+namespace leet_523 { void main_(); }// 前缀和
 
 namespace leet_530 { void main_(); }
 
@@ -350,6 +356,7 @@ namespace leet_547 { void main_(); }// 并查集
 
 namespace leet_557 { void main_(); }
 namespace leet_559 { void main_(); }
+namespace leet_560 { void main_(); }
 
 namespace leet_563 { void main_(); }
 
@@ -366,6 +373,7 @@ namespace leet_633 { void main_(); }
 namespace leet_637 { void main_(); }
 
 namespace leet_647 { void main_(); }//=*--动态规划--*= // 27% 78%
+namespace leet_648 { void main_(); }// 字典树
 
 namespace leet_652 { void main_(); }// 序列化 5%
 namespace leet_653 { void main_(); }
@@ -374,6 +382,8 @@ namespace leet_654 { void main_(); }// 5.13%, 7.69%
 namespace leet_663 { void main_(); }
 
 namespace leet_671 { void main_(); }
+
+namespace leet_677 { void main_(); }// 字典树
 
 namespace leet_684 { void main_(); }// 并查集
 namespace leet_687 { void main_(); }
@@ -386,6 +396,7 @@ namespace leet_704 { void main_(); }
 namespace leet_709 { void main_(); }//...无脑...
 
 namespace leet_712 { void main_(); }//=*--动态规划--*= 5.28%  55.56%
+namespace leet_713 { void main_(); }
 
 namespace leet_718 { void main_(); }
 
@@ -438,6 +449,7 @@ namespace leet_1022 { void main_(); }
 namespace leet_1025 { void main_(); }//=*--动态规划--*=
 namespace leet_1047 { void main_(); }
 namespace leet_1064 { void main_(); }// 17.22%  33.33% 未来精进
+namespace leet_1065 { void main_(); }// 字典树
 namespace leet_1071 { void main_(); }
 
 namespace leet_1085 { void main_(); }//...无脑...
@@ -569,7 +581,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_208::main_();
+    leet_48::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
