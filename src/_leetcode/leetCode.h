@@ -42,6 +42,7 @@
  * -- 238: 前缀积分，后缀积
  * -- 328: 双链表收集元素，最后合并链表
  * -- 445: 双栈，反向组装链表节点
+ * -- 448: 基于下标 交换元素法
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
  * -- m22: 双指针 固定间距法
@@ -107,6 +108,12 @@
  * ------ 题：
  * - 523：
  * - 560:
+ * 
+ * =============== 环 =================
+ * 所有的环题都需要重视
+ * ------ 题：
+ * - 142:
+ * - 287:
  */
 
 
@@ -138,6 +145,7 @@ namespace leet_24 { void main_(); }
 namespace leet_26 { void main_(); }
 namespace leet_27 { void main_(); }
 
+namespace leet_33 { void main_(); }// 二分查找 
 namespace leet_34 { void main_(); }
 namespace leet_35 { void main_(); }// 二分查找 
 
@@ -146,6 +154,7 @@ namespace leet_42 { void main_(); }
 namespace leet_43 { void main_(); }// 19.69% 40.74%
 namespace leet_46 { void main_(); }
 namespace leet_48 { void main_(); }// 矩阵
+namespace leet_49 { void main_(); }
 
 namespace leet_53 { void main_(); }//=*--动态规划--*=
 namespace leet_54 { void main_(); }
@@ -215,6 +224,7 @@ namespace leet_145 { void main_(); }
 
 namespace leet_148 { void main_(); }
 
+namespace leet_152 { void main_(); }
 namespace leet_155 { void main_(); }
 
 namespace leet_160 { void main_(); }
@@ -309,6 +319,7 @@ namespace leet_375 { void main_(); }//=*--动态规划--*= **难**
 
 namespace leet_401 { void main_(); }
 namespace leet_402 { void main_(); }
+namespace leet_406 { void main_(); }// 贪心算法
 namespace leet_407 { void main_(); }
 namespace leet_409 { void main_(); }
 
@@ -319,7 +330,10 @@ namespace leet_421 { void main_(); }
 
 namespace leet_429 { void main_(); }
 
+namespace leet_437 { void main_(); }// 前缀和
+
 namespace leet_445 { void main_(); }
+namespace leet_448 { void main_(); }
 namespace leet_449 { void main_(); }
 
 namespace leet_451 { void main_(); }
@@ -581,7 +595,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_48::main_();
+    leet_152::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
