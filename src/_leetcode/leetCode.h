@@ -16,6 +16,8 @@
  * <limits.h>
  * INT_MIN = -2147483648
  * INT_MAX =  2147483647
+ * LONG_MIN
+ * LONG_MAX
  * -----
  * 字符串转 int
  * int val = std::stoi("-123");
@@ -248,6 +250,7 @@ namespace leet_206 { void main_(); }
 namespace leet_208 { void main_(); }
 namespace leet_209 { void main_(); }
 
+namespace leet_213 { void main_(); }
 namespace leet_215 { void main_(); }
 namespace leet_217 { void main_(); }
 
@@ -256,6 +259,7 @@ namespace leet_222 { void main_(); }
 namespace leet_225 { void main_(); }//...无脑...
 namespace leet_226 { void main_(); }
 
+namespace leet_230 { void main_(); }
 namespace leet_231 { void main_(); }//...无脑...
 namespace leet_232 { void main_(); }
 
@@ -287,6 +291,7 @@ namespace leet_283 { void main_(); }
 
 namespace leet_287 { void main_(); }
 
+namespace leet_292 { void main_(); }
 namespace leet_293 { void main_(); }//...无脑...
 namespace leet_295 { void main_(); }// 最大堆+最小堆 求中位数
 namespace leet_297 { void main_(); }
@@ -430,10 +435,14 @@ namespace leet_784 { void main_(); }
 namespace leet_814 { void main_(); }
 
 namespace leet_821 { void main_(); }
+
+namespace leet_836 { void main_(); }//...无脑...
+
 namespace leet_876 { void main_(); }
 
 namespace leet_889 { void main_(); }
 
+namespace leet_892 { void main_(); }
 namespace leet_897 { void main_(); }
 
 namespace leet_905 { void main_(); }
@@ -494,6 +503,7 @@ namespace leet_1281 { void main_(); }//...无脑...
 
 namespace leet_1290 { void main_(); }
 
+namespace leet_1300 { void main_(); }
 namespace leet_1302 { void main_(); }
 namespace leet_1304 { void main_(); }//...无脑...
 namespace leet_1305 { void main_(); }
@@ -595,7 +605,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_152::main_();
+    leet_213::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
