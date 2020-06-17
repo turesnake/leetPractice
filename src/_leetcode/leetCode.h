@@ -117,6 +117,10 @@
  * ------ 题：
  * - 142:
  * - 287:
+ * 
+ * ============== 需要学习更多解法的题目 ===============
+ * - 76: 滑动窗口
+ * 
  */
 
 
@@ -178,6 +182,8 @@ namespace leet_72 { void main_(); }
 namespace leet_73 { void main_(); }
 
 namespace leet_75 { void main_(); }
+namespace leet_76 { void main_(); }
+
 namespace leet_78 { void main_(); }
 
 namespace leet_83 { void main_(); }
@@ -430,6 +436,7 @@ namespace leet_709 { void main_(); }//...无脑...
 namespace leet_712 { void main_(); }//=*--动态规划--*= 5.28%  55.56%
 namespace leet_713 { void main_(); }
 
+namespace leet_716 { void main_(); }
 namespace leet_718 { void main_(); }
 
 namespace leet_720 { void main_(); }// 字典树
@@ -450,6 +457,8 @@ namespace leet_814 { void main_(); }
 namespace leet_821 { void main_(); }
 
 namespace leet_836 { void main_(); }//...无脑...
+
+namespace leet_862 { void main_(); }
 
 namespace leet_876 { void main_(); }
 
@@ -517,6 +526,8 @@ namespace leet_1246 { void main_(); }// dp hard
 namespace leet_1277 { void main_(); }//=*--动态规划--*= 5.07%， 50%
 
 namespace leet_1281 { void main_(); }//...无脑...
+
+namespace leet_1284 { void main_(); }
 
 namespace leet_1290 { void main_(); }
 
@@ -625,7 +636,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_32::main_();
+    leet_716::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
