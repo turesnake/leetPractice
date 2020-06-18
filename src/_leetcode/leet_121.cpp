@@ -12,6 +12,10 @@
 namespace leet_121 {//~
 
 
+// 这题本质上是 dp 题...
+
+
+
 // 获得最大利润
 int maxProfit_2( std::vector<int>& prices) {
 

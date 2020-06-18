@@ -100,6 +100,12 @@ int lengthOfLIS_3( std::vector<int>& nums ) {
 
 
 
+// dp 
+// 思路 和 673 题 类似
+
+
+
+
 
 
 
