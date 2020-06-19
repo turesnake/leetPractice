@@ -222,6 +222,7 @@ namespace leet_121 { void main_(); }
 namespace leet_122 { void main_(); }//=*--动态规划--*=
 
 namespace leet_124 { void main_(); }
+namespace leet_125 { void main_(); }
 
 namespace leet_128 { void main_(); }
 namespace leet_129 { void main_(); }
@@ -326,6 +327,7 @@ namespace leet_328 { void main_(); }
 namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
 
 namespace leet_342 { void main_(); }// 二进制/位运算
+namespace leet_343 { void main_(); }//=*--动态规划--*=
 namespace leet_344 { void main_(); }//...无脑...
 namespace leet_346 { void main_(); }
 namespace leet_347 { void main_(); }
@@ -333,6 +335,7 @@ namespace leet_349 { void main_(); }
 
 namespace leet_357 { void main_(); }
 
+namespace leet_368 { void main_(); }//  有趣
 namespace leet_369 { void main_(); }//...无脑...
 
 namespace leet_371 { void main_(); }
@@ -365,6 +368,7 @@ namespace leet_449 { void main_(); }
 namespace leet_451 { void main_(); }
 namespace leet_452 { void main_(); }
 namespace leet_455 { void main_(); }
+
 
 namespace leet_461 { void main_(); }//...无脑...
 namespace leet_464 { void main_(); }
@@ -415,6 +419,7 @@ namespace leet_629 { void main_(); }
 namespace leet_633 { void main_(); }
 namespace leet_637 { void main_(); }
 
+namespace leet_646 { void main_(); }//=*--动态规划--*=
 namespace leet_647 { void main_(); }//=*--动态规划--*= // 27% 78%
 namespace leet_648 { void main_(); }// 字典树
 
@@ -490,6 +495,7 @@ namespace leet_974 { void main_(); }
 namespace leet_977 { void main_(); }
 
 namespace leet_980 { void main_(); }
+namespace leet_983 { void main_(); }
 
 namespace leet_989 { void main_(); }
 namespace leet_990 { void main_(); }
@@ -538,6 +544,7 @@ namespace leet_1281 { void main_(); }//...无脑...
 
 namespace leet_1284 { void main_(); }
 
+namespace leet_1289 { void main_(); }//=*--动态规划--*=
 namespace leet_1290 { void main_(); }
 
 namespace leet_1300 { void main_(); }
@@ -640,6 +647,7 @@ namespace leet_m56_1 { void main_(); }
 
 namespace leet_m59_1 { void main_(); }// 单调队列 [罕见]
 
+namespace leet_m63 { void main_(); }
 // oths:
 namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 
@@ -648,7 +656,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_673::main_();
+    leet_343::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

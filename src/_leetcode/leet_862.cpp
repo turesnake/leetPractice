@@ -34,7 +34,6 @@ public:
     // 1 <= K <= 10 ^ 9
     int shortestSubarray( std::vector<int>& A, int K ){
 
-
         int N = static_cast<int>(A.size());
 
         std::vector<int> preSums( N,0 );
