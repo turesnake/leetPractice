@@ -44,9 +44,11 @@
  * -- 238: 前缀积分，后缀积
  * -- 328: 双链表收集元素，最后合并链表
  * -- 445: 双栈，反向组装链表节点
+ * -- 459: 字符串重复子串
  * -- 448: 基于下标 交换元素法
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
+ * -- 1044: Rabin-Karp 字符串编码术
  * -- m22: 双指针 固定间距法
  * -- m64: -1- 借助 逻辑运算符的短路特性，实现条件判断。-2- 快速乘
  * -- m08_05: 俄国农民乘法
@@ -77,6 +79,7 @@
  * ------ 题：
  * - 32:  括号区间题  一维dp
  * - 221: 正方形判定
+ * - 276: 栏杆题，新类型
  * - 322: 背包dp  一维dp
  * - 718: 
  *    
@@ -297,6 +300,7 @@ namespace leet_264 { void main_(); }
 
 namespace leet_270 { void main_(); }
 
+namespace leet_276 { void main_(); }//=*--动态规划--*=
 namespace leet_278 { void main_(); }
 namespace leet_279 { void main_(); }// bfs
 
@@ -343,6 +347,7 @@ namespace leet_371 { void main_(); }
 namespace leet_374 { void main_(); }// 奇怪，与本机运行不一致...
 namespace leet_375 { void main_(); }//=*--动态规划--*= **难**
 
+namespace leet_392 { void main_(); }
 namespace leet_394 { void main_(); }
 
 namespace leet_401 { void main_(); }
@@ -454,7 +459,11 @@ namespace leet_718 { void main_(); }
 namespace leet_720 { void main_(); }// 字典树
 namespace leet_721 { void main_(); }// 并查集
 
+namespace leet_727 { void main_(); }// 9%
+
 namespace leet_739 { void main_(); }
+
+namespace leet_746 { void main_(); }//=*--动态规划--*=
 
 namespace leet_763 { void main_(); }
 namespace leet_766 { void main_(); }// 矩阵
@@ -508,6 +517,7 @@ namespace leet_1002 { void main_(); }
 namespace leet_1022 { void main_(); }
 namespace leet_1025 { void main_(); }//=*--动态规划--*=
 namespace leet_1047 { void main_(); }
+namespace leet_1062 { void main_(); }
 namespace leet_1064 { void main_(); }// 17.22%  33.33% 未来精进
 namespace leet_1065 { void main_(); }// 字典树
 namespace leet_1071 { void main_(); }
@@ -515,6 +525,7 @@ namespace leet_1071 { void main_(); }
 namespace leet_1085 { void main_(); }//...无脑...
 namespace leet_1089 { void main_(); }
 
+namespace leet_1100 { void main_(); }
 namespace leet_1104 { void main_(); }
 
 namespace leet_1114 { void main_(); }// threads
@@ -526,6 +537,9 @@ namespace leet_1133 { void main_(); }
 namespace leet_1143 { void main_(); }//=*--动态规划--*= 8.93%, 100%
 
 namespace leet_1150 { void main_(); }
+
+namespace leet_1156 { void main_(); }
+
 namespace leet_1160 { void main_(); }// 5.15% 20%
 
 namespace leet_1180 { void main_(); }//...无脑...
@@ -623,6 +637,7 @@ namespace leet_m04_02 { void main_(); }
 namespace leet_m04_03 { void main_(); }
 namespace leet_m04_04 { void main_(); }
 
+namespace leet_m08_01 { void main_(); }//=*--动态规划--*=
 namespace leet_m08_05 { void main_(); }
 namespace leet_m08_07 { void main_(); }
 
@@ -656,7 +671,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_343::main_();
+    leet_1062::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
