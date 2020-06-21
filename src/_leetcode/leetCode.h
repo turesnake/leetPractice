@@ -48,7 +48,7 @@
  * -- 448: 基于下标 交换元素法
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
- * -- 1044: Rabin-Karp 字符串编码术
+ * -- 1044: Rabin-Karp，后缀数组
  * -- m22: 双指针 固定间距法
  * -- m64: -1- 借助 逻辑运算符的短路特性，实现条件判断。-2- 快速乘
  * -- m08_05: 俄国农民乘法
@@ -160,6 +160,7 @@ namespace leet_33 { void main_(); }// 二分查找
 namespace leet_34 { void main_(); }
 namespace leet_35 { void main_(); }// 二分查找 
 
+namespace leet_38 { void main_(); }
 namespace leet_39 { void main_(); }
 namespace leet_42 { void main_(); }
 namespace leet_43 { void main_(); }// 19.69% 40.74%
@@ -394,6 +395,7 @@ namespace leet_515 { void main_(); }// 27%, 25%
 namespace leet_516 { void main_(); }//=*--动态规划--*= 5.34% 75% 
 
 namespace leet_520 { void main_(); }//...无脑...
+namespace leet_521 { void main_(); }//...无脑...
 namespace leet_523 { void main_(); }// 前缀和
 
 namespace leet_530 { void main_(); }
@@ -431,6 +433,8 @@ namespace leet_648 { void main_(); }// 字典树
 namespace leet_652 { void main_(); }// 序列化 5%
 namespace leet_653 { void main_(); }
 namespace leet_654 { void main_(); }// 5.13%, 7.69%
+
+namespace leet_657 { void main_(); }//...无脑...
 
 namespace leet_663 { void main_(); }
 
@@ -516,6 +520,7 @@ namespace leet_1002 { void main_(); }
 
 namespace leet_1022 { void main_(); }
 namespace leet_1025 { void main_(); }//=*--动态规划--*=
+namespace leet_1044 { void main_(); }// 字符串， Rabin-Karp， 后缀数组
 namespace leet_1047 { void main_(); }
 namespace leet_1062 { void main_(); }
 namespace leet_1064 { void main_(); }// 17.22%  33.33% 未来精进
@@ -671,7 +676,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1062::main_();
+    leet_38::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

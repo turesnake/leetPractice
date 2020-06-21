@@ -44,7 +44,7 @@ public:
             int r = l + maxLen; // 会比 现有 最长长度，再长1位
             for( ; r<N; r++ ){
                 int len = r-l+1;
-                if( S.rfind(std::string(S, l, len))==l ){ break; }
+                if( S.rfind(std::string(S, l, len)) == static_cast<uint64_t>(l) ){ break; }
                 maxLen = std::max( maxLen, len );
             }
         }
@@ -70,7 +70,7 @@ public:
             int len = r-l+1;
             if( len < maxLen ){ continue; }// 优化，节省比较次数
 
-            if( S.rfind(std::string(S, l, len))==l ){// 不符合
+            if( S.rfind(std::string(S, l, len)) == static_cast<uint64_t>(l) ){// 不符合
                 l++;
             }else{// 符合
                 maxLen = std::max( maxLen, len );
