@@ -37,6 +37,7 @@
  * 
  * =============== 需要复习的内容 =================
  * -- 15:  三数之和，很麻烦...
+ * -- 41:  原地hash 法
  * -- 69:  求平方根: 二分查找，牛顿法
  * -- 94:  二叉树中序遍历的 迭代实现
  * -- 160: 双指针轮回遍历链表法
@@ -162,6 +163,7 @@ namespace leet_35 { void main_(); }// 二分查找
 
 namespace leet_38 { void main_(); }
 namespace leet_39 { void main_(); }
+namespace leet_41 { void main_(); }
 namespace leet_42 { void main_(); }
 namespace leet_43 { void main_(); }// 19.69% 40.74%
 namespace leet_46 { void main_(); }
@@ -425,6 +427,7 @@ namespace leet_629 { void main_(); }
 
 namespace leet_633 { void main_(); }
 namespace leet_637 { void main_(); }
+namespace leet_638 { void main_(); }//=*--动态规划--*=
 
 namespace leet_646 { void main_(); }//=*--动态规划--*=
 namespace leet_647 { void main_(); }//=*--动态规划--*= // 27% 78%
@@ -547,6 +550,8 @@ namespace leet_1156 { void main_(); }
 
 namespace leet_1160 { void main_(); }// 5.15% 20%
 
+namespace leet_1165 { void main_(); }//...无脑...
+
 namespace leet_1180 { void main_(); }//...无脑...
 
 namespace leet_1207 { void main_(); }//...无脑...
@@ -577,6 +582,8 @@ namespace leet_1315 { void main_(); }
 
 namespace leet_1323 { void main_(); }//...无脑...
 namespace leet_1325 { void main_(); }
+
+namespace leet_1335 { void main_(); }
 
 namespace leet_1351 { void main_(); }
 
@@ -676,7 +683,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_38::main_();
+    leet_41::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
