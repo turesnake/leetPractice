@@ -342,6 +342,8 @@ namespace leet_349 { void main_(); }
 
 namespace leet_357 { void main_(); }
 
+namespace leet_363 { void main_(); }
+
 namespace leet_368 { void main_(); }//  有趣
 namespace leet_369 { void main_(); }//...无脑...
 
@@ -358,6 +360,7 @@ namespace leet_402 { void main_(); }
 namespace leet_406 { void main_(); }// 贪心算法
 namespace leet_407 { void main_(); }
 namespace leet_409 { void main_(); }
+namespace leet_410 { void main_(); }
 
 namespace leet_413 { void main_(); }//=*--动态规划--*=
 namespace leet_414 { void main_(); }
@@ -423,6 +426,7 @@ namespace leet_590 { void main_(); }
 
 namespace leet_617 { void main_(); }
 
+namespace leet_628 { void main_(); }
 namespace leet_629 { void main_(); }
 
 namespace leet_633 { void main_(); }
@@ -465,6 +469,8 @@ namespace leet_718 { void main_(); }
 
 namespace leet_720 { void main_(); }// 字典树
 namespace leet_721 { void main_(); }// 并查集
+
+namespace leet_724 { void main_(); }
 
 namespace leet_727 { void main_(); }// 9%
 
@@ -542,6 +548,8 @@ namespace leet_1119 { void main_(); }//...无脑...
 namespace leet_1130 { void main_(); }//=*--动态规划--*= 29.51%, 50%
 namespace leet_1133 { void main_(); }
 
+namespace leet_1139 { void main_(); }
+
 namespace leet_1143 { void main_(); }//=*--动态规划--*= 8.93%, 100%
 
 namespace leet_1150 { void main_(); }
@@ -559,6 +567,8 @@ namespace leet_1207 { void main_(); }//...无脑...
 namespace leet_1214 { void main_(); }
 
 namespace leet_1228 { void main_(); }//...无脑...
+
+namespace leet_1240 { void main_(); }//=*--动态规划--*=
 
 namespace leet_1246 { void main_(); }// dp hard
 
@@ -602,6 +612,9 @@ namespace leet_1460 { void main_(); }//...无脑...
 namespace leet_1464 { void main_(); }
 
 namespace leet_1480 { void main_(); }//...无脑...
+
+
+namespace leet_j66 { void main_(); }
 
 
 namespace leet_LCP_01 { void main_(); }//...无脑...
@@ -675,6 +688,11 @@ namespace leet_m56_1 { void main_(); }
 namespace leet_m59_1 { void main_(); }// 单调队列 [罕见]
 
 namespace leet_m63 { void main_(); }
+
+
+
+
+
 // oths:
 namespace leet_knapsack_problems { void main_(); }// 背包问题练习
 
@@ -683,7 +701,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_41::main_();
+    leet_1139::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

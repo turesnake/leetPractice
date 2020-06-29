@@ -91,6 +91,32 @@ int maxSubArray_2( std::vector<int> &nums ){
 
 
 
+// 更为简易的 O(N) 法   97%   100%
+// 只要上次计算的 sum 是负数，本回合就从头算起
+class S3{
+public:
+    int maxSubArray( std::vector<int>& nums ){
+
+        if( nums.empty() ){ return 0; }
+        if( nums.size()==1 ){ return nums.back(); }
+        // 接下来，nums 一定包含 2或更多元素
+        int N = static_cast<int>(nums.size());
+
+        int sum = nums[0];
+        int mmax = nums[0];
+        for( int i=1; i<N; i++ ){
+            sum = sum<0 ? nums[i] : sum+nums[i];
+            mmax = std::max( mmax, sum );
+        }
+        return mmax;
+
+
+    }
+};
+
+
+
+
 //=========================================================//
 void main_(){
 
