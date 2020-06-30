@@ -240,6 +240,7 @@ namespace leet_141 { void main_(); }
 namespace leet_143 { void main_(); }
 namespace leet_144 { void main_(); }
 namespace leet_145 { void main_(); }
+namespace leet_146 { void main_(); }
 
 namespace leet_148 { void main_(); }
 
@@ -475,11 +476,15 @@ namespace leet_724 { void main_(); }
 namespace leet_727 { void main_(); }// 9%
 
 namespace leet_739 { void main_(); }
+namespace leet_740 { void main_(); }
 
 namespace leet_746 { void main_(); }//=*--动态规划--*=
 
+
+namespace leet_760 { void main_(); }//...无脑...
 namespace leet_763 { void main_(); }
 namespace leet_766 { void main_(); }// 矩阵
+
 
 namespace leet_771 { void main_(); }//...无脑...
 
@@ -572,6 +577,8 @@ namespace leet_1240 { void main_(); }//=*--动态规划--*=
 
 namespace leet_1246 { void main_(); }// dp hard
 
+namespace leet_1265 { void main_(); }//...无脑...
+
 namespace leet_1277 { void main_(); }//=*--动态规划--*= 5.07%， 50%
 
 namespace leet_1281 { void main_(); }//...无脑...
@@ -581,6 +588,8 @@ namespace leet_1284 { void main_(); }
 namespace leet_1289 { void main_(); }//=*--动态规划--*=
 namespace leet_1290 { void main_(); }
 
+
+namespace leet_1299 { void main_(); }//...无脑...
 namespace leet_1300 { void main_(); }
 namespace leet_1302 { void main_(); }
 namespace leet_1304 { void main_(); }//...无脑...
@@ -610,6 +619,8 @@ namespace leet_1457 { void main_(); }
 
 namespace leet_1460 { void main_(); }//...无脑...
 namespace leet_1464 { void main_(); }
+
+namespace leet_1470 { void main_(); }//...无脑...
 
 namespace leet_1480 { void main_(); }//...无脑...
 
@@ -701,7 +712,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1139::main_();
+    leet_146::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
