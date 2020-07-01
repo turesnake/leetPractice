@@ -235,6 +235,7 @@ namespace leet_129 { void main_(); }
 namespace leet_130 { void main_(); }// 广度优先
 namespace leet_136 { void main_(); }// 异或消除成对元素
 namespace leet_138 { void main_(); }
+namespace leet_139 { void main_(); }
 
 namespace leet_141 { void main_(); }
 namespace leet_143 { void main_(); }
@@ -425,6 +426,8 @@ namespace leet_581 { void main_(); }// 双向遍历法
 namespace leet_589 { void main_(); }
 namespace leet_590 { void main_(); }
 
+namespace leet_600 { void main_(); }
+
 namespace leet_617 { void main_(); }
 
 namespace leet_628 { void main_(); }
@@ -547,6 +550,7 @@ namespace leet_1089 { void main_(); }
 namespace leet_1100 { void main_(); }
 namespace leet_1104 { void main_(); }
 
+namespace leet_1111 { void main_(); }
 namespace leet_1114 { void main_(); }// threads
 namespace leet_1119 { void main_(); }//...无脑...
 
@@ -566,6 +570,8 @@ namespace leet_1160 { void main_(); }// 5.15% 20%
 namespace leet_1165 { void main_(); }//...无脑...
 
 namespace leet_1180 { void main_(); }//...无脑...
+
+namespace leet_1198 { void main_(); }
 
 namespace leet_1207 { void main_(); }//...无脑...
 
@@ -676,6 +682,7 @@ namespace leet_m04_04 { void main_(); }
 namespace leet_m08_01 { void main_(); }//=*--动态规划--*=
 namespace leet_m08_05 { void main_(); }
 namespace leet_m08_07 { void main_(); }
+namespace leet_m08_09 { void main_(); }
 
 namespace leet_m10_01 { void main_(); }
 
@@ -712,7 +719,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_146::main_();
+    leet_139::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
