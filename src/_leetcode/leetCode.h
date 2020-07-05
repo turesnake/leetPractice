@@ -36,6 +36,7 @@
  * 
  * 
  * =============== 需要复习的内容 =================
+ * -- 4:   二分折半删除法
  * -- 15:  三数之和，很麻烦...
  * -- 41:  原地hash 法
  * -- 69:  求平方根: 二分查找，牛顿法
@@ -166,6 +167,7 @@ namespace leet_39 { void main_(); }
 namespace leet_41 { void main_(); }
 namespace leet_42 { void main_(); }
 namespace leet_43 { void main_(); }// 19.69% 40.74%
+namespace leet_44 { void main_(); }
 namespace leet_46 { void main_(); }
 namespace leet_48 { void main_(); }// 矩阵
 namespace leet_49 { void main_(); }
@@ -719,7 +721,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_139::main_();
+    leet_4::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

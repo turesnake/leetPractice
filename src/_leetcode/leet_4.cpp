@@ -12,119 +12,143 @@
 namespace leet_4 {//~
 
 
+// 排序法   debug 用 
+class S1{
+public:
+    double findMedianSortedArrays( std::vector<int>& nums1, std::vector<int>& nums2 ){
 
-
-//     目前这个方法是 错的 
-
-
-// - 长数组 一定不为空，但也允许非常短
-// - 短数组 [0,2] 个
-// 将短数组 和 长数组的 中位[2,4]个元素 做收集排序，然后 中位数
-double work( std::vector<int> &longNums, int l, int r,
-             std::vector<int> &shortNums, int sIdx, int sLen ){
-
-    std::vector<int> v {};
-    if( sLen > 0 ){
-        for( int i=sIdx; i<sIdx+sLen; i++ ){ v.push_back( shortNums.at(i) ); }
-    }// 短数组 为空时，不处理
-
-    bool isOdd = (r-l+1)%2!=0;
-    if( r-l<=3 ){// 长数组小于 4 个元素
-        for( int i=l; i<=r; i++ ){
-            v.push_back( longNums.at(i) );
-        }
-    }else{
-        int mid = l + (r-l)/2; // 中位偏左
-        if( isOdd ){// 长数组 奇数个
-            for( int i=mid-1; i<=mid+1; i++ ){// 3个
-                v.push_back( longNums.at(i) );
-            }
-        }else{// 长数组 偶数个
-            for( int i=mid-1; i<=mid+2; i++ ){// 4个
-                v.push_back( longNums.at(i) );
-            }
-        }
+        std::vector<int> nums ( nums1.begin(), nums1.end() );
+        nums.insert( nums.end(), nums2.begin(), nums2.end() );
+        std::sort( nums.begin(), nums.end() );
+        int Nall = static_cast<int>(nums.size());
+        int ml = (Nall-1)/2;
+        int mr = (Nall&1)==0 ? ml+1 : ml;
+        //cout<<"ml:"<<ml<<", mr:"<<mr<<endl;
+        return static_cast<double>(nums[ml]+nums[mr])/2;
     }
-            cout << "== work: v: ";
-            for( int i : v ){ cout << i << ", "; }
-            cout <<endl;
-
-    std::sort( v.begin(), v.end() );// 数据量很小
-    int N = static_cast<int>(v.size());
-    int mid = (N-1)/2;// 中间偏左
-    isOdd = N%2!=0;
-
-            cout << "== sorted: v: ";
-            for( int i : v ){ cout << i << ", "; }
-            cout <<endl;
-
-    return isOdd ?
-            static_cast<double>(v.at(mid)) :
-            (static_cast<double>(v.at(mid))+static_cast<double>(v.at(mid+1)))/2.0;
-}
+};
 
 
 
+// O(m+n) 法, debug 用 
+class S2{
+public:
+    double findMedianSortedArrays( std::vector<int>& nums1, std::vector<int>& nums2 ){
 
-// 两数组 不同时为空
-double findMedianSortedArrays_2( std::vector<int>& nums1, std::vector<int>& nums2 ){
+        int N1 = static_cast<int>(nums1.size());
+        int N2 = static_cast<int>(nums2.size());
+        int Nall = N1 + N2;
+
+        int mid_lV {};
+        int mid_rV {};
+
+        int midl = Nall/2;
+        int midr = (Nall&1)==0 ? midl+1 : midl;
+        //cout<<"midl:"<<midl<<", midr:"<<midr<<endl;
+
+        int a=0;
+        int b=0;
+        int count = 0;
+
+        while( a<N1 || b<N2 ){
+
+            if( a>=N1 ){
+                b++;
+            }else if( b>=N2 ){
+                a++;
+            }else{
+                nums1[a] <= nums2[b] ? a++ : b++;
+            }
+
+            count++;
+            if( count == midl ){
+                mid_lV = std::min( nums1[a], nums2[b] );
+            }
+            if( count == midr ){
+                mid_rV = std::min( nums1[a], nums2[b] );
+                break;
+            }
+        }
+        return static_cast<double>(mid_lV+mid_rV)/2; 
+        
+    }
+};
+
+
+
+// 二分折半删除法
+
+// O(log(m+n))    96%   100%
+// 假设 k=mid-left-idx
+// 每次对比 两数组中 [k/2] 位元素，如果某个较小，就把它以及它前面的元素统统删掉
+// 然后 k-=k/2;
+// ---
+// 万一 某个数组长度 小于 k/2,
+// 这个短数组 直接访问 尾元素，另一个数组继续访问 [k/2]
+// 这样保证，每一回合，都能删除掉 k/2个元素，或者彻底删除某个数组
+class S3{
+
+    std::vector<int> *np1 {nullptr};
+    std::vector<int> *np2 {nullptr};
     
-    int N1 = static_cast<int>(nums1.size());
-    int N2 = static_cast<int>(nums2.size());
-    int l1 = 0;
-    int r1 = N1-1;
-    int l2 = 0;
-    int r2 = N2-1;
+    int N1 {};
+    int N2 {};
 
-    if( N1<=N2 ){
-        if( N1<=2 ){ return work( nums2, l2, r2, nums1, l1, N1 ); }
-    }else{
-        if( N2<=2 ){ return work( nums1, l1, r1, nums2, l2, N2 ); }
-    }
-    int minDelLen {};
-
-        cout <<"begin:"<< endl;
-        cout << "  l1:"<<l1 << ", r1:"<<r1
-            << "; l2:"<<l2 << ", r2:"<<r2 << endl;
-
-    //执行 区间删除，直到某段数据剩下 2个元素 位置
-    while( (r1-l1)>1 && (r2-l2)>1 ){
-
-        // 中位数计算，中间偏左，如果 l/r 紧邻或相同，指向l
-        int mid1 = l1 + (r1-l1)/2;// 中间偏左
-        int mid2 = l2 + (r2-l2)/2;// 中间偏左
-        int mv1 = nums1.at(mid1);
-        int mv2 = nums2.at(mid2);
-
-        if( mv1 <= mv2 ){
-            // 各删一段
-            minDelLen = std::min( mid1-l1, r2-mid2 );
-            l1 += minDelLen;
-            r2 -= minDelLen;
-        }else{
-            // 各删一段
-            minDelLen = std::min( r1-mid1, mid2-l2 );
-            r1 -= minDelLen;
-            l2 += minDelLen;
+    // 从 两个数字中，删掉 5 个 元素 
+    int work( int l1, int l2, int k ){
+        //cout<<"l1:"<<l1<<", l2:"<<l2<<", k:"<<k<<endl;
+        if( l1>=N1 ){
+            return np2->at( l2+k );
         }
-
-            cout << "  l1:"<<l1 << ", r1:"<<r1
-                << "; l2:"<<l2 << ", r2:"<<r2
-                << ", minDelLen:" << minDelLen << endl;
+        if( l2>=N2 ){
+            return np1->at( l1+k );
+        }
+        if( k==0 ){
+            return std::min( np1->at(l1), np2->at(l2) );
+        }
+        if( k==1 ){
+            if( np1->at(l1) <= np2->at(l2) ){
+                return work( l1+1, l2, 0 );
+            }else{
+                return work( l1, l2+1, 0 );
+            }
+        }
+        int len1 = std::min( k/2, N1-l1 );
+        int len2 = std::min( k/2, N2-l2 );
+        int i1 = l1+len1-1;
+        int i2 = l2+len2-1;
+        //cout<<"~~"<<endl;
+        //cout<<"i1:"<<i1<<", i2:"<<i2<<endl;
+        if( np1->at(i1) <= np2->at(i2) ){
+            l1 += len1;
+            return work( l1, l2, k-len1 );
+        }else{
+            l2 += len2;
+            return work( l1, l2, k-len2 );
+        }
     }
-    // 现在，获得一个 长数组，和一个短数组（n==2）
-
-        cout <<"out:"<< endl;
-        cout << "  l1:"<<l1 << ", r1:"<<r1
-            << "; l2:"<<l2 << ", r2:"<<r2 << endl;
 
 
-    if( r1-l1==1 ){// 短数组为 1
-        return work( nums2, l2, r2, nums1, l1, r1-l1+1 );
-    }else{// 短数组为 2
-        return work( nums1, l1, r1, nums2, l2, r2-l2+1 );
+
+public:
+    double findMedianSortedArrays( std::vector<int>& nums1, std::vector<int>& nums2 ){
+
+        N1 = static_cast<int>(nums1.size());
+        N2 = static_cast<int>(nums2.size());
+        int Nall = N1 + N2;
+
+        np1 = &nums1;
+        np2 = &nums2;
+        bool isOdd = (Nall&1)==1;
+        int lVal = work( 0, 0, (Nall-1)/2 );// mid-left
+        int rVal = (Nall&1)==1 ? lVal : work( 0, 0, (Nall-1)/2+1 );// mid-right
+        //cout<<"lVal:"<<lVal<<", rVal:"<<rVal<<endl;
+        return static_cast<double>(lVal+rVal)/2;
+
+
     }
-}
+};
+
 
 
 
@@ -136,9 +160,15 @@ double findMedianSortedArrays_2( std::vector<int>& nums1, std::vector<int>& nums
 //=========================================================//
 void main_(){
 
-    // 目标: 9,11
-    std::vector<int> v1 { 1,5,6,7 };
-    std::vector<int> v2 { 2,3,4,8,9,10 };
+    std::vector<int> v1 { 1,2 };
+    std::vector<int> v2 { 3,4 };
+
+    //std::vector<int> v1 { 3,7 };
+    //std::vector<int> v2 { 1,2,4,5,6 };
+
+    // 目标:
+    //std::vector<int> v1 { 1,5,6,7,8,9,9 };
+    //std::vector<int> v2 { 2,3,4,8,9,10,11 };
 
     // 目标: 10,11
     //std::vector<int> v1 { 1,5,6,10,12,13,15 };
@@ -148,10 +178,13 @@ void main_(){
     //std::vector<int> v1 { 1,2,3,4 };
     //std::vector<int> v2 { 9,10,11,20,30,31,40 };
 
-    
-    debug::log( "<1>: {}", findMedianSortedArrays_2(v1,v2) );
+
+
+    debug::log( "<0>: {}", S1{}.findMedianSortedArrays(v1,v2) );
     cout << endl;
-    debug::log( "<2>: {}", findMedianSortedArrays_2(v2,v1) );
+    debug::log( "<1>: {}", S3{}.findMedianSortedArrays(v1,v2) );
+    cout << endl;
+    //debug::log( "<2>: {}",  S2{}.findMedianSortedArrays(v2,v1) );
     
 
 
