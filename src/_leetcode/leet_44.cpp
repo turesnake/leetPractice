@@ -98,7 +98,7 @@ public:
 
 
 
-// dp    75%   8%
+// dp    77%   58%
 class S2{
 
 struct Elem{
@@ -144,7 +144,7 @@ public:
         int Ns = static_cast<int>(s.size());
         int Npp = static_cast<int>(pp.size());
 
-        std::vector<std::vector<int>> dp (Npp, std::vector<int>(Ns, 0));
+        std::vector<std::vector<char>> dp (Npp, std::vector<char>(Ns, 0));
 
         // dp[0][w]
         if( !pp[0].isWildcard ){

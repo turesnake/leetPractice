@@ -138,7 +138,7 @@ namespace leet_6 { void main_(); }
 namespace leet_7 { void main_(); }
 namespace leet_8 { void main_(); }
 namespace leet_9 { void main_(); }// 回文数，待新方案：8.02%, 5.95% 
-
+namespace leet_10 { void main_(); }
 namespace leet_11 { void main_(); }
 
 namespace leet_13 { void main_(); }
@@ -236,6 +236,7 @@ namespace leet_128 { void main_(); }
 namespace leet_129 { void main_(); }
 namespace leet_130 { void main_(); }// 广度优先
 namespace leet_136 { void main_(); }// 异或消除成对元素
+namespace leet_137 { void main_(); }// 异或
 namespace leet_138 { void main_(); }
 namespace leet_139 { void main_(); }
 
@@ -302,6 +303,8 @@ namespace leet_256 { void main_(); }//=*--动态规划--*=
 namespace leet_257 { void main_(); }
 namespace leet_258 { void main_(); }
 
+namespace leet_260 { void main_(); }// 位运算，异或 + lowbit
+
 namespace leet_263 { void main_(); }
 namespace leet_264 { void main_(); }
 
@@ -359,6 +362,7 @@ namespace leet_375 { void main_(); }//=*--动态规划--*= **难**
 namespace leet_392 { void main_(); }
 namespace leet_394 { void main_(); }
 
+namespace leet_400 { void main_(); }
 namespace leet_401 { void main_(); }
 namespace leet_402 { void main_(); }
 namespace leet_406 { void main_(); }// 贪心算法
@@ -410,6 +414,8 @@ namespace leet_523 { void main_(); }// 前缀和
 namespace leet_530 { void main_(); }
 
 namespace leet_538 { void main_(); }// 倒置的 中序遍历 26% 7%
+
+namespace leet_540 { void main_(); }
 
 namespace leet_543 { void main_(); }
 namespace leet_546 { void main_(); }
@@ -593,6 +599,8 @@ namespace leet_1281 { void main_(); }//...无脑...
 
 namespace leet_1284 { void main_(); }
 
+namespace leet_1287 { void main_(); }
+
 namespace leet_1289 { void main_(); }//=*--动态规划--*=
 namespace leet_1290 { void main_(); }
 
@@ -611,6 +619,8 @@ namespace leet_1323 { void main_(); }//...无脑...
 namespace leet_1325 { void main_(); }
 
 namespace leet_1335 { void main_(); }
+
+namespace leet_1342 { void main_(); }
 
 namespace leet_1351 { void main_(); }
 
@@ -632,7 +642,8 @@ namespace leet_1470 { void main_(); }//...无脑...
 
 namespace leet_1480 { void main_(); }//...无脑...
 
-
+namespace leet_j44 { void main_(); }
+namespace leet_j56_11 { void main_(); }
 namespace leet_j66 { void main_(); }
 
 
@@ -686,6 +697,8 @@ namespace leet_m08_05 { void main_(); }
 namespace leet_m08_07 { void main_(); }
 namespace leet_m08_09 { void main_(); }
 
+namespace leet_m08_11 { void main_(); }
+
 namespace leet_m10_01 { void main_(); }
 
 namespace leet_m16_01 { void main_(); }
@@ -721,7 +734,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_4::main_();
+    leet_j44::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
