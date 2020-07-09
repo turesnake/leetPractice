@@ -14,32 +14,35 @@ namespace leet_540 {//~
 
 // 时间 O(log(n)), 空间 O(1)
 
+// 必须使用 二分查找，不停地收缩 收缩区间
 
-
+//    89%，  33%
 class S{
-
-
-    std::vector<int> *np {nullptr};
-
-    int l {};
-    int r {};
-
-
-
 public:
     int singleNonDuplicate( std::vector<int>& nums ){
 
-        np = &nums;
 
-        l = 0;
-        r = static_cast<int>(nums.size())-1;
+        int l = 0;
+        int r = static_cast<int>(nums.size())-1;
 
-
-        // 未完...
-
-
-
-        return 0;
+        while( l<=r ){
+            if( l==r ){ return nums[l]; }
+            int mid = l+(r-l)/2;//mid-left
+            if( (mid&1)==1 ){// 奇数
+                if( nums[mid-1]==nums[mid] ){
+                    l = mid+1;// 检查 后区间
+                }else{
+                    r = mid-1;// 检查 前区间
+                }
+            }else{// 偶数
+                if( nums[mid]==nums[mid+1] ){
+                    l = mid+2; // 检查 后区间
+                }else{
+                    r = mid;  // 检查 前区间
+                }
+            }
+        }
+        return -999; // never reach
         
 
     }
@@ -49,6 +52,12 @@ public:
 
 //=========================================================//
 void main_(){
+
+    std::vector<int> v { 4,4,5,5,6,6,7 };
+
+    auto ret = S{}.singleNonDuplicate(v);
+
+    cout<<"ret:"<<ret<<endl;
 
     
 

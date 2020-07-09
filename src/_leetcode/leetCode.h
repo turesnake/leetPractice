@@ -18,21 +18,32 @@
  * INT_MAX =  2147483647
  * LONG_MIN
  * LONG_MAX
+ * 
  * -----
  * 字符串转 int
  * int val = std::stoi("-123");
+ * 
  * -----
  * int 转 string: std::to_string()
+ * 
  * -----
  * 容器可以直接用 一对迭代器来初始化
+ * 
  * -----
  * 判断奇偶性，(1)取模：val%2 (2)判断末尾: val&1
+ * 
  * -----
  * 消除成对的元素方法[1]
  *     if( set.erase(i)==0 ){ set.insert( i ); }
  * 消除成对的元素方法[2]
  *     异或运算 a^b^b = a
  *     可以将一整组数据都 异或起来，最后成对的元素都会被自动 对消掉
+ * 
+ * -----
+ * double log10(int v);   <cmath>
+ *     库函数，计算 数字的 位数: (int)log10(v)+1
+ *     类似的还有 log2
+ * 
  * 
  * 
  * =============== 需要复习的内容 =================
@@ -191,6 +202,7 @@ namespace leet_73 { void main_(); }
 
 namespace leet_75 { void main_(); }
 namespace leet_76 { void main_(); }
+namespace leet_77 { void main_(); }// dfs + 回溯
 
 namespace leet_78 { void main_(); }
 
@@ -349,6 +361,8 @@ namespace leet_349 { void main_(); }
 
 namespace leet_357 { void main_(); }
 
+namespace leet_378 { void main_(); }// 有序矩阵，左下角遍历法(2): 统计 <=tgt 元素个数
+
 namespace leet_363 { void main_(); }
 
 namespace leet_368 { void main_(); }//  有趣
@@ -506,6 +520,8 @@ namespace leet_814 { void main_(); }
 
 namespace leet_821 { void main_(); }
 
+namespace leet_832 { void main_(); }//...无脑...
+
 namespace leet_836 { void main_(); }//...无脑...
 
 namespace leet_862 { void main_(); }
@@ -564,6 +580,7 @@ namespace leet_1119 { void main_(); }//...无脑...
 
 namespace leet_1130 { void main_(); }//=*--动态规划--*= 29.51%, 50%
 namespace leet_1133 { void main_(); }
+namespace leet_1134 { void main_(); }//...无脑...
 
 namespace leet_1139 { void main_(); }
 
@@ -590,6 +607,8 @@ namespace leet_1228 { void main_(); }//...无脑...
 namespace leet_1240 { void main_(); }//=*--动态规划--*=
 
 namespace leet_1246 { void main_(); }// dp hard
+
+namespace leet_1252 { void main_(); }
 
 namespace leet_1265 { void main_(); }//...无脑...
 
@@ -633,6 +652,7 @@ namespace leet_1402 { void main_(); }
 
 
 namespace leet_1441 { void main_(); }
+namespace leet_1450 { void main_(); }
 namespace leet_1457 { void main_(); }
 
 namespace leet_1460 { void main_(); }//...无脑...
@@ -642,6 +662,10 @@ namespace leet_1470 { void main_(); }//...无脑...
 
 namespace leet_1480 { void main_(); }//...无脑...
 
+namespace leet_1502 { void main_(); }
+
+
+namespace leet_j04 { void main_(); }// 有序矩阵，左下角遍历法(1): 查找 tgt元素 是否存在
 namespace leet_j44 { void main_(); }
 namespace leet_j56_11 { void main_(); }
 namespace leet_j66 { void main_(); }
@@ -734,7 +758,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_j44::main_();
+    leet_378::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
