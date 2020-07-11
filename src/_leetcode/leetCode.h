@@ -40,11 +40,36 @@
  *     可以将一整组数据都 异或起来，最后成对的元素都会被自动 对消掉
  * 
  * -----
+ * double pow( int base, int exponent );
+ *     计算 base 的 exponent 次方
+ *  
+ * -----
  * double log10(int v);   <cmath>
  *     库函数，计算 数字的 位数: (int)log10(v)+1
  *     类似的还有 log2
  * 
+ * -----
+ * std::reverse( v.begin(), v.end() );
+ *     将 vector 颠倒
  * 
+ * -----
+ * it std::unique( fstIt, endIt );
+ *     将 vector 中所有 “当前重复的元素” ，排到队尾，然后返回指向 重复元素区首元素的 it
+ *     注意，这里的 去重，只去除 相邻的，如果整个数组含有 3个4，但都不相邻，则无法去除
+ *     2，排到队尾并不是真的 排到队尾，队尾区间的 元素，可能只是 尾部元素的 重复。
+ *     这个算法，时间 O(N), 实现很鸡贼
+ *     ---
+ *     可以利用这个函数来 高效去除 重复元素：
+ *     -- std::sort( v.begin(), v.end() );
+ *     -- v.erase( std::unique(v.begin(),v.end()), v.end() );
+ * 
+ * 
+ * -----
+ * it std::lower_bound( fstIt, endIt, tgtVal );
+ * it std::upper_bound( fstIt, endIt, tgtVal );
+ *     二分查找 目标值，返回 左/右 边界值 it，没有的话 返回 endIt
+ * bool std::binary_search( fstIt, endIt, tgtVal );
+ *     二分查找 目标值
  * 
  * =============== 需要复习的内容 =================
  * -- 4:   二分折半删除法
@@ -175,6 +200,7 @@ namespace leet_35 { void main_(); }// 二分查找
 
 namespace leet_38 { void main_(); }
 namespace leet_39 { void main_(); }
+namespace leet_40 { void main_(); }
 namespace leet_41 { void main_(); }
 namespace leet_42 { void main_(); }
 namespace leet_43 { void main_(); }// 19.69% 40.74%
@@ -286,6 +312,7 @@ namespace leet_209 { void main_(); }
 
 namespace leet_213 { void main_(); }
 namespace leet_215 { void main_(); }
+namespace leet_216 { void main_(); }
 namespace leet_217 { void main_(); }
 
 namespace leet_221 { void main_(); }
@@ -344,6 +371,7 @@ namespace leet_309 { void main_(); }//=*--动态规划--*=
 
 namespace leet_312 { void main_(); }// dp hard
 namespace leet_314 { void main_(); }
+namespace leet_315 { void main_(); }
 
 namespace leet_322 { void main_(); }
 
@@ -532,6 +560,8 @@ namespace leet_889 { void main_(); }
 
 namespace leet_892 { void main_(); }
 namespace leet_897 { void main_(); }
+
+namespace leet_902 { void main_(); }// 难
 
 namespace leet_905 { void main_(); }
 
@@ -758,7 +788,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_378::main_();
+    leet_315::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
