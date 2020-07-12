@@ -49,6 +49,39 @@ int searchInsert( std::vector<int> nums, int target ){
 }
 
 
+// 重新实现：
+// 实质就是 查找 大于等于 tgt 的 最小值（左区间）
+
+
+// 2020_0712     95%  100%
+class S{
+public:
+    // 数组元素 已排序，无重复元素
+    int searchInsert( std::vector<int>& nums, int target ){
+
+        int N = static_cast<int>(nums.size());
+        int l=0;
+        int r=N-1;
+        while( l<=r ){
+            if( l==r ){ 
+                return nums[l]>=target ? l : l+1;// find
+            }
+            int mid = l+(r-l)/2;//mid-left
+            int midVal = nums[mid];
+            if( midVal<target ){
+                l = mid+1; // 坚决剔除
+            }else if( midVal>target ){
+                r = mid; // 保留到下一回合
+            }else{// == 
+                return mid;// find
+            }
+        }
+        return 0; // nums.empty()
+        
+    }
+};
+
+
 
 //=========================================================//
 void main_(){

@@ -28,6 +28,33 @@ public:
 };
 
 
+//  异或 交换法
+//  38%   100%
+class S2{
+public:
+    // 只有 2个元素
+    std::vector<int> swapNumbers(std::vector<int>& numbers) {
+        
+        numbers[0] ^= numbers[1];
+        numbers[1] ^= numbers[0];// [1] 成功变为 [0]
+        numbers[0] ^= numbers[1];// [0] 成功变为 [1]
+        return numbers;
+    }
+};
+
+
+
+// 这是 记录最优解，但是它新建了 vector，似乎不符合题意
+
+class S3{
+public:
+    // 只有 2个元素
+    std::vector<int> swapNumbers(std::vector<int>& numbers) {
+        return { numbers[1], numbers[0] };
+    }
+};
+
+
 
 //=========================================================//
 void main_(){

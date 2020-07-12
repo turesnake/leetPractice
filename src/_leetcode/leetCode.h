@@ -193,6 +193,7 @@ namespace leet_24 { void main_(); }
 namespace leet_26 { void main_(); }
 namespace leet_27 { void main_(); }
 
+namespace leet_31 { void main_(); }// 巧
 namespace leet_32 { void main_(); }
 namespace leet_33 { void main_(); }// 二分查找 
 namespace leet_34 { void main_(); }
@@ -231,6 +232,7 @@ namespace leet_76 { void main_(); }
 namespace leet_77 { void main_(); }// dfs + 回溯
 
 namespace leet_78 { void main_(); }
+namespace leet_79 { void main_(); }
 
 namespace leet_83 { void main_(); }
 namespace leet_84 { void main_(); }
@@ -272,7 +274,8 @@ namespace leet_125 { void main_(); }
 
 namespace leet_128 { void main_(); }
 namespace leet_129 { void main_(); }
-namespace leet_130 { void main_(); }// 广度优先
+namespace leet_130 { void main_(); }// bfs
+namespace leet_131 { void main_(); }// dp记忆化 + dfs + 回溯 -- 简陋的缝合怪
 namespace leet_136 { void main_(); }// 异或消除成对元素
 namespace leet_137 { void main_(); }// 异或
 namespace leet_138 { void main_(); }
@@ -438,6 +441,7 @@ namespace leet_474 { void main_(); }
 
 namespace leet_486 { void main_(); }//=*--动态规划--*= 100%  100%
 
+namespace leet_494 { void main_(); }
 namespace leet_496 { void main_(); }
 
 namespace leet_500 { void main_(); }//...无脑...
@@ -511,6 +515,7 @@ namespace leet_696 { void main_(); }
 namespace leet_698 { void main_(); }
 
 namespace leet_701 { void main_(); }
+namespace leet_702 { void main_(); }
 namespace leet_704 { void main_(); }
 namespace leet_709 { void main_(); }//...无脑...
 
@@ -680,6 +685,7 @@ namespace leet_1382 { void main_(); }
 
 namespace leet_1402 { void main_(); }
 
+namespace leet_1431 { void main_(); }//...无脑...
 
 namespace leet_1441 { void main_(); }
 namespace leet_1450 { void main_(); }
@@ -691,6 +697,8 @@ namespace leet_1464 { void main_(); }
 namespace leet_1470 { void main_(); }//...无脑...
 
 namespace leet_1480 { void main_(); }//...无脑...
+
+namespace leet_1492 { void main_(); }
 
 namespace leet_1502 { void main_(); }
 
@@ -747,6 +755,7 @@ namespace leet_m04_03 { void main_(); }
 namespace leet_m04_04 { void main_(); }
 
 namespace leet_m08_01 { void main_(); }//=*--动态规划--*=
+namespace leet_m08_03 { void main_(); }// 非常有挑战！
 namespace leet_m08_05 { void main_(); }
 namespace leet_m08_07 { void main_(); }
 namespace leet_m08_09 { void main_(); }
@@ -788,7 +797,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_315::main_();
+    leet_131::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
