@@ -7,8 +7,6 @@
  * 617. 合并二叉树
  */
 #include "innLeet.h"
-#include <stack>
-
 #include "TreeNode1.h"
 
 

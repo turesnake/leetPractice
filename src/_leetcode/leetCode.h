@@ -240,6 +240,7 @@ namespace leet_85 { void main_(); }
 
 namespace leet_86 { void main_(); }
 namespace leet_88 { void main_(); }
+namespace leet_89 { void main_(); }
 
 namespace leet_92 { void main_(); }
 namespace leet_94 { void main_(); }
@@ -389,6 +390,7 @@ namespace leet_344 { void main_(); }//...无脑...
 namespace leet_346 { void main_(); }
 namespace leet_347 { void main_(); }
 namespace leet_349 { void main_(); }
+namespace leet_350 { void main_(); }
 
 namespace leet_357 { void main_(); }
 
@@ -599,6 +601,7 @@ namespace leet_1025 { void main_(); }//=*--动态规划--*=
 namespace leet_1044 { void main_(); }// 字符串， Rabin-Karp， 后缀数组
 namespace leet_1047 { void main_(); }
 namespace leet_1062 { void main_(); }
+namespace leet_1063 { void main_(); }
 namespace leet_1064 { void main_(); }// 17.22%  33.33% 未来精进
 namespace leet_1065 { void main_(); }// 字典树
 namespace leet_1071 { void main_(); }
@@ -637,6 +640,7 @@ namespace leet_1207 { void main_(); }//...无脑...
 
 namespace leet_1214 { void main_(); }
 
+namespace leet_1227 { void main_(); }
 namespace leet_1228 { void main_(); }//...无脑...
 
 namespace leet_1240 { void main_(); }//=*--动态规划--*=
@@ -644,6 +648,7 @@ namespace leet_1240 { void main_(); }//=*--动态规划--*=
 namespace leet_1246 { void main_(); }// dp hard
 
 namespace leet_1252 { void main_(); }
+namespace leet_1255 { void main_(); }
 
 namespace leet_1265 { void main_(); }//...无脑...
 
@@ -797,7 +802,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_131::main_();
+    leet_1227::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
