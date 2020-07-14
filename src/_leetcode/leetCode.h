@@ -73,6 +73,7 @@
  * 
  * =============== 需要复习的内容 =================
  * -- 4:   二分折半删除法
+ * -- 5:   回文 - 中心扩散法, manacher
  * -- 15:  三数之和，很麻烦...
  * -- 41:  原地hash 法
  * -- 69:  求平方根: 二分查找，牛顿法
@@ -351,6 +352,8 @@ namespace leet_260 { void main_(); }// 位运算，异或 + lowbit
 namespace leet_263 { void main_(); }
 namespace leet_264 { void main_(); }
 
+namespace leet_266 { void main_(); }
+
 namespace leet_270 { void main_(); }
 
 namespace leet_276 { void main_(); }//=*--动态规划--*=
@@ -509,6 +512,8 @@ namespace leet_671 { void main_(); }
 namespace leet_673 { void main_(); }
 
 namespace leet_677 { void main_(); }// 字典树
+
+namespace leet_680 { void main_(); }
 
 namespace leet_684 { void main_(); }// 并查集
 namespace leet_687 { void main_(); }
@@ -677,6 +682,7 @@ namespace leet_1315 { void main_(); }
 namespace leet_1323 { void main_(); }//...无脑...
 namespace leet_1325 { void main_(); }
 
+namespace leet_1332 { void main_(); }
 namespace leet_1335 { void main_(); }
 
 namespace leet_1342 { void main_(); }
@@ -750,9 +756,11 @@ namespace leet_m64 { void main_(); }
 
 namespace leet_m01_1 { void main_(); }
 namespace leet_m01_01 { void main_(); }//...无脑...
+namespace leet_m01_04 { void main_(); }//...无脑...
 namespace leet_m01_06 { void main_(); }
 
 namespace leet_m02_03 { void main_(); }
+namespace leet_m02_06 { void main_(); }
 
 namespace leet_m03_04 { void main_(); }//...无脑...
 namespace leet_m04_02 { void main_(); }
@@ -802,7 +810,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1227::main_();
+    leet_m02_06::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

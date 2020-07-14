@@ -16,24 +16,34 @@ namespace leet_1227 {//~
 
 // 朴素法： 回溯
 //   递归回溯 很容易实现，但 n最大为 100000，一定会超时 超内存
+
+//  很遗憾，无论怎么优化，都是 超时
 class S{
 
     std::vector<int> road {};
     int N {};
-    int sum {0};   // 分母
-    int getNum {0};// 分子
+    int sum    {1};// 分母
+    int getNum {1};// 分子
 
     // val 本回合 要写的 值，通常从 1 开始
-    void work( int val ){
+    void work( int val, int fstEmpty ){
         if( val >= N ){
             sum++;
             if( road.back()==N-1 ){ getNum++; }
             return;
         }
+
+        if( val==fstEmpty ){//从本元素开始，后区间元素都对齐了
+            sum++;
+            getNum++;
+            return;
+        }
+
         //== 自己位置可坐时，一定选自己位置 ==//
         if( road[val]==-1 ){
+
             road[val]=val;
-            work( val+1 );
+            work( val+1, fstEmpty );
             road[val]=-1; // 释放
             return;
         }
@@ -41,11 +51,17 @@ class S{
         for( int i=0; i<N; i++ ){
             if( road[i]==-1 ){
                 road[i] = val;
-                work( val+1 );
+                int f = fstEmpty;
+                if( i==fstEmpty ){
+                    for(; f<N && road[f]!=-1; f++ ){}
+                }
+                work( val+1,f );
                 road[i] = -1;// 释放
             }
         }
     }
+
+
 
 public:
     // 1 <= n <= 10^5
@@ -54,9 +70,9 @@ public:
         N = n;
         road.resize( n, -1 );
 
-        for( int i=0; i<n; i++ ){
+        for( int i=1; i<n; i++ ){
             road[i]=0;
-            work( 1 );
+            work( 1, 0 );
             road[i]=-1;
         }
         return static_cast<double>(getNum) / static_cast<double>(sum);
@@ -67,29 +83,18 @@ public:
 
 
 
-//   迭代版 回溯
-class S{
+// 找规律....
+class S2{
 public:
-    // 1 <= n <= 10^5
-    double nthPersonGetsNthSeat( int n ){
-
-
-        std::vector<int> road (n,-1);
-        int sum {0};   // 分母
-        int getNum {0};// 分子
-
-
-
-        //   有待完成 ....
-
-
-
-        return static_cast<double>(getNum) / static_cast<double>(sum);
-
+    double nthPersonGetsNthSeat(int n) {
+        return n==1 ? 1.0 : 0.5;
     }
 };
 
 
+
+
+// 还存在 dp 解....
 
 
 
@@ -98,9 +103,15 @@ public:
 //=========================================================//
 void main_(){
 
-    auto ret = S{}.nthPersonGetsNthSeat( 3 );
+    
 
-    cout<<"ret:"<<ret<<endl;
+
+    for( int i=1; i<=50; i++ ){
+
+        auto ret = S{}.nthPersonGetsNthSeat( i );
+        cout<<" "<<i<<": "<<ret<<endl;
+
+    }
 
 
 
