@@ -60,8 +60,52 @@ std::string longestPalindrome_1( std::string s ){
 
 
 
-// 动态规划
-// 未实现 ...
+// 马拉车版    97%   100%
+class S2{
+public:
+    std::string longestPalindrome( std::string s ){
+
+        int Ns = static_cast<int>(s.size());
+
+        // 预处理字符串
+        std::string v ( Ns*2+1, '#' );
+        for( int i=0; i<Ns; i++ ){
+            v[i*2+1] = s[i];
+        }
+        int Nv = static_cast<int>(v.size());
+
+        std::vector<int> mv (Nv, 0);
+        int center = 0;
+        int maxR = 0;// 可以设为最小值，不影响最初的运算
+        int maxLen = 1;
+        int start = 0;
+
+        for( int i=0; i<Nv; i++ ){
+
+            if( i < maxR ){
+                int mirror = center*2-i;
+                mv[i] = std::min( mv[mirror], maxR-i );
+            }
+
+            int l = i-mv[i]-1;
+            int r = i+mv[i]+1;
+            for(; l>=0 && r<Nv && v[l]==v[r]; mv[i]++,l--,r++ ){}
+
+            // 更新数据
+            if( i+mv[i]>maxR ){
+                maxR = i+mv[i];
+                center = i;
+            }
+
+            if( mv[i]>maxLen ){
+                maxLen = mv[i];
+                start = (i-mv[i])/2;
+            }
+        }
+        return std::string( s, start, maxLen );
+        
+    }
+};
 
 
 

@@ -12,6 +12,9 @@
 namespace leet_516 {//~
 
 
+
+
+
 //=======================================================//
 // 5.34% 75% 
 // 思路：两指针指向 字符串的两端，依次计算，[l][r] 及其外侧区域的 “最长回文字母”个数
@@ -19,17 +22,6 @@ namespace leet_516 {//~
 class S{
 
     std::vector<std::vector<int>> dp {};
-
-    // 原始布局
-    /*
-    int &dp_at( int l, int r ){
-        return dp.at(l).at(r); 
-    }
-    void dp_resize( int N ){
-        dp.resize( N, std::vector<int>( N,-1 ) );
-    }
-    */
-
     // 压缩版布局
     // 为了节省 dp 空间而做得设置
     // 缺点是 dp 变得不直观了
@@ -95,11 +87,7 @@ public:
         /*
         //-------------------
         cout << "dp:" << endl;
-        for( auto &c : dp ){
-            for( int i : c ){ cout << i << ",  "; }
-            cout <<endl;
-        }
-        cout << "=====" << endl;
+        for( auto &c : dp ){ for( int i : c ){ cout << i << ",  "; } cout <<endl;}
         */
         return mmax;
     }
@@ -114,15 +102,15 @@ public:
 class S2{
 
     // 1143 题 求 两个字符串 最长公共子序列
+    // 两参数字符串 等长
     int longestCommonSubsequence_2( std::string &text1, std::string &text2 ){
-        int N1 = static_cast<int>(text1.size());// w [1,1000]
-        int N2 = static_cast<int>(text2.size());// h [1,1000]
-        std::vector<int> dp1 ( N1+1, 0 );
-        std::vector<int> dp2 ( N1+1, 0 );
+        int N = static_cast<int>(text1.size());// w [1,1000]
+        std::vector<int> dp1 ( N+1, 0 );
+        std::vector<int> dp2 ( N+1, 0 );
         auto *fst = &dp1;
         auto *lst = &dp2;
-        for( int j=1; j<=N2; j++ ){// [1,N2+1]
-            for( int i=1; i<=N1; i++ ){// [1,N1+1]
+        for( int j=1; j<=N; j++ ){// [1,N+1]   text2
+            for( int i=1; i<=N; i++ ){// [1,N+1]  text1
                 int up = fst->at(i);
                 int left = lst->at(i-1);
                 int corner = text1.at(i-1)==text2.at(j-1) ? fst->at(i-1)+1 : INT_MIN;
@@ -135,8 +123,7 @@ class S2{
 
 public:
     int longestPalindromeSubseq( std::string s ){
-        std::string rs {s};
-        std::reverse( rs.begin(), rs.end() );
+        std::string rs ( s.rbegin(), s.rend() );// 倒序
         return longestCommonSubsequence_2( s, rs);
     }
 };

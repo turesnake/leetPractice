@@ -34,6 +34,48 @@ public:
 
 
 
+
+// 双指针法
+// 先指向两头，然后向中间遍历，
+// 一个指针只负责 负数，一个指针负责 正数和0
+
+
+// 一个小优化点在于，在原始方案中，先倒序填充数组 从大到小，之后 反转
+// 可以用 for 循环，从尾部开始填起
+
+
+//   70%   25%
+class S2{
+public:
+    // 1<= len <= 10000
+    // -10000 <= [i] <= 10000
+    std::vector<int> sortedSquares( std::vector<int>& A ){
+
+        int N = static_cast<int>(A.size());
+        int l=0;  // 只负责 负数
+        int r=N-1;// 只负责 正数和0
+
+        std::vector<int> outs (N,0);
+
+        for(int i=N-1; i>=0; i-- ){// 小小的优化点
+            int lv = A[l]<0 ?  -A[l] : -1;
+            int rv = A[r]>=0 ? A[r] : -1;
+            if( lv >= rv ){
+                outs[i] = lv*lv;
+                l++;
+            }else{
+                outs[i] = rv*rv;
+                r--;
+            }
+        }
+        return outs;
+
+    }
+};
+
+
+
+
 //=========================================================//
 void main_(){
 

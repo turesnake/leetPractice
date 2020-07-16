@@ -71,6 +71,13 @@
  * bool std::binary_search( fstIt, endIt, tgtVal );
  *     二分查找 目标值
  * 
+ * 
+ * =============== 需要学习的 =================
+ * -- 马拉车算法： 字符串，最长回文子串
+ * -- KMP算法：   两字符串，最大重复子串
+ * -- 线段树：    
+ * 
+ * 
  * =============== 需要复习的内容 =================
  * -- 4:   二分折半删除法
  * -- 5:   回文 - 中心扩散法, manacher
@@ -93,12 +100,6 @@
  * -- m08_05: 俄国农民乘法
  * -- m59_1: 单调队列
  * 
- * =============== 排序 =================
- * 有些题表面上没啥特征，但用朴素法实现后成绩并不好看
- * 也许它在要求你实现更精准的排序
- * 
- * ------ 题：
- * - 977:
  * 
  * =============== 二分查找 =================
  * -1- 明确每次细分，需要剔除的是那一部分元素
@@ -160,6 +161,8 @@
  * - 142:
  * - 287:
  * 
+ * 
+ * 
  * ============== 需要学习更多解法的题目 ===============
  * - 76: 滑动窗口
  * 
@@ -193,6 +196,7 @@ namespace leet_24 { void main_(); }
 
 namespace leet_26 { void main_(); }
 namespace leet_27 { void main_(); }
+namespace leet_28 { void main_(); }// kmp 
 
 namespace leet_31 { void main_(); }// 巧
 namespace leet_32 { void main_(); }
@@ -278,6 +282,7 @@ namespace leet_128 { void main_(); }
 namespace leet_129 { void main_(); }
 namespace leet_130 { void main_(); }// bfs
 namespace leet_131 { void main_(); }// dp记忆化 + dfs + 回溯 -- 简陋的缝合怪
+namespace leet_132 { void main_(); }
 namespace leet_136 { void main_(); }// 异或消除成对元素
 namespace leet_137 { void main_(); }// 异或
 namespace leet_138 { void main_(); }
@@ -316,6 +321,7 @@ namespace leet_208 { void main_(); }
 namespace leet_209 { void main_(); }
 
 namespace leet_213 { void main_(); }
+namespace leet_214 { void main_(); }
 namespace leet_215 { void main_(); }
 namespace leet_216 { void main_(); }
 namespace leet_217 { void main_(); }
@@ -605,6 +611,7 @@ namespace leet_1022 { void main_(); }
 namespace leet_1025 { void main_(); }//=*--动态规划--*=
 namespace leet_1044 { void main_(); }// 字符串， Rabin-Karp， 后缀数组
 namespace leet_1047 { void main_(); }
+namespace leet_1055 { void main_(); }
 namespace leet_1062 { void main_(); }
 namespace leet_1063 { void main_(); }
 namespace leet_1064 { void main_(); }// 17.22%  33.33% 未来精进
@@ -616,6 +623,8 @@ namespace leet_1089 { void main_(); }
 
 namespace leet_1100 { void main_(); }
 namespace leet_1104 { void main_(); }
+
+namespace leet_1108 { void main_(); }//...无脑...
 
 namespace leet_1111 { void main_(); }
 namespace leet_1114 { void main_(); }// threads
@@ -658,6 +667,7 @@ namespace leet_1255 { void main_(); }
 namespace leet_1265 { void main_(); }//...无脑...
 
 namespace leet_1277 { void main_(); }//=*--动态规划--*= 5.07%， 50%
+namespace leet_1278 { void main_(); }
 
 namespace leet_1281 { void main_(); }//...无脑...
 
@@ -713,8 +723,12 @@ namespace leet_1492 { void main_(); }
 
 namespace leet_1502 { void main_(); }
 
+namespace leet_1512 { void main_(); }// 排列组合
+
 
 namespace leet_j04 { void main_(); }// 有序矩阵，左下角遍历法(1): 查找 tgt元素 是否存在
+namespace leet_j14_1 { void main_(); }
+namespace leet_j17 { void main_(); }//...无脑...
 namespace leet_j44 { void main_(); }
 namespace leet_j56_11 { void main_(); }
 namespace leet_j66 { void main_(); }
@@ -810,7 +824,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_m02_06::main_();
+    leet_1278::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
