@@ -359,6 +359,7 @@ namespace leet_263 { void main_(); }
 namespace leet_264 { void main_(); }
 
 namespace leet_266 { void main_(); }
+namespace leet_267 { void main_(); }
 
 namespace leet_270 { void main_(); }
 
@@ -562,6 +563,8 @@ namespace leet_771 { void main_(); }//...无脑...
 namespace leet_783 { void main_(); }
 namespace leet_784 { void main_(); }
 
+namespace leet_809 { void main_(); }
+
 namespace leet_814 { void main_(); }
 
 namespace leet_821 { void main_(); }
@@ -637,6 +640,7 @@ namespace leet_1134 { void main_(); }//...无脑...
 namespace leet_1139 { void main_(); }
 
 namespace leet_1143 { void main_(); }//=*--动态规划--*= 8.93%, 100%
+namespace leet_1147 { void main_(); }
 
 namespace leet_1150 { void main_(); }
 
@@ -685,12 +689,15 @@ namespace leet_1302 { void main_(); }
 namespace leet_1304 { void main_(); }//...无脑...
 namespace leet_1305 { void main_(); }
 
+namespace leet_1312 { void main_(); }
 namespace leet_1313 { void main_(); }//...无脑...
 namespace leet_1314 { void main_(); }//=*--动态规划--*=
 namespace leet_1315 { void main_(); }
 
 namespace leet_1323 { void main_(); }//...无脑...
 namespace leet_1325 { void main_(); }
+
+namespace leet_1328 { void main_(); }
 
 namespace leet_1332 { void main_(); }
 namespace leet_1335 { void main_(); }
@@ -704,6 +711,7 @@ namespace leet_1365 { void main_(); }
 namespace leet_1381 { void main_(); }
 namespace leet_1382 { void main_(); }
 
+namespace leet_1400 { void main_(); }
 namespace leet_1402 { void main_(); }
 
 namespace leet_1431 { void main_(); }//...无脑...
@@ -813,7 +821,7 @@ namespace leet_m59_1 { void main_(); }// 单调队列 [罕见]
 namespace leet_m63 { void main_(); }
 
 
-
+namespace leet_test { void main_(); }
 
 
 // oths:
@@ -824,7 +832,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1278::main_();
+    leet_1147::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
