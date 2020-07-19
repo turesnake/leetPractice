@@ -95,6 +95,7 @@
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
  * -- 1044: Rabin-Karp，后缀数组
+ * -- m17_19: 异或，求和，元素交换
  * -- m22: 双指针 固定间距法
  * -- m64: -1- 借助 逻辑运算符的短路特性，实现条件判断。-2- 快速乘
  * -- m08_05: 俄国农民乘法
@@ -107,12 +108,12 @@
  * -2- 寻找左边界，还是右边界，要使用不同的 mid 计算法
  *     寻找左侧边界时，mid偏左
  *     寻找右侧边界时，mid偏右
- * 
  * ------ 题：
  * - 34:
  * - 35:
  * - 278:
  * - 1351:
+ * - j11:  很特殊的 二分查找
  * 
  * =============== dp =================
  * 有些 dp 题思路比较奇特，记录于此
@@ -122,6 +123,7 @@
  * - 276: 栏杆题，新类型
  * - 322: 背包dp  一维dp
  * - 718: 
+ * - m17_09: 本质上也是 dp 题，很特殊
  *    
  * =============== 单调栈 =================
  * stk内元素一定是有序的，递增或递减
@@ -215,20 +217,20 @@ namespace leet_46 { void main_(); }
 namespace leet_48 { void main_(); }// 矩阵
 namespace leet_49 { void main_(); }
 
-namespace leet_53 { void main_(); }//=*--动态规划--*=
+namespace leet_53 { void main_(); }// dp
 namespace leet_54 { void main_(); }
 namespace leet_56 { void main_(); }
 namespace leet_58 { void main_(); }//...无脑...
 
-namespace leet_62 { void main_(); }//=*--动态规划--*= 基础
-namespace leet_63 { void main_(); }//=*--动态规划--*=
-namespace leet_64 { void main_(); }//=*--动态规划--*=
+namespace leet_62 { void main_(); }// dp 基础
+namespace leet_63 { void main_(); }// dp
+namespace leet_64 { void main_(); }// dp
 
 namespace leet_66 { void main_(); }//...无脑...
 namespace leet_67 { void main_(); }
 
 namespace leet_69 { void main_(); }
-namespace leet_70 { void main_(); }//=*--动态规划--*=
+namespace leet_70 { void main_(); }// dp
 namespace leet_72 { void main_(); }
 namespace leet_73 { void main_(); }
 
@@ -249,8 +251,8 @@ namespace leet_89 { void main_(); }
 
 namespace leet_92 { void main_(); }
 namespace leet_94 { void main_(); }
-namespace leet_95 { void main_(); }//=*--动态规划--*=
-namespace leet_96 { void main_(); }//=*--动态规划--*=
+namespace leet_95 { void main_(); }// dp
+namespace leet_96 { void main_(); }// dp
 namespace leet_97 { void main_(); }
 
 namespace leet_98 { void main_(); }
@@ -271,9 +273,9 @@ namespace leet_112 { void main_(); }
 
 namespace leet_116 { void main_(); }
 
-namespace leet_120 { void main_(); }//=*--动态规划--*=
+namespace leet_120 { void main_(); }// dp
 namespace leet_121 { void main_(); }
-namespace leet_122 { void main_(); }//=*--动态规划--*=
+namespace leet_122 { void main_(); }// dp
 
 namespace leet_124 { void main_(); }
 namespace leet_125 { void main_(); }
@@ -297,6 +299,8 @@ namespace leet_146 { void main_(); }
 namespace leet_148 { void main_(); }
 
 namespace leet_152 { void main_(); }
+namespace leet_153 { void main_(); }
+namespace leet_154 { void main_(); }
 namespace leet_155 { void main_(); }
 
 namespace leet_160 { void main_(); }
@@ -309,7 +313,7 @@ namespace leet_173 { void main_(); }
 
 namespace leet_191 { void main_(); }//...无脑...
 
-namespace leet_198 { void main_(); }//=*--动态规划--*=
+namespace leet_198 { void main_(); }// dp
 namespace leet_200 { void main_(); }
 namespace leet_202 { void main_(); }
 namespace leet_203 { void main_(); }
@@ -349,7 +353,7 @@ namespace leet_245 { void main_(); }
 namespace leet_252 { void main_(); }// 区间
 namespace leet_253 { void main_(); }// 区间
 
-namespace leet_256 { void main_(); }//=*--动态规划--*=
+namespace leet_256 { void main_(); }// dp
 namespace leet_257 { void main_(); }
 namespace leet_258 { void main_(); }
 
@@ -363,7 +367,7 @@ namespace leet_267 { void main_(); }
 
 namespace leet_270 { void main_(); }
 
-namespace leet_276 { void main_(); }//=*--动态规划--*=
+namespace leet_276 { void main_(); }// dp
 namespace leet_278 { void main_(); }
 namespace leet_279 { void main_(); }// bfs
 
@@ -381,7 +385,7 @@ namespace leet_298 { void main_(); }
 namespace leet_300 { void main_(); }// **难**
 namespace leet_303 { void main_(); }// 树状数组
 namespace leet_307 { void main_(); }// 树状数组
-namespace leet_309 { void main_(); }//=*--动态规划--*=
+namespace leet_309 { void main_(); }// dp
 
 namespace leet_312 { void main_(); }// dp hard
 namespace leet_314 { void main_(); }
@@ -395,7 +399,7 @@ namespace leet_328 { void main_(); }
 namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
 
 namespace leet_342 { void main_(); }// 二进制/位运算
-namespace leet_343 { void main_(); }//=*--动态规划--*=
+namespace leet_343 { void main_(); }// dp
 namespace leet_344 { void main_(); }//...无脑...
 namespace leet_346 { void main_(); }
 namespace leet_347 { void main_(); }
@@ -414,7 +418,7 @@ namespace leet_369 { void main_(); }//...无脑...
 namespace leet_371 { void main_(); }
 
 namespace leet_374 { void main_(); }// 奇怪，与本机运行不一致...
-namespace leet_375 { void main_(); }//=*--动态规划--*= **难**
+namespace leet_375 { void main_(); }// dp **难**
 
 namespace leet_392 { void main_(); }
 namespace leet_394 { void main_(); }
@@ -427,7 +431,7 @@ namespace leet_407 { void main_(); }
 namespace leet_409 { void main_(); }
 namespace leet_410 { void main_(); }
 
-namespace leet_413 { void main_(); }//=*--动态规划--*=
+namespace leet_413 { void main_(); }// dp
 namespace leet_414 { void main_(); }
 namespace leet_415 { void main_(); }
 
@@ -451,7 +455,7 @@ namespace leet_464 { void main_(); }
 
 namespace leet_474 { void main_(); }
 
-namespace leet_486 { void main_(); }//=*--动态规划--*= 100%  100%
+namespace leet_486 { void main_(); }// dp 100%  100%
 
 namespace leet_494 { void main_(); }
 namespace leet_496 { void main_(); }
@@ -463,7 +467,7 @@ namespace leet_509 { void main_(); }
 namespace leet_513 { void main_(); }
 namespace leet_515 { void main_(); }// 27%, 25%
 
-namespace leet_516 { void main_(); }//=*--动态规划--*= 5.34% 75% 
+namespace leet_516 { void main_(); }// dp 5.34% 75% 
 
 namespace leet_520 { void main_(); }//...无脑...
 namespace leet_521 { void main_(); }//...无脑...
@@ -501,10 +505,10 @@ namespace leet_629 { void main_(); }
 
 namespace leet_633 { void main_(); }
 namespace leet_637 { void main_(); }
-namespace leet_638 { void main_(); }//=*--动态规划--*=
+namespace leet_638 { void main_(); }// dp
 
-namespace leet_646 { void main_(); }//=*--动态规划--*=
-namespace leet_647 { void main_(); }//=*--动态规划--*= // 27% 78%
+namespace leet_646 { void main_(); }// dp
+namespace leet_647 { void main_(); }// dp // 27% 78%
 namespace leet_648 { void main_(); }// 字典树
 
 namespace leet_652 { void main_(); }// 序列化 5%
@@ -533,9 +537,9 @@ namespace leet_702 { void main_(); }
 namespace leet_704 { void main_(); }
 namespace leet_709 { void main_(); }//...无脑...
 
-namespace leet_712 { void main_(); }//=*--动态规划--*= 5.28%  55.56%
+namespace leet_712 { void main_(); }// dp 5.28%  55.56%
 namespace leet_713 { void main_(); }
-namespace leet_714 { void main_(); }//=*--动态规划--*=
+namespace leet_714 { void main_(); }// dp
 
 namespace leet_716 { void main_(); }
 namespace leet_718 { void main_(); }
@@ -550,7 +554,7 @@ namespace leet_727 { void main_(); }// 9%
 namespace leet_739 { void main_(); }
 namespace leet_740 { void main_(); }
 
-namespace leet_746 { void main_(); }//=*--动态规划--*=
+namespace leet_746 { void main_(); }// dp
 
 
 namespace leet_760 { void main_(); }//...无脑...
@@ -590,7 +594,7 @@ namespace leet_912 { void main_(); }// sorts
 
 namespace leet_922 { void main_(); }// 双指针：奇偶指针
 
-namespace leet_931 { void main_(); }//=*--动态规划--*=
+namespace leet_931 { void main_(); }// dp
 
 namespace leet_938 { void main_(); }
 
@@ -611,7 +615,7 @@ namespace leet_998 { void main_(); }
 namespace leet_1002 { void main_(); }
 
 namespace leet_1022 { void main_(); }
-namespace leet_1025 { void main_(); }//=*--动态规划--*=
+namespace leet_1025 { void main_(); }// dp
 namespace leet_1044 { void main_(); }// 字符串， Rabin-Karp， 后缀数组
 namespace leet_1047 { void main_(); }
 namespace leet_1055 { void main_(); }
@@ -633,13 +637,13 @@ namespace leet_1111 { void main_(); }
 namespace leet_1114 { void main_(); }// threads
 namespace leet_1119 { void main_(); }//...无脑...
 
-namespace leet_1130 { void main_(); }//=*--动态规划--*= 29.51%, 50%
+namespace leet_1130 { void main_(); }// dp 29.51%, 50%
 namespace leet_1133 { void main_(); }
 namespace leet_1134 { void main_(); }//...无脑...
 
 namespace leet_1139 { void main_(); }
 
-namespace leet_1143 { void main_(); }//=*--动态规划--*= 8.93%, 100%
+namespace leet_1143 { void main_(); }// dp 8.93%, 100%
 namespace leet_1147 { void main_(); }
 
 namespace leet_1150 { void main_(); }
@@ -661,7 +665,7 @@ namespace leet_1214 { void main_(); }
 namespace leet_1227 { void main_(); }
 namespace leet_1228 { void main_(); }//...无脑...
 
-namespace leet_1240 { void main_(); }//=*--动态规划--*=
+namespace leet_1240 { void main_(); }// dp
 
 namespace leet_1246 { void main_(); }// dp hard
 
@@ -670,7 +674,7 @@ namespace leet_1255 { void main_(); }
 
 namespace leet_1265 { void main_(); }//...无脑...
 
-namespace leet_1277 { void main_(); }//=*--动态规划--*= 5.07%， 50%
+namespace leet_1277 { void main_(); }// dp 5.07%， 50%
 namespace leet_1278 { void main_(); }
 
 namespace leet_1281 { void main_(); }//...无脑...
@@ -679,7 +683,7 @@ namespace leet_1284 { void main_(); }
 
 namespace leet_1287 { void main_(); }
 
-namespace leet_1289 { void main_(); }//=*--动态规划--*=
+namespace leet_1289 { void main_(); }// dp
 namespace leet_1290 { void main_(); }
 
 
@@ -691,7 +695,7 @@ namespace leet_1305 { void main_(); }
 
 namespace leet_1312 { void main_(); }
 namespace leet_1313 { void main_(); }//...无脑...
-namespace leet_1314 { void main_(); }//=*--动态规划--*=
+namespace leet_1314 { void main_(); }// dp
 namespace leet_1315 { void main_(); }
 
 namespace leet_1323 { void main_(); }//...无脑...
@@ -735,46 +739,19 @@ namespace leet_1512 { void main_(); }// 排列组合
 
 
 namespace leet_j04 { void main_(); }// 有序矩阵，左下角遍历法(1): 查找 tgt元素 是否存在
+namespace leet_j10_11 { void main_(); }
 namespace leet_j14_1 { void main_(); }
 namespace leet_j17 { void main_(); }//...无脑...
+namespace leet_j21 { void main_(); }
+namespace leet_j38 { void main_(); }
 namespace leet_j44 { void main_(); }
+namespace leet_j51 { void main_(); }
 namespace leet_j56_11 { void main_(); }
 namespace leet_j66 { void main_(); }
 
 
 namespace leet_LCP_01 { void main_(); }//...无脑...
 namespace leet_LCP_06 { void main_(); }//...无脑...
-
-namespace leet_m02_07 { void main_(); }
-namespace leet_m03 { void main_(); }
-namespace leet_m03_02 { void main_(); }
-namespace leet_m05 { void main_(); }//...无脑...
-namespace leet_m06 { void main_(); }
-namespace leet_m07 { void main_(); }
-namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
-namespace leet_m15 { void main_(); }//...无脑...
-namespace leet_m16_11 { void main_(); }
-namespace leet_m16_16 { void main_(); }
-namespace leet_m22 { void main_(); }// 双指针固定间距法
-namespace leet_m24 { void main_(); }
-namespace leet_m25 { void main_(); }
-namespace leet_m27 { void main_(); }
-namespace leet_m28 { void main_(); }
-namespace leet_m29 { void main_(); }
-namespace leet_m39 { void main_(); }
-namespace leet_m40 { void main_(); }
-namespace leet_m42 { void main_(); }//=*--动态规划--*=
-namespace leet_m46 { void main_(); }
-namespace leet_m47 { void main_(); }//=*--动态规划--*=
-namespace leet_m50 { void main_(); }//...无脑...
-namespace leet_m53 { void main_(); }// 二分查找
-namespace leet_m53_1 { void main_(); }
-namespace leet_m57 { void main_(); }
-namespace leet_m57_2 { void main_(); }
-namespace leet_m58_1 { void main_(); }//...无脑...
-namespace leet_m58_2 { void main_(); }//...无脑...
-namespace leet_m62 { void main_(); }
-namespace leet_m64 { void main_(); }
 
 namespace leet_m01_1 { void main_(); }
 namespace leet_m01_01 { void main_(); }//...无脑...
@@ -783,43 +760,77 @@ namespace leet_m01_06 { void main_(); }
 
 namespace leet_m02_03 { void main_(); }
 namespace leet_m02_06 { void main_(); }
+namespace leet_m02_07 { void main_(); }
 
+namespace leet_m03 { void main_(); }
+namespace leet_m03_02 { void main_(); }
 namespace leet_m03_04 { void main_(); }//...无脑...
+
 namespace leet_m04_02 { void main_(); }
 namespace leet_m04_03 { void main_(); }
 namespace leet_m04_04 { void main_(); }
 
-namespace leet_m08_01 { void main_(); }//=*--动态规划--*=
+namespace leet_m05 { void main_(); }//...无脑...
+namespace leet_m06 { void main_(); }
+namespace leet_m07 { void main_(); }
+
+namespace leet_m08_01 { void main_(); }// dp
 namespace leet_m08_03 { void main_(); }// 非常有挑战！
 namespace leet_m08_05 { void main_(); }
 namespace leet_m08_07 { void main_(); }
 namespace leet_m08_09 { void main_(); }
-
 namespace leet_m08_11 { void main_(); }
 namespace leet_m08_13 { void main_(); }
 
+namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
 namespace leet_m10_01 { void main_(); }
+namespace leet_m10_03 { void main_(); }
+namespace leet_m10_09 { void main_(); }
+namespace leet_m15 { void main_(); }//...无脑...
 
 namespace leet_m16_01 { void main_(); }
 namespace leet_m16_07 { void main_(); }
-namespace leet_m16_17 { void main_(); }//=*--动态规划--*= 34.46%，100%
+namespace leet_m16_11 { void main_(); }
+namespace leet_m16_16 { void main_(); }
+namespace leet_m16_17 { void main_(); }// dp 34.46%，100%
 
 namespace leet_m17_04 { void main_(); }
+namespace leet_m17_09 { void main_(); }// 特殊的 dp 题
 namespace leet_m17_10 { void main_(); }
 namespace leet_m17_12 { void main_(); }
-namespace leet_m17_16 { void main_(); }//=*--动态规划--*=
+namespace leet_m17_16 { void main_(); }// dp
+namespace leet_m17_19 { void main_(); }// 异或，求和，元素交换
 
+namespace leet_m22 { void main_(); }// 双指针固定间距法
+namespace leet_m24 { void main_(); }
+namespace leet_m25 { void main_(); }
+namespace leet_m27 { void main_(); }
+namespace leet_m28 { void main_(); }
+namespace leet_m29 { void main_(); }
 namespace leet_m32_1 { void main_(); }
 namespace leet_m32_2 { void main_(); }
-
 namespace leet_m37 { void main_(); }
-
+namespace leet_m39 { void main_(); }
+namespace leet_m40 { void main_(); }
+namespace leet_m42 { void main_(); }// dp
+namespace leet_m46 { void main_(); }
+namespace leet_m47 { void main_(); }// dp
+namespace leet_m50 { void main_(); }//...无脑...
+namespace leet_m53 { void main_(); }// 二分查找
+namespace leet_m53_1 { void main_(); }
 namespace leet_m55_1 { void main_(); }
 namespace leet_m56_1 { void main_(); }
-
+namespace leet_m57 { void main_(); }
+namespace leet_m57_2 { void main_(); }
+namespace leet_m58_1 { void main_(); }//...无脑...
+namespace leet_m58_2 { void main_(); }//...无脑...
 namespace leet_m59_1 { void main_(); }// 单调队列 [罕见]
-
+namespace leet_m62 { void main_(); }
 namespace leet_m63 { void main_(); }
+namespace leet_m64 { void main_(); }
+
+
+
 
 
 namespace leet_test { void main_(); }
@@ -833,7 +844,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_m08_13::main_();
+    leet_m10_03::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
