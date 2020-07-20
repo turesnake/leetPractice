@@ -75,7 +75,8 @@
  * =============== 需要学习的 =================
  * -- 马拉车算法： 字符串，最长回文子串
  * -- KMP算法：   两字符串，最大重复子串
- * -- 线段树：    
+ * -- 线段树：  
+ * -- 前缀树，后缀树
  * 
  * 
  * =============== 需要复习的内容 =================
@@ -94,6 +95,7 @@
  * -- 448: 基于下标 交换元素法
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
+ * -- 942: 很有趣的 双指针 收缩空间法
  * -- 1044: Rabin-Karp，后缀数组
  * -- m17_19: 异或，求和，元素交换
  * -- m22: 双指针 固定间距法
@@ -550,6 +552,7 @@ namespace leet_721 { void main_(); }// 并查集
 namespace leet_724 { void main_(); }
 
 namespace leet_727 { void main_(); }// 9%
+namespace leet_728 { void main_(); }
 
 namespace leet_739 { void main_(); }
 namespace leet_740 { void main_(); }
@@ -589,7 +592,8 @@ namespace leet_897 { void main_(); }
 namespace leet_902 { void main_(); }// 难
 
 namespace leet_905 { void main_(); }
-
+namespace leet_908 { void main_(); }
+namespace leet_910 { void main_(); }
 namespace leet_912 { void main_(); }// sorts
 
 namespace leet_922 { void main_(); }// 双指针：奇偶指针
@@ -598,6 +602,7 @@ namespace leet_931 { void main_(); }// dp
 
 namespace leet_938 { void main_(); }
 
+namespace leet_942 { void main_(); }// 有趣
 namespace leet_945 { void main_(); }
 
 namespace leet_974 { void main_(); }
@@ -745,6 +750,7 @@ namespace leet_j17 { void main_(); }//...无脑...
 namespace leet_j21 { void main_(); }
 namespace leet_j38 { void main_(); }
 namespace leet_j44 { void main_(); }
+namespace leet_j49 { void main_(); }
 namespace leet_j51 { void main_(); }
 namespace leet_j56_11 { void main_(); }
 namespace leet_j66 { void main_(); }
@@ -799,6 +805,7 @@ namespace leet_m17_09 { void main_(); }// 特殊的 dp 题
 namespace leet_m17_10 { void main_(); }
 namespace leet_m17_12 { void main_(); }
 namespace leet_m17_16 { void main_(); }// dp
+namespace leet_m17_17 { void main_(); }// kmp
 namespace leet_m17_19 { void main_(); }// 异或，求和，元素交换
 
 namespace leet_m22 { void main_(); }// 双指针固定间距法

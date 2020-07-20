@@ -27,8 +27,7 @@ namespace leet_336 {//~
 
 // 然后，使用 马拉车，计算 每个单词，覆盖首字符的 所有回文串
 // 然后 将单词 截掉 这些回文后，剩余字符串 反转，查找 是否在 uset 中 
-
-// ...
+// 未展开
 
 
 
@@ -99,6 +98,105 @@ public:
 
         return outs;
 
+    }
+};
+
+
+
+// 马拉车  
+
+// 很容易出错，很容易 漏掉情况
+// 但是性能确实很强，可能是在处理一些 长字符串时，表现不错
+
+//    79%  100%
+class S2{
+
+    std::unordered_map<std::string,int> umap {};//<str,idx>
+    std::vector<std::vector<int>> outs {};
+    int emptyStrIdx {-1};
+
+    // 目前的实现 并不算好，
+    void manacher( const std::string &word, int idx ){
+
+        std::string rword ( word.rbegin(), word.rend() );
+
+        //== 纯粹的 反转字符串 ==//
+        if( umap.count(rword)>0 && umap.at(rword)!=idx ){
+            outs.push_back( { umap.at(rword), idx } );
+        }
+
+        int N = static_cast<int>(word.size());
+        int Nv = N*2+1;// 一定是奇数
+        
+        //== 头 + 回文 + 尾 ==//
+        std::string v ( Nv, '#' );
+        for( int i=0; i<N; i++ ){
+            v[i*2+1] = word[i];
+        }
+
+        std::vector<int> mv ( Nv, 0 );// mv[0]=0
+
+        int center = 0;
+        int maxR = 0;
+
+        for( int i=1; i<Nv; i++ ){
+            if( i<maxR ){
+                int mirror = center*2-i;
+                mv[i] = std::min( mv[mirror], maxR-i );
+            }
+            int l=i-mv[i]-1;
+            int r=i+mv[i]+1;
+            for(; l>=0 && r<Nv && v[l]==v[r]; l--,r++,mv[i]++ ){}
+            // 更新数据
+            if( i+mv[i]>maxR ){
+                maxR = i+mv[i];
+                center = i;
+            }
+
+            // 头部回文, 或 word 本身就是回文
+            if( i == mv[i] ){
+
+                if( N==mv[i] ){// 整个 word 就是一个 回文
+                    if( emptyStrIdx!=-1 ){
+                        outs.push_back( { idx, emptyStrIdx } );
+                        outs.push_back( { emptyStrIdx, idx } );
+                    }
+                }else{
+                    std::string str ( rword, 0, N-mv[i] );
+                    if( umap.count(str)>0 ){
+                        outs.push_back( { umap.at(str), idx } );
+                    }
+                }
+            }
+            // 尾部回文
+            else if( i+mv[i]==Nv-1 && i!=Nv-1 ){
+                std::string str ( rword, mv[i], N-mv[i] );
+                if( umap.count(str)>0 && idx!=umap.at(str) ){
+                    outs.push_back( { idx, umap.at(str) } );
+                }
+            }
+        }
+    }
+
+
+public:
+    // 每个单词 都是 唯一的
+    std::vector<std::vector<int>> palindromePairs( std::vector<std::string>& words ){
+
+        int Nw = static_cast<int>(words.size());
+        for( int i=0; i<Nw; i++ ){
+            umap.emplace( words[i], i );
+        }
+        if( umap.count("")>0 ){
+            emptyStrIdx = umap.at("");
+        }
+        for( int i=0; i<Nw; i++ ){
+            if( !words[i].empty() ){
+                manacher( words[i], i );
+            }
+        }
+
+        return outs;
     }
 };
 

@@ -21,7 +21,8 @@ namespace tpr_manacher{//~
 
 class KMP{
 public:
-    // 若 needle 为空，返回 0
+    // 若 p 为空，返回 0
+    // s 允许为空
     int strStr( std::string s, std::string p ){
 
         if( p.empty() ){ return 0; }
@@ -55,7 +56,10 @@ public:
         std::vector<int> tgtIdxs {};// 所有匹配的 下标
         int j=0;
         i = 0;  
-        while( j<Ns-Np ){
+        while( j<Ns ){
+            // 注意，此处不能写成 j<=Ns-Np
+            // j 要遍历到 s 中的最后一个字符，它并不是指代 比较段的 首字符
+
             if( s[j]==p[i] ){
                 j++;
                 i++;
