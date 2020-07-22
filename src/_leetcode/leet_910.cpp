@@ -65,23 +65,38 @@ public:
 
 
 
+// 官方思路, 本质上是 贪心算法
 
 
-
+//  朴素排序版   56%  25%
 class S2{
 public:
+    // 1 <= A.length <= 10000
+    // 0 <= A[i] <= 10000
+    // 0 <= K <= 10000
     int smallestRangeII( std::vector<int>& A, int K) {
 
+        int N = static_cast<int>(A.size());
+        if( N<=1 ){ return 0; }
+
+        std::sort( A.begin(), A.end() );
+    
+        int outMin = A.back()-A[0];
+        int fstUp = A[0]+K;
+        int lstDown = A.back()-K;
         
-
-
-
-        return 0;//tmp
-
-
+        // 将 [0,i] 区间 划分为 左区间
+        for( int i=0; i<N-1; i++ ){// [i],[i+1]
+            int off = std::max(A[i]+K, lstDown) - std::min(fstUp, A[i+1]-K);
+            outMin = std::min( outMin, off );
+        }
+        return outMin;
 
     }
 };
+
+
+
 
 
 

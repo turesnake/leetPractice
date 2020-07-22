@@ -27,6 +27,10 @@
  * int 转 string: std::to_string()
  * 
  * -----
+ * 当对 doule->string 且 小数点后N位 有要求时，
+ * 请参考 m17_26 题的实现
+ * 
+ * -----
  * 容器可以直接用 一对迭代器来初始化
  * 
  * -----
@@ -71,6 +75,10 @@
  * bool std::binary_search( fstIt, endIt, tgtVal );
  *     二分查找 目标值
  * 
+ * -----
+ * std::sort( fstIt,lstIt, Comp{} )
+ *     此处第三参数，自定义的 比较对象，必须是 '<' 操作的，不能写 '<=' 操作的，会引发错误
+ *  
  * 
  * =============== 需要学习的 =================
  * -- 马拉车算法： 字符串，最长回文子串
@@ -83,6 +91,7 @@
  * -- 4:   二分折半删除法
  * -- 5:   回文 - 中心扩散法, manacher
  * -- 15:  三数之和，很麻烦...
+ * -- 30:  hash，字符串题，思路不常见
  * -- 41:  原地hash 法
  * -- 69:  求平方根: 二分查找，牛顿法
  * -- 94:  二叉树中序遍历的 迭代实现
@@ -93,6 +102,7 @@
  * -- 445: 双栈，反向组装链表节点
  * -- 459: 字符串重复子串
  * -- 448: 基于下标 交换元素法
+ * -- 632: 非常特殊的 滑动窗口 题
  * -- 974: 前缀和+模 计算区间和是否被整除 
  * -- 922: 特殊的双指针：奇偶指针
  * -- 942: 很有趣的 双指针 收缩空间法
@@ -166,7 +176,6 @@
  * - 287:
  * 
  * 
- * 
  * ============== 需要学习更多解法的题目 ===============
  * - 76: 滑动窗口
  * 
@@ -202,6 +211,7 @@ namespace leet_26 { void main_(); }
 namespace leet_27 { void main_(); }
 namespace leet_28 { void main_(); }// kmp 
 
+namespace leet_30 { void main_(); }
 namespace leet_31 { void main_(); }// 巧
 namespace leet_32 { void main_(); }
 namespace leet_33 { void main_(); }// 二分查找 
@@ -222,6 +232,7 @@ namespace leet_49 { void main_(); }
 namespace leet_53 { void main_(); }// dp
 namespace leet_54 { void main_(); }
 namespace leet_56 { void main_(); }
+namespace leet_57 { void main_(); }
 namespace leet_58 { void main_(); }//...无脑...
 
 namespace leet_62 { void main_(); }// dp 基础
@@ -505,6 +516,7 @@ namespace leet_617 { void main_(); }
 namespace leet_628 { void main_(); }
 namespace leet_629 { void main_(); }
 
+namespace leet_632 { void main_(); }
 namespace leet_633 { void main_(); }
 namespace leet_637 { void main_(); }
 namespace leet_638 { void main_(); }// dp
@@ -570,6 +582,7 @@ namespace leet_771 { void main_(); }//...无脑...
 namespace leet_783 { void main_(); }
 namespace leet_784 { void main_(); }
 
+namespace leet_804 { void main_(); }
 namespace leet_809 { void main_(); }
 
 namespace leet_814 { void main_(); }
@@ -593,10 +606,11 @@ namespace leet_902 { void main_(); }// 难
 
 namespace leet_905 { void main_(); }
 namespace leet_908 { void main_(); }
-namespace leet_910 { void main_(); }
+namespace leet_910 { void main_(); }// 贪心
 namespace leet_912 { void main_(); }// sorts
 
 namespace leet_922 { void main_(); }// 双指针：奇偶指针
+namespace leet_929 { void main_(); }
 
 namespace leet_931 { void main_(); }// dp
 
@@ -725,6 +739,7 @@ namespace leet_1402 { void main_(); }
 
 namespace leet_1431 { void main_(); }//...无脑...
 
+namespace leet_1439 { void main_(); }
 namespace leet_1441 { void main_(); }
 namespace leet_1450 { void main_(); }
 namespace leet_1457 { void main_(); }
@@ -752,7 +767,9 @@ namespace leet_j38 { void main_(); }
 namespace leet_j44 { void main_(); }
 namespace leet_j49 { void main_(); }
 namespace leet_j51 { void main_(); }
+namespace leet_j55_11 { void main_(); }
 namespace leet_j56_11 { void main_(); }
+namespace leet_j60 { void main_(); }
 namespace leet_j66 { void main_(); }
 
 
@@ -771,6 +788,7 @@ namespace leet_m02_07 { void main_(); }
 namespace leet_m03 { void main_(); }
 namespace leet_m03_02 { void main_(); }
 namespace leet_m03_04 { void main_(); }//...无脑...
+namespace leet_m03_05 { void main_(); }
 
 namespace leet_m04_02 { void main_(); }
 namespace leet_m04_03 { void main_(); }
@@ -790,6 +808,7 @@ namespace leet_m08_13 { void main_(); }
 
 namespace leet_m09 { void main_(); }// 用两栈实现队列，...无脑...
 namespace leet_m10_01 { void main_(); }
+namespace leet_m10_02 { void main_(); }
 namespace leet_m10_03 { void main_(); }
 namespace leet_m10_09 { void main_(); }
 namespace leet_m15 { void main_(); }//...无脑...
@@ -807,6 +826,9 @@ namespace leet_m17_12 { void main_(); }
 namespace leet_m17_16 { void main_(); }// dp
 namespace leet_m17_17 { void main_(); }// kmp
 namespace leet_m17_19 { void main_(); }// 异或，求和，元素交换
+namespace leet_m17_24 { void main_(); }
+namespace leet_m17_25 { void main_(); }
+namespace leet_m17_26 { void main_(); }
 
 namespace leet_m22 { void main_(); }// 双指针固定间距法
 namespace leet_m24 { void main_(); }
@@ -851,7 +873,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_m10_03::main_();
+    leet_j60::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

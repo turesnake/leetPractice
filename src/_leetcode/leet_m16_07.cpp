@@ -14,12 +14,21 @@
 namespace leet_m16_07 {//~
 
 
-// 未学习...
+// 数学法:
+// 两数最大值，为
+// (abs(a-b) + a + b)/2
 
+
+//  100%  100%
 class S{
 public:
     int maximum(int a, int b) {
-        return 0;
+
+        int64_t A=a;
+        int64_t B=b;
+        return (std::abs(A-B)+A+B)/2;
+
+        
     }
 };
 
