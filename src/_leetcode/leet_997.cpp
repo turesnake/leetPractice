@@ -13,6 +13,51 @@
 namespace leet_997 {//~
 
 
+// 本质上是道 有向图 的题
+// 用 拓扑排序 topo
+
+// 问题可被理解为：检测是否仅存在一个，出度为0 的元素，且它的 入度==N-1
+
+
+//   45%,  16%
+class S2{
+public:
+    // 1 <= N <= 1000
+    // trust.length <= 10000
+    // trust[i] 是完全不同的
+    // trust[i][0] != trust[i][1]
+    // 1 <= trust[i][0], trust[i][1] <= N
+    int findJudge(int N, std::vector<std::vector<int>>& trust ){
+
+
+        std::vector<int> indegrees  (N, 0);
+        std::vector<int> outdegrees (N, 0);
+        for( auto &e : trust ){
+            outdegrees[e[0]-1]++;
+            indegrees[e[1]-1]++;
+        }
+        int count = 0;
+        int tgtIdx = 0;
+        for( int i=0; i<N; i++ ){
+            if( outdegrees[i]==0 ){
+                tgtIdx = i;
+                count++;
+            }
+        }
+        if( count!=1 || indegrees[tgtIdx]!=N-1 ){ return -1; }
+        return tgtIdx+1;
+
+    }
+};
+
+
+
+
+
+
+
+
+
 // 5.12%, 16.67%
 int findJudge( int N, std::vector<std::vector<int>>& trust ){
 

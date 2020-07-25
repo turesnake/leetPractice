@@ -85,6 +85,7 @@
  * -- KMP算法：   两字符串，最大重复子串
  * -- 线段树：  
  * -- 前缀树，后缀树
+ * -- 图：拓扑排序
  * 
  * 
  * =============== 需要复习的内容 =================
@@ -226,6 +227,7 @@ namespace leet_42 { void main_(); }
 namespace leet_43 { void main_(); }// 19.69% 40.74%
 namespace leet_44 { void main_(); }
 namespace leet_46 { void main_(); }
+namespace leet_47 { void main_(); }
 namespace leet_48 { void main_(); }// 矩阵
 namespace leet_49 { void main_(); }
 
@@ -235,6 +237,7 @@ namespace leet_56 { void main_(); }
 namespace leet_57 { void main_(); }
 namespace leet_58 { void main_(); }//...无脑...
 
+namespace leet_60 { void main_(); }
 namespace leet_62 { void main_(); }// dp 基础
 namespace leet_63 { void main_(); }// dp
 namespace leet_64 { void main_(); }// dp
@@ -318,6 +321,7 @@ namespace leet_155 { void main_(); }
 
 namespace leet_160 { void main_(); }
 
+namespace leet_164 { void main_(); }
 namespace leet_167 { void main_(); }
 namespace leet_169 { void main_(); }// Boyer-Moore Algorithm 多数投票算法
 
@@ -362,6 +366,7 @@ namespace leet_239 { void main_(); }
 namespace leet_243 { void main_(); }
 namespace leet_244 { void main_(); }
 namespace leet_245 { void main_(); }
+namespace leet_246 { void main_(); }
 
 namespace leet_252 { void main_(); }// 区间
 namespace leet_253 { void main_(); }// 区间
@@ -377,6 +382,7 @@ namespace leet_264 { void main_(); }
 
 namespace leet_266 { void main_(); }
 namespace leet_267 { void main_(); }
+namespace leet_269 { void main_(); }
 
 namespace leet_270 { void main_(); }
 
@@ -408,6 +414,7 @@ namespace leet_322 { void main_(); }
 
 namespace leet_326 { void main_(); }//...无脑...
 namespace leet_328 { void main_(); }
+namespace leet_329 { void main_(); }
 
 namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
 
@@ -628,13 +635,14 @@ namespace leet_983 { void main_(); }
 namespace leet_989 { void main_(); }
 namespace leet_990 { void main_(); }
 
-namespace leet_997 { void main_(); }// 5.12%, 16.67%
+namespace leet_997 { void main_(); }// 图
 namespace leet_998 { void main_(); }
 
 namespace leet_1002 { void main_(); }
 
 namespace leet_1022 { void main_(); }
 namespace leet_1025 { void main_(); }// dp
+namespace leet_1042 { void main_(); }// 图
 namespace leet_1044 { void main_(); }// 字符串， Rabin-Karp， 后缀数组
 namespace leet_1047 { void main_(); }
 namespace leet_1055 { void main_(); }
@@ -733,6 +741,7 @@ namespace leet_1365 { void main_(); }
 
 namespace leet_1381 { void main_(); }
 namespace leet_1382 { void main_(); }
+namespace leet_1387 { void main_(); }
 
 namespace leet_1400 { void main_(); }
 namespace leet_1402 { void main_(); }
@@ -873,7 +882,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_j60::main_();
+    leet_329::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
