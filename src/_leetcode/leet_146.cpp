@@ -13,111 +13,68 @@ namespace leet_146 {//~
 
 
 
-// 双向指针，实现队列
+// 难点在于，如何维护 删除队列
+// 使用 deque 来记录次序
+// 当某个元素被更新后，他在 deque 中的 元素将被保留
+// 我们会添加一个 新的元素 到 deque 尾部，
+// 每个 deque 元素，都携带一个 count 信息，记载了，本元素被添加之时，目标元素的 count 是多少
+// 当需要 从头部删除一个元素时，那些失效的元素就可以被检测出来，直接删除掉
 
 
-
-//     未完工...
-
-
-
+//  75%  92%
 class LRUCache{
 
-
-struct Node{
-    Node()=default;
-    Node( int k_, int v_, Node *l_, Node *r_ ):key(k_),val(v_),left(l_),right(r_){}
-    int key {0};
-    int val {0};
-    Node *left {nullptr};
-    Node *right {nullptr};
+struct Elem{
+    int val   {};
+    int count {};
 };
 
+struct QElem{
+    int key {};
+    int count {};
+};
 
-    std::unordered_map<int, Node> umap {};
-    size_t N {};
-
-    Node *queFront {nullptr}; // use right
-    Node *queBack  {nullptr};  // use left
-
-
-    // 将目标node，更新到 尾端
-    void update( Node &node ){
-        if( node.right == queBack  ){ return; }// 已经在尾部
-
-        if( node.left != nullptr ){
-            node.left->right = node.right;
-            node.right->left = node.left;
-        }
-
-        Node &newLeft = *(queBack->left);
-
-        newLeft.right = &node;
-        queBack->left = &node;
-
-        node.left = &newLeft;
-        node.right = queBack;
-    }
+    std::unordered_map<int,Elem> umap {};
+    std::deque<QElem> que {};
+    size_t cap {};
 
 
 public:
     LRUCache(int capacity) {
-
-        queFront = new Node( -77, 0, nullptr, nullptr );
-        queBack  = new Node( -99, 0, nullptr, nullptr );
-        N = capacity;
-        assert( N>0 );
+        cap = capacity;
     }
     
     int get(int key) {
-        if( umap.count(key)==0 ){ return -1; }
-        int tgtVal = umap[key].val;
-        update( umap[key] );
-        return tgtVal;
+        if( umap.count(key)==0 ){
+            return -1;
+        }else{// find
+            umap[key].count++;
+            que.push_back( QElem{ key, umap[key].count } );
+            return umap[key].val;
+        }
     }
     
 
-
     void put(int key, int value) {
-        
-        // 仅仅是 数据更新
-        if( !umap.empty() && umap.count(key)>0 ){// find
-            umap[key].val = value;
-            update( umap[key] );
-            return;
-        }
 
-        // 需要当成新元素 添加
-        if( umap.empty() || N==1 ){
-            umap.clear();
-            auto [it,bl] = umap.emplace( key, Node{ key, value, queFront, queBack } );
-            queFront->right = &it->second;
-            queBack->left = &it->second;
-
+        if( umap.count(key)==0 ){
+            umap.emplace( key, Elem{value,0} );
         }else{
-            // 删除
-            if( umap.size() == N ){
-                cout<<"-1- key:"<<key<<endl;
-                Node &newFrontNode = *(queFront->right->right);
-                cout<<"-2- key:"<<key<<endl;
-
-                int delKey = queFront->right->key;
-                cout<<"delkey:"<<delKey<<endl;
-
-                queFront->right = &newFrontNode;
-                cout<<"--a--"<<endl;
-
-                newFrontNode.left = queFront;
-
-                cout<<"--aa--"<<endl;
-
-                umap.erase(delKey);
-            }
-            // 添加
-            auto [it,bl] = umap.emplace( key, Node{ key, value, queFront, queBack } );
-            update( it->second );
+            umap[key].val = value;
+            umap[key].count++;
         }
+        que.push_back( QElem{ key, umap[key].count } );
 
+        if( umap.size() > cap ){
+            while( !que.empty() ){
+                auto [eKey,eCount] = que.front();
+                que.pop_front();
+                if( eCount == umap[eKey].count ){// 有效的
+                    umap.erase( eKey );
+                    break;
+                }
+            }
+        }
     }
 };
 
@@ -127,24 +84,6 @@ public:
 
 //=========================================================//
 void main_(){
-
-    LRUCache cc {2};
-
-    cc.put( 1,1 );
-    cc.put( 2,2 );
-    cc.get( 1 );
-    cc.put( 3,3 );
-    cc.get( 2 );
-    cc.put( 4,4 );
-    //cc.get( 1 );
-    //cc.get( 3 );
-    //cc.get( 4 );
-
-
-
-
-
-
 
     
     debug::log( "\n~~~~ leet: 146 :end ~~~~\n" );

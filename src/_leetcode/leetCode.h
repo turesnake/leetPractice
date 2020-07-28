@@ -200,6 +200,7 @@ namespace leet_14 { void main_(); }
 namespace leet_15 { void main_(); }
 namespace leet_16 { void main_(); }
 namespace leet_17 { void main_(); }
+namespace leet_18 { void main_(); }
 
 
 namespace leet_20 { void main_(); }
@@ -249,7 +250,7 @@ namespace leet_69 { void main_(); }
 namespace leet_70 { void main_(); }// dp
 namespace leet_72 { void main_(); }
 namespace leet_73 { void main_(); }
-
+namespace leet_74 { void main_(); }
 namespace leet_75 { void main_(); }
 namespace leet_76 { void main_(); }
 namespace leet_77 { void main_(); }// dfs + 回溯
@@ -323,11 +324,15 @@ namespace leet_160 { void main_(); }
 
 namespace leet_164 { void main_(); }
 namespace leet_167 { void main_(); }
+namespace leet_168 { void main_(); }
 namespace leet_169 { void main_(); }// Boyer-Moore Algorithm 多数投票算法
+
 
 namespace leet_172 { void main_(); }
 namespace leet_173 { void main_(); }
 
+namespace leet_189 { void main_(); }
+namespace leet_190 { void main_(); }
 namespace leet_191 { void main_(); }//...无脑...
 
 namespace leet_198 { void main_(); }// dp
@@ -374,8 +379,9 @@ namespace leet_253 { void main_(); }// 区间
 namespace leet_256 { void main_(); }// dp
 namespace leet_257 { void main_(); }
 namespace leet_258 { void main_(); }
-
+namespace leet_259 { void main_(); }
 namespace leet_260 { void main_(); }// 位运算，异或 + lowbit
+
 
 namespace leet_263 { void main_(); }
 namespace leet_264 { void main_(); }
@@ -655,6 +661,8 @@ namespace leet_1071 { void main_(); }
 namespace leet_1085 { void main_(); }//...无脑...
 namespace leet_1089 { void main_(); }
 
+namespace leet_1099 { void main_(); }
+
 namespace leet_1100 { void main_(); }
 namespace leet_1104 { void main_(); }
 
@@ -774,6 +782,7 @@ namespace leet_j17 { void main_(); }//...无脑...
 namespace leet_j21 { void main_(); }
 namespace leet_j38 { void main_(); }
 namespace leet_j44 { void main_(); }
+namespace leet_j45 { void main_(); }
 namespace leet_j49 { void main_(); }
 namespace leet_j51 { void main_(); }
 namespace leet_j55_11 { void main_(); }
@@ -783,6 +792,7 @@ namespace leet_j66 { void main_(); }
 
 
 namespace leet_LCP_01 { void main_(); }//...无脑...
+namespace leet_LCP_04 { void main_(); }
 namespace leet_LCP_06 { void main_(); }//...无脑...
 
 namespace leet_m01_1 { void main_(); }
@@ -882,7 +892,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_329::main_();
+    leet_LCP_04::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

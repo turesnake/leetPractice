@@ -16,126 +16,66 @@ namespace leet_15 {//~
 // 这题甚至比很多困难题都麻烦 ...
 
 
-// 2020_0617   11%   7%
-// 先将数组排序，然后从头到尾地遍历，此为a
-// 每一次针对剩余区间，分别用两指针指向 区间头尾，相向而行
-// 查找合格的 b 和 c
+// 最稳定的思路就是：
+// -1- 数组排序，
+// -2- 用 a 遍历整个数组，
+// -3- 用头尾双指针 b,c 遍历 a之后的区间，查找 匹配组合
+// a,b,c 都要去重
 // ---
-// 此题的难点在于 重复元素的排除
-// a/b/c 在遍历时，都要排除重复值 
-// ---
-// 优化：当 a大于0时，bc一定也大于0，可以终止判断
+// 优化点： 当 [a]>0, 意味着 后面元素都大于0，可以直接终止 检测
 
-class S4{
+// 时间 O(N^2)
+
+
+
+// 2020_0727   55%   7%
+// -----
+// 目前为止，最精简的版本，核心在于去重
+// 使用 if 来去重，易于理解，性能也不亏。
+// 从 重复区 的第二个元素开始去，这种实现，能覆盖一些极限情况，比如 [b]==[c] 时，
+// 不会因为 b 的去重，将 这个可能性删除掉
+class S5{
 public:
-    std::vector<std::vector<int>> threeSum( std::vector<int>& nums) {
+    std::vector<std::vector<int>> threeSum( std::vector<int>& nums ){
 
-        if( nums.size()<3 ){ return {}; }
-
-        std::sort( nums.begin(), nums.end() );
         int N = static_cast<int>(nums.size());
-
+        if(N<3){ return {}; }
         std::vector<std::vector<int>> outs {};
+        std::sort( nums.begin(), nums.end() );
 
-        int  lstA = 0;
-        for( int i=0; i<N-2; i++ ){
-            int a = nums.at(i);
+        for(int a=0; a<N-2; a++ ){
+            if( nums[a]>0 ){ break; }// 优化点
+            if( a>0 && nums[a]==nums[a-1] ){ continue; }//去重
 
-            if( a>0 ){ break; }// 核心优化项!!!
-   
-            if( i==0 ){
-                lstA = a;
-            }else{
-                if( lstA == a ){ continue; } // 跳过重复的 a
-                lstA = a;
-            }
+            int b=a+1;
+            int c=N-1;
+            while( b<c ){
+                if( b>a+1 && nums[b]==nums[b-1] ){ b++; continue; }//去重
+                if( c<N-1 && nums[c]==nums[c+1] ){ c--; continue; }//去重
 
-            //---//
-            // 执行两数判断 b也要避免重复数
-            int bcSum = 0 - a;
-
-            bool isFst = true;
-            int lstB = 0;
-            int lstC = 0;
-            int l = i+1;
-            int r = N-1;
-            while( l<r ){
-                int b = nums.at(l);
-                int c = nums.at(r);
-                bool isL = false;
-                bool isR = false;
-
-                if( isFst ){
-                    isFst = false;
-                    lstB = b;
-                    lstC = c;
-                }
-
-                int tmpSum = b + c;
-                if( tmpSum < bcSum ){
-                    isL = true;
-                }else if( tmpSum > bcSum ){
-                    isR = true;
+                int tsum = nums[a] + nums[b] + nums[c];
+                if( tsum>0 ){
+                    c--;
+                }else if( tsum<0 ){
+                    b++;
                 }else{// ==
-                    outs.push_back({ a,b,c });
-                    isL = true;
-                    isR = true;
-                }
-
-                if( isL ){
-                    l++;
-                    for(; l<r && nums.at(l)==lstB; l++ ){}//排除重复数
-                    lstB = nums.at(l);
-                }
-                if( isR ){
-                    r--;
-                    for(; l<r && nums.at(r)==lstC; r-- ){}//排除重复数
-                    lstC = nums.at(r);
+                    outs.push_back( { nums[a], nums[b], nums[c] } );
+                    b++; 
+                    c--;
                 }
             }
         }
         return outs;
-
 
     }
 };
 
 
 
+
+
 //=========================================================//
 void main_(){
-
-    std::vector<int> v { -5,-4,-4,-3,-3,-2,-2,-1,6,6,7,8,8,9 };
-
-    //std::vector<int> v { -1, 0, 1, 2 };
-    //std::vector<int> v { 1,2,-2,-1 };
-    //std::vector<int> v { -1,0,1,2,-1,-4, 7, -2, -5, -4, -3, 0, 0, 0 };
-    //std::vector<int> v { 0, 0, 0 };
-    //std::vector<int> v { -1, -3, 5 };
-
-    //std::vector<int> v { -1, 0 };
-
-
-    //std::vector<int> v { -1,0,1,2,-1,-4, 7, -2, -5, -4, -3 };
-
-    //std::vector<int> v { -1,0,1,2,-1,-4 };
-
-    //auto retVecs = threeSum( v );
-    auto retVecs = S4{}.threeSum( v );
-
-    cout << "call DONE" << endl;
-
-    for( const auto &iVec : retVecs ){
-        debug::log("--------");
-        cout << "   ";
-
-        for( const auto i: iVec ){
-            cout << i << ", ";
-        }
-        cout << endl;
-    }
-
-    
 
 
     debug::log( "\n~~~~ leet: 15 :end ~~~~\n" );
