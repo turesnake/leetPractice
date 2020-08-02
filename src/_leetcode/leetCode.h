@@ -18,6 +18,10 @@
  * INT_MAX =  2147483647
  * LONG_MIN
  * LONG_MAX
+ * -----
+ * <cfloat>
+ * DBL_MIN
+ * DBL_MAX
  * 
  * -----
  * 字符串转 int
@@ -87,6 +91,7 @@
  * -- 线段树：（未学习）
  * -- 前缀树，后缀树（未学习）
  * -- 图：拓扑排序
+ * -- 图：最短路径：Dijkstra 
  * 
  * 
  * =============== 需要复习的内容 =================
@@ -100,6 +105,7 @@
  * -- 160: 双指针轮回遍历链表法
  * -- 169: Boyer-Moore Algorithm 多数投票算法
  * -- 238: 前缀积分，后缀积
+ * -- 261: 以图判树
  * -- 328: 双链表收集元素，最后合并链表
  * -- 445: 双栈，反向组装链表节点
  * -- 459: 字符串重复子串
@@ -145,17 +151,7 @@
  * 分别针对 大于小于等于，进行三种方式的处理
  * 彻底遍历完所有元素后，再将栈内剩余元素，做一层处理
  * 
- * ------ 题：
- * - 84:
- * - 85: 基于84的升级版
- * - 496:
- * - 581:
- * - 739:
- * - 901:
- * 
  * =============== 双向遍历法 =================
- * ------ 题：
- * - 581:
  * 
  * =============== 并查集 =================
  * - [0]空置，[i]=i; 初始值指向自己，这样，每个元素互不联通
@@ -167,16 +163,9 @@
  * 
  * =============== 前缀和/积 =================
  * 并不容易想到的方法
- * ------ 题：
- * - 523：
- * - 560:
  * 
  * =============== 环 =================
  * 所有的环题都需要重视
- * ------ 题：
- * - 142:
- * - 287:
- * 
  * 
  * ============== 需要学习更多解法的题目 ===============
  * - 76: 滑动窗口
@@ -260,8 +249,8 @@ namespace leet_78 { void main_(); }
 namespace leet_79 { void main_(); }
 
 namespace leet_83 { void main_(); }
-namespace leet_84 { void main_(); }
-namespace leet_85 { void main_(); }
+namespace leet_84 { void main_(); }// 单调栈
+namespace leet_85 { void main_(); }// 单调栈 基于84的升级版
 
 namespace leet_86 { void main_(); }
 namespace leet_88 { void main_(); }
@@ -309,6 +298,7 @@ namespace leet_138 { void main_(); }
 namespace leet_139 { void main_(); }
 
 namespace leet_141 { void main_(); }
+namespace leet_142 { void main_(); }// 环
 namespace leet_143 { void main_(); }
 namespace leet_144 { void main_(); }
 namespace leet_145 { void main_(); }
@@ -382,7 +372,7 @@ namespace leet_257 { void main_(); }
 namespace leet_258 { void main_(); }
 namespace leet_259 { void main_(); }
 namespace leet_260 { void main_(); }// 位运算，异或 + lowbit
-
+namespace leet_261 { void main_(); }// 以图判树，查找连通分量个数，无向图是否有环，并查集
 
 namespace leet_263 { void main_(); }
 namespace leet_264 { void main_(); }
@@ -400,7 +390,7 @@ namespace leet_279 { void main_(); }// bfs
 namespace leet_281 { void main_(); }
 namespace leet_283 { void main_(); }
 
-namespace leet_287 { void main_(); }
+namespace leet_287 { void main_(); }// 环
 
 namespace leet_292 { void main_(); }
 namespace leet_293 { void main_(); }//...无脑...
@@ -412,18 +402,21 @@ namespace leet_300 { void main_(); }// **难**
 namespace leet_303 { void main_(); }// 树状数组
 namespace leet_307 { void main_(); }// 树状数组
 namespace leet_309 { void main_(); }// dp
+namespace leet_310 { void main_(); }// 图 -> 最小高度树
 
 namespace leet_312 { void main_(); }// dp hard
 namespace leet_314 { void main_(); }
 namespace leet_315 { void main_(); }
 
 namespace leet_322 { void main_(); }
+namespace leet_323 { void main_(); }// 图，连通分量， 并查集
 
 namespace leet_326 { void main_(); }//...无脑...
 namespace leet_328 { void main_(); }
 namespace leet_329 { void main_(); }
 
 namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
+namespace leet_339 { void main_(); }// 图，带权并查集
 
 namespace leet_342 { void main_(); }// 二进制/位运算
 namespace leet_343 { void main_(); }// dp
@@ -485,7 +478,7 @@ namespace leet_474 { void main_(); }
 namespace leet_486 { void main_(); }// dp 100%  100%
 
 namespace leet_494 { void main_(); }
-namespace leet_496 { void main_(); }
+namespace leet_496 { void main_(); }// 单调栈
 
 namespace leet_500 { void main_(); }//...无脑...
 namespace leet_504 { void main_(); }
@@ -512,13 +505,13 @@ namespace leet_547 { void main_(); }// 并查集
 
 namespace leet_557 { void main_(); }
 namespace leet_559 { void main_(); }
-namespace leet_560 { void main_(); }
+namespace leet_560 { void main_(); }// 前缀和/积
 
 namespace leet_563 { void main_(); }
 
 namespace leet_572 { void main_(); }
 
-namespace leet_581 { void main_(); }// 双向遍历法
+namespace leet_581 { void main_(); }// 双向遍历法， 单调栈
 
 namespace leet_589 { void main_(); }
 namespace leet_590 { void main_(); }
@@ -580,8 +573,9 @@ namespace leet_724 { void main_(); }
 namespace leet_727 { void main_(); }// 9%
 namespace leet_728 { void main_(); }
 
-namespace leet_739 { void main_(); }
+namespace leet_739 { void main_(); }// 单调栈
 namespace leet_740 { void main_(); }
+namespace leet_743 { void main_(); }// Dijkstra
 
 namespace leet_746 { void main_(); }// dp
 
@@ -596,6 +590,9 @@ namespace leet_771 { void main_(); }//...无脑...
 namespace leet_783 { void main_(); }
 namespace leet_784 { void main_(); }
 
+namespace leet_785 { void main_(); }// 二分图判断，并查集 活用
+namespace leet_787 { void main_(); }
+
 namespace leet_804 { void main_(); }
 namespace leet_809 { void main_(); }
 
@@ -606,6 +603,7 @@ namespace leet_821 { void main_(); }
 namespace leet_832 { void main_(); }//...无脑...
 
 namespace leet_836 { void main_(); }//...无脑...
+namespace leet_841 { void main_(); }
 
 namespace leet_862 { void main_(); }
 
@@ -616,6 +614,7 @@ namespace leet_889 { void main_(); }
 namespace leet_892 { void main_(); }
 namespace leet_897 { void main_(); }
 
+namespace leet_901 { void main_(); }// 单调栈
 namespace leet_902 { void main_(); }// 难
 
 namespace leet_905 { void main_(); }
@@ -746,6 +745,7 @@ namespace leet_1342 { void main_(); }
 
 namespace leet_1351 { void main_(); }
 
+namespace leet_1361 { void main_(); }
 namespace leet_1365 { void main_(); }
 
 namespace leet_1381 { void main_(); }
@@ -810,6 +810,7 @@ namespace leet_m03_02 { void main_(); }
 namespace leet_m03_04 { void main_(); }//...无脑...
 namespace leet_m03_05 { void main_(); }
 
+namespace leet_m04_01 { void main_(); }
 namespace leet_m04_02 { void main_(); }
 namespace leet_m04_03 { void main_(); }
 namespace leet_m04_04 { void main_(); }
@@ -893,7 +894,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_LCP_04::main_();
+    leet_310::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

@@ -21,6 +21,8 @@
 #include <iterator>
 #include <stack>
 
+#include <cfloat>// DBL_MIN, DBL_MAX
+
 //------------------- Libs --------------------//
 #include "magic_enum.hpp"
 
