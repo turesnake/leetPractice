@@ -416,7 +416,7 @@ namespace leet_328 { void main_(); }
 namespace leet_329 { void main_(); }
 
 namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
-namespace leet_339 { void main_(); }// 图，带权并查集
+namespace leet_339 { void main_(); }// 图，带权 并查集
 
 namespace leet_342 { void main_(); }// 二进制/位运算
 namespace leet_343 { void main_(); }// dp
@@ -461,6 +461,7 @@ namespace leet_429 { void main_(); }
 
 namespace leet_437 { void main_(); }// 前缀和
 
+namespace leet_444 { void main_(); }
 namespace leet_445 { void main_(); }
 namespace leet_448 { void main_(); }
 namespace leet_449 { void main_(); }
@@ -632,6 +633,8 @@ namespace leet_938 { void main_(); }
 namespace leet_942 { void main_(); }// 有趣
 namespace leet_945 { void main_(); }
 
+namespace leet_959 { void main_(); }// 有趣  并查集 变种
+
 namespace leet_974 { void main_(); }
 namespace leet_977 { void main_(); }
 
@@ -664,6 +667,7 @@ namespace leet_1089 { void main_(); }
 namespace leet_1099 { void main_(); }
 
 namespace leet_1100 { void main_(); }
+namespace leet_1102 { void main_(); }// dijkstra
 namespace leet_1104 { void main_(); }
 
 namespace leet_1108 { void main_(); }//...无脑...
@@ -672,6 +676,7 @@ namespace leet_1111 { void main_(); }
 namespace leet_1114 { void main_(); }// threads
 namespace leet_1119 { void main_(); }//...无脑...
 
+namespace leet_1129 { void main_(); }// 图， 最小限度的 环 (而不是彻底屏蔽环)
 namespace leet_1130 { void main_(); }// dp 29.51%, 50%
 namespace leet_1133 { void main_(); }
 namespace leet_1134 { void main_(); }//...无脑...
@@ -894,7 +899,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_310::main_();
+    leet_1102::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
