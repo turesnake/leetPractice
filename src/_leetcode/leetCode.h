@@ -549,6 +549,7 @@ namespace leet_677 { void main_(); }// 字典树
 namespace leet_680 { void main_(); }
 
 namespace leet_684 { void main_(); }// 并查集
+namespace leet_685 { void main_(); }// 并查集 很有挑战
 namespace leet_687 { void main_(); }
 
 namespace leet_696 { void main_(); }
