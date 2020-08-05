@@ -415,6 +415,7 @@ namespace leet_326 { void main_(); }//...无脑...
 namespace leet_328 { void main_(); }
 namespace leet_329 { void main_(); }
 
+namespace leet_337 { void main_(); }
 namespace leet_338 { void main_(); }// 临时方案，等待更正式的方案
 namespace leet_339 { void main_(); }// 图，带权 并查集
 
@@ -584,6 +585,7 @@ namespace leet_746 { void main_(); }// dp
 
 namespace leet_760 { void main_(); }//...无脑...
 namespace leet_763 { void main_(); }
+namespace leet_765 { void main_(); }// 并查集
 namespace leet_766 { void main_(); }// 矩阵
 
 
@@ -682,6 +684,7 @@ namespace leet_1130 { void main_(); }// dp 29.51%, 50%
 namespace leet_1133 { void main_(); }
 namespace leet_1134 { void main_(); }//...无脑...
 
+namespace leet_1136 { void main_(); }// 拓扑排序
 namespace leet_1139 { void main_(); }
 
 namespace leet_1143 { void main_(); }// dp 8.93%, 100%
@@ -694,6 +697,7 @@ namespace leet_1156 { void main_(); }
 namespace leet_1160 { void main_(); }// 5.15% 20%
 
 namespace leet_1165 { void main_(); }//...无脑...
+namespace leet_1168 { void main_(); }// 最小生成树 小顶堆 并查集 kruskal
 
 namespace leet_1180 { void main_(); }//...无脑...
 
@@ -900,7 +904,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1102::main_();
+    leet_1168::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
