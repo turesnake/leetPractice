@@ -597,6 +597,7 @@ namespace leet_784 { void main_(); }
 namespace leet_785 { void main_(); }// 二分图判断，并查集 活用
 namespace leet_787 { void main_(); }
 
+namespace leet_802 { void main_(); }
 namespace leet_804 { void main_(); }
 namespace leet_809 { void main_(); }
 
@@ -737,6 +738,7 @@ namespace leet_1300 { void main_(); }
 namespace leet_1302 { void main_(); }
 namespace leet_1304 { void main_(); }//...无脑...
 namespace leet_1305 { void main_(); }
+namespace leet_1306 { void main_(); }
 
 namespace leet_1312 { void main_(); }
 namespace leet_1313 { void main_(); }//...无脑...
@@ -780,6 +782,7 @@ namespace leet_1470 { void main_(); }//...无脑...
 namespace leet_1480 { void main_(); }//...无脑...
 
 namespace leet_1492 { void main_(); }
+namespace leet_1494 { void main_(); }// 图， 复杂且综合
 
 namespace leet_1502 { void main_(); }
 
@@ -904,7 +907,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1168::main_();
+    leet_1306::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
