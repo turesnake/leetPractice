@@ -15,124 +15,84 @@ namespace leet_test {//~
 
 
 
-// 复习 马拉车
-class M{
-public:
-    std::string manacher( std::string s ){
+class FF{
 
-        int Ns = static_cast<int>(s.size());
-        int Nv = Ns*2+1;
+    std::vector<std::unordered_map<int,int>> adjs {};// <to,w>
+    std::vector<char> vis {};
+    int N {};
+    int tgt {};
 
-        std::string v ( Ns*2+1, '#' );
-        for( int i=0; i<Ns; i++ ){
-            v[i*2+1] = s[i];
+    // 只要随便找到 一条 完整的路径，就会从整个 递归中 彻底返回
+    int dfs( int from, int minFlow ){
+
+        if( from==tgt ){ return minFlow; }// 一条路径完整获得
+        vis[from] = 1;
+        for( auto [to,w] : adjs[from] ){
+            if( w<=0 || vis[to]==1 ){ continue; }
+            int c = dfs( to, std::min(w,minFlow) );
+            if( c==-1 ){ continue; }// 此分支 找不到完整路径
+            //-- find --//
+            adjs[from][to] -= c;// 当前方向边 减少容量
+            adjs[to][from] += c;// 反向边 增加容量
+            return c;
         }
-        
-        std::vector<int> mv (Nv, 0);
-
-        int center = 0;
-        int maxR = 0;
-
-        int maxLen = 1;
-        int start = 0;
-
-        for( int i=0; i<Nv; i++ ){
-            if( i<maxR ){
-                int mirror = center*2-i;
-                mv[i] = std::min( maxR-i, mv[mirror] );
-            }
-            int l = i-mv[i]-1;
-            int r = i+mv[i]+1;
-            for(; l>=0 && r<Nv && v[l]==v[r]; mv[i]++,l--,r++ ){}
-            // 更新数据
-            if( i+mv[i]>maxR ){
-                maxR = i+mv[i];
-                center = i;
-            }
-            if( mv[i]>maxLen ){
-                maxLen = mv[i];
-                start = (i-mv[i])/2;
-            }
-        }
-        return std::string( s, start, maxLen );
-
+        vis[from] = 0;
+        return -1; // 未能找到 完整路径
     }
+
+public:
+    // edges_[i]: { 边起点，边尾点，边容量 }
+    // N_: 一共 N_ 条边，{ 0,...N_-1 }
+    int ff( std::vector<std::vector<int>> edges_, int N_, int start_, int target_ ){
+
+        N = N_;
+        tgt = target_;
+        adjs.resize(N,std::unordered_map<int,int>{});
+        for( auto &e : edges_ ){
+            int head = e[0];
+            int tail = e[1];
+            adjs[head].emplace( tail, e[2] );// 正向边
+            adjs[tail].emplace( head, 0 );   // 反向边
+        } 
+
+        int ans = 0;
+        while( true ){
+            vis.assign(N,0);
+            int c = dfs( start_, INT_MAX );
+            cout<<"c:"<<c<<endl;
+            if( c==-1 ){ break; }// 再也找不到 增广路径了
+            ans += c;
+        }
+        return ans;
+    }
+
 };
 
 
 
-// 复习
-class KMP{
-public:
-    // 若 p 为空，返回 0
-    int kmp( std::string s, std::string p ){
 
-        if( p.empty() ){ return 0; }
 
-        int Ns = static_cast<int>(s.size());
-        int Np = static_cast<int>(p.size());
 
-        std::vector<int> next (Np, 0);
-        // next[0]=0;
 
-        //=== next ===//
-        int now = 0;
-        int i = 1;
-        while( i<Np ){
-            if( p[now]==p[i] ){
-                next[i] = now+1;
-                now++;
-                i++;
-            }else{
-                if( now==0 ){
-                    next[i]=0;
-                    i++;
-                }else{
-                    now = next[now-1];// 核心
-                }
-            }
-        }
-        cout<<"next: ";for( int i : next ){ cout<<i<<", "; }cout<<endl;
 
-        //=== chech ===//
-        std::vector<int> tgtIdxs {};// 所有匹配的 下标
-        int j=0;
-        i = 0;  
-        while( j<Ns-Np ){
-            if( s[j]==p[i] ){
-                j++;
-                i++;
-            }else{
-                if( i==0 ){// i 不能前移了，改测下一个j
-                    j++;
-                }else{
-                    i = next[i-1];
-                }
-            }
 
-            if( i==Np ){// 一次比配成功
-
-                tgtIdxs.push_back( j-Np );
-
-                // j 已经指向 下一位了
-                i = next[i-1];
-            }
-
-        }
-        return tgtIdxs.empty() ? -1 : tgtIdxs[0];
-    }
-};
 
 
 
 //=========================================================//
 void main_(){
 
-    std::string s = "aba";
-    std::string p = "aaaapaaa";
+    std::vector<std::vector<int>> edges {
+        {0,1,6},
+        {1,3,8},
+        {0,2,6},
+        {2,1,2},
+        {2,3,3}
+    };
 
-    auto ret = KMP{}.kmp(s,p);
-    cout<<"ret:"<<ret<<endl;
+    auto ret = FF{}.ff( edges, 4, 0, 3 );
+
+    cout<<"ff: ret:"<<ret<<endl;
     
 
 

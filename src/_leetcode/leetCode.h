@@ -41,6 +41,19 @@
  * 判断奇偶性，(1)取模：val%2 (2)判断末尾: val&1
  * 
  * -----
+ * a^1  异或1
+ *     举例：
+ *        (-4)^1 = -3
+ *        (-3)^1 = -4
+ *        0^1 = 1
+ *        1^1 = 0
+ *        2^1 = 3
+ *        3^1 = 2
+ *  若 a 为偶数，结果为 a+1
+ *  若 a 为奇数，结果为 a-1
+ *  不管 a 是正数负数还是0，都成立
+ * 
+ * -----
  * 消除成对的元素方法[1]
  *     if( set.erase(i)==0 ){ set.insert( i ); }
  * 消除成对的元素方法[2]
@@ -408,7 +421,7 @@ namespace leet_312 { void main_(); }// dp hard
 namespace leet_314 { void main_(); }
 namespace leet_315 { void main_(); }
 
-namespace leet_322 { void main_(); }
+namespace leet_322 { void main_(); }// 背包 dp
 namespace leet_323 { void main_(); }// 图，连通分量， 并查集
 
 namespace leet_326 { void main_(); }//...无脑...
@@ -755,6 +768,7 @@ namespace leet_1335 { void main_(); }
 
 namespace leet_1342 { void main_(); }
 
+namespace leet_1349 { void main_(); }// dp 状态压缩
 namespace leet_1351 { void main_(); }
 
 namespace leet_1361 { void main_(); }
@@ -907,7 +921,9 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1306::main_();
+    //leet_1306::main_();
+
+    leet_test::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");

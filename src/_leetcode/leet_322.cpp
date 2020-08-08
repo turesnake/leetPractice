@@ -84,14 +84,14 @@ public:
                 if( i<=0 ){ continue; }
                 int iOff = n-i;
                 if( iOff<0 ){ continue; }
-                if( dp.at(iOff)==-1 ){ continue; }
+                if( dp[iOff]==-1 ){ continue; }
                 if( !isFind ){ isFind=true; }
                 mmin = std::min( mmin, dp.at(iOff) );
             }
-            dp.at(n) = isFind ? (mmin+1) : -1;
+            dp[n] = isFind ? (mmin+1) : -1;
         }
             //cout<<"dp:"<<endl; for( int i : dp ){ cout<<i<<", "; }cout<<endl;
-        return dp.at(amount);
+        return dp[amount];
 
 
     }
