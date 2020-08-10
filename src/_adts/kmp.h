@@ -18,6 +18,8 @@ namespace tpr_manacher{//~
 
 
 // 此版本 没有将 next 后移一位
+// next 首位只是单纯写 0
+// 后续位记录，[0,i] 区间的 最长公共后缀 的长度
 
 class KMP{
 public:

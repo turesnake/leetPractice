@@ -14,17 +14,25 @@
 // 树状数组
 // 内部，从1号开始存储
 class Fenwick_Tree{
+
+     std::vector<int> tree {};// [0] 空置
+     int N {};// 多一个 [0]
+    // 获得 数字在二进制表达中，最后一位1 的 数字表示
+    // 6(0b110),去掉尾部1，变成 4(0b100)
+    int lowBits( int a ){ return a&(-a); }
+
 public:
     Fenwick_Tree()=default;
 
-    void init( size_t num_ ){
-        this->tree.resize( num_+1, 0 );//0号空缺
+    void init( int N_ ){
+        N = N_+1;
+        tree.assign( N, 0 );//0号空缺
     }
 
-    void add( int idx_, int val_ ){
+    void add( int idx_, int addVal ){
         int i = idx_+1; // 内部从1号开始存储
-        while( i < static_cast<int>(tree.size()) ){
-            this->tree.at(i) += val_;
+        while( i<N ){
+            tree[i] += addVal;
             i += lowBits(i); // 指向自己父节点
         }
     }
@@ -33,21 +41,13 @@ public:
     int sum( int idx_ ){
         int i = idx_+1; // 内部从1号开始存储
         int ans {0};
-        while( i > 0 ){
-            ans += tree.at(i);
+        while( i>0 ){
+            ans += tree[i];
             i -= lowBits(i);// 指向排在自己下方（前部）的，比自己大一级的区间节点
         }
         return ans;
     }
-
-private:
-    // 获得 数字在二进制表达中，最后一位1 的 数字表示
-    // 6(0b110),去掉尾部1，变成 4(0b100)
-    int lowBits( int v_ ){
-        return (v_&(-v_));
-    }
-
-    std::vector<int> tree {};
+   
 };
 
 

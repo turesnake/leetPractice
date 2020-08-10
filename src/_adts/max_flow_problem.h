@@ -284,41 +284,60 @@ public:
 // 这样，一个死路径 就只会被遍历一次
 //
 
-/*
-class Dinic{
+
+class Dinic_Origin{
+
+struct Edge{
+    int to   {};// 弧头节点序号（边的尾端）
+    int w    {};// 权重
+    int next {};// 下一条边的序号 (并不是下一条边的头节点值)
+                // 这个 next，本质上是个 链表结构，可以逐个 next 下去
+                // 获得的是 本边所有的 下一条边
+};
 
     //int n, m, s, t, lv[MAXN], cur[MAXN]; // lv是每个点的层数，cur用于当前弧优化标记增广起点
 
-    std::vector<std::unordered_map<int,int>> adjs {};// <to,w>
+    // 两个容器，使用相同的 idx 去访问
+    // idx 仅表示 第i号边：[i]
+    // 此边的 头节点是 head[i]
+    // 此边的 尾节点是 edge[i].to
+    // 此边的 权重（残余容量） edge[i].w
+    // 此边的 下一条边的idx号是 edge[i].next
+    std::vector<Edge> edges {};// 
+    std::vector<int>  head {}; // 记录每条边的 头节点idx, 初始为-1
+
+    std::vector<int> cur {};  
+        // cur用于当前弧优化标记增广起点
+        // 每次bfs，都将 head 完整地复制给 cur，在之后地 dfs搜索中，修改 cur 中的值
+
+
+    std::vector<int> lv  {};// 每个点的 层数
+
     int N {};
     int start {};
     int tgt {};
 
-    std::vector<int> lv  {};// 每个点的 层数
-    std::vector<int> cur {};// cur用于当前弧优化标记增广起点
-
 
     bool bfs(){ // BFS分层
 
-        lv.assign( N, -1 );
+        //memcpy( cur, head, sizeof(head) ); 
+        cur.assign( head.begin(), head.end() );
 
+        lv.assign( N, -1 );
         lv[start] = 0;
 
-        memcpy(cur, head, sizeof(head)); // 当前弧优化初始化, head 复制给 cur
-
-
-        std::queue<int> que;
-        que.push(start);
+        std::deque<int> que {start};
         while (!que.empty()){
-
             int p = que.front();
-            que.pop();
+            que.pop_front();
 
             for (int eg = head[p]; eg; eg = edges[eg].next){
-
-                int to = edges[eg].to, vol = edges[eg].w;
-                if (vol > 0 && lv[to] == -1)
-                    lv[to] = lv[p] + 1, que.push(to);
+                int to = edges[eg].to;
+                int vol = edges[eg].w;
+                if( vol>0 && lv[to]==-1 ){
+                    lv[to] = lv[p] + 1;
+                    que.push_back(to);
+                }
             }
         }
         return lv[tgt] != -1; // 如果汇点未访问过说明已经无法达到汇点，此时返回false
@@ -326,32 +345,126 @@ class Dinic{
 
 
 
-    int dfs(int p, int flow ){
+    int dfs(int from, int flow ){
 
-        if( p==tgt ){ return flow; }
+        if( from==tgt ){ return flow; }
             
-        int rmn = flow; // 剩余的流量
+        int rmn = flow; // 剩余的流量， 很奇怪的设置 
 
         // 并不是找到一条 有效路径就终止，而是要反复找，直到出现 阻塞流 为止
         // 每搜索得到一条 有效路径，会即刻更新 边上的 容量值
         // 所以在之后的搜索中，已经饱和的边 会自动封闭道路
 
-        for (int &eg = cur[p]; eg; eg = edges[eg].next){ // eg带引用，跳过已经增广过的边,下次增广直接从这条边开始循环
+        for (int &eg = cur[from]; eg; eg = edges[eg].next){ 
+            // eg带引用，跳过已经增广过的边,下次增广直接从这条边开始循环
+            // 在这个 for 体内，每回合，eg指向的值 被改写
         
-            if (!rmn){ break; } // 如果已经没有剩余流量则退出
+            if ( rmn==0 ){ break; } // 如果已经没有剩余流量则退出
                 
             int to = edges[eg].to;
-            int vol = edges[eg].w;
+            int w = edges[eg].w;
 
-
-            if( vol>0 && lv[to]==lv[p]+1 ){ // 往层数高的方向增广
+            if( w>0 && lv[to]==lv[from]+1 ){ // 往层数高的方向增广
             
-                int c = dfs( to, std::min(vol,rmn) ); // 尽可能多地传递流量
+                int c = dfs( to, std::min(w,rmn) );// 如果本路径最终没能形成有效路径，c将为 0
                 rmn -= c; // 剩余流量减少
-                edges[eg].w -= c; // 更新残余容量
-                edges[eg^1].w += c; // 再次提醒，链式前向星的cnt需要初始化为1（或-1）才能这样求反向边
+                edges[eg].w -= c;
+                edges[eg^1].w += c;
             }
         }
+        // 返回传递出去的流量的大小
+        // 如果在本层，没有找到继续 向前的路，那么此时，rmn 未做减损，仍然为 flow
+        // 最后将返回 0
+        return flow - rmn; 
+    }
+
+
+public:
+    // edges_[i]: { 边起点，边尾点，边容量 }
+    // N_: 一共 N_ 条边，{ 0,...N_-1 }
+    int dinic( std::vector<std::vector<int>> edges_, int N_, int start_, int target_ ){
+  
+
+        start = start_;
+        tgt = target_;
+        N = N_;
+    
+        // 将数据 装入 edges, head 容器中
+        // 未实现 
+        // ...
+
+        int ans = 0;
+        while (bfs()){
+            ans += dfs( start, INT_MAX );
+        }
+        return ans;
+    }
+};
+
+
+
+// 自己整理的版本
+// 暂无 当前弧优化
+
+class Dinic_CPP_1{
+
+    std::vector<std::unordered_map<int,int>> adjs {};// <to,w>
+    int N {};
+    int start {};
+    int tgt {};
+
+    std::vector<int> lv  {};// 每个点的 层数
+    //std::vector<int> cur {};// cur用于当前弧优化标记增广起点
+
+
+    // 从 start 点出发，为所有能遍历得到的 点 设置 lv 值
+    // 如果 tgt 点无法到达，意味着 整个 算法将要结束了（已经没有增广路径了）
+    bool bfs(){ // BFS分层
+
+        lv.assign( N, -1 );
+        lv[start] = 0;
+
+        std::deque<int> que { start };
+        while (!que.empty()){
+            int from = que.front();
+            que.pop_front();
+            for( auto [to,w] : adjs[from] ){
+                if( w>0 && lv[to]==-1 ){
+                    // 如果一个节点，会从多条路径到达，它会被赋予值最小的lv
+                    lv[to] = lv[from] + 1;
+                    que.push_back( to );
+                }
+            }
+        }
+        return lv[tgt]!=-1;
+    }
+
+
+    // 一套完整的 dfs 搜索，在其体内，不是像 ff 那样，找到一条有效路径就退出
+    // 而是会不停地找，直到再也找不到为止
+    int dfs(int from, int flow ){
+
+        if( from==tgt ){ return flow; }
+            
+        int rmn = flow; // 剩余的流量， 很奇怪的设置 
+        // 维护 整个 dfs 搜索中，本层的 剩余的流量，通常是 之前层中，值最小的边量
+        // 这个 rmn 会被不断消耗，直至0，此时，就没必要 再做遍历了
+
+        // 并不是找到一条 有效路径就终止，而是要反复找，直到出现 阻塞流 为止
+        // 每搜索得到一条 有效路径，会即刻更新 边上的 容量值
+        // 所以在之后的搜索中，已经饱和的边 会自动封闭道路
+        for( auto [to,w] : adjs[from] ){
+
+            if ( rmn==0 ){ break; } // 如果已经没有剩余流量则退出
+            if( w>0 && lv[to]==lv[from]+1 ){ // 只选择 lv+1 的边
+                int c = dfs( to, std::min(w,rmn) ); // 尽可能多地传递流量
+                rmn -= c; // 剩余流量减少
+                adjs[from][to] -= c;
+                adjs[to][from] += c;
+            }
+        }
+        // 如果在本层，没有找到继续 向前的路，那么此时，rmn 未做减损，仍然为 flow
+        // 最后将返回 0
         return flow - rmn; // 返回传递出去的流量的大小
     }
 
@@ -374,10 +487,8 @@ public:
             adjs[tail].emplace( head, 0 );   // 反向边
         } 
 
-
-
         int ans = 0;
-        while (bfs()){
+        while( bfs() ){
             ans += dfs( start, INT_MAX );
         }
         return ans;
@@ -388,7 +499,7 @@ public:
 
 
 };
-*/
+
 
 
 

@@ -52,9 +52,13 @@ public:
 
         for( int i=0; i<Nv; i++ ){
 
-            if( i < maxR ){
+            if( i < maxR ){// 当 i==maxR 时，下方 std::min 计算出来的结果是 0
                 int mirror = 2*center-i;
-                mv[i] = std::min( maxR-i, mv[mirror] );// 核心
+                mv[i] = std::min( maxR-i, mv[mirror] );
+                    // 核心
+                    // 不能无脑等于 mv[mirror]，因为假设 两个回文 是部分重叠的
+                    // 那么 当前 center，maxR 表达的 回文段，其前部区间某个字符的 mv值
+                    // 是可以 大于 maxR-i 的。
             }
 
             int l = i - mv[i] - 1;

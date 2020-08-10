@@ -105,6 +105,7 @@
  * -- 前缀树，后缀树（未学习）
  * -- 图：拓扑排序
  * -- 图：最短路径：Dijkstra 
+ * -- 图：ff / ek / Dinic 算法， 最大流最小割算法
  * 
  * 
  * =============== 需要复习的内容 =================
@@ -627,6 +628,7 @@ namespace leet_862 { void main_(); }
 
 namespace leet_876 { void main_(); }
 
+namespace leet_886 { void main_(); }// 并查集
 namespace leet_889 { void main_(); }
 
 namespace leet_892 { void main_(); }
@@ -709,6 +711,7 @@ namespace leet_1150 { void main_(); }
 namespace leet_1156 { void main_(); }
 
 namespace leet_1160 { void main_(); }// 5.15% 20%
+namespace leet_1162 { void main_(); }
 
 namespace leet_1165 { void main_(); }//...无脑...
 namespace leet_1168 { void main_(); }// 最小生成树 小顶堆 并查集 kruskal
@@ -768,7 +771,7 @@ namespace leet_1335 { void main_(); }
 
 namespace leet_1342 { void main_(); }
 
-namespace leet_1349 { void main_(); }// dp 状态压缩
+namespace leet_1349 { void main_(); }// 状态压缩dp， 匈牙利， 最大流，ff， dinic
 namespace leet_1351 { void main_(); }
 
 namespace leet_1361 { void main_(); }
@@ -921,9 +924,9 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    //leet_1306::main_();
+    leet_1162::main_();
 
-    leet_test::main_();
+    //leet_test::main_();
 
 
     debug::log("\n============= Leet Code: End ==================<<\n\n");
