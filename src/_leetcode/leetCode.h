@@ -532,6 +532,7 @@ namespace leet_581 { void main_(); }// 双向遍历法， 单调栈
 namespace leet_589 { void main_(); }
 namespace leet_590 { void main_(); }
 
+namespace leet_598 { void main_(); }
 namespace leet_600 { void main_(); }
 
 namespace leet_617 { void main_(); }
@@ -655,6 +656,7 @@ namespace leet_945 { void main_(); }
 namespace leet_959 { void main_(); }// 有趣  并查集 变种
 
 namespace leet_974 { void main_(); }
+namespace leet_876 { void main_(); }
 namespace leet_977 { void main_(); }
 
 namespace leet_980 { void main_(); }
@@ -667,6 +669,8 @@ namespace leet_997 { void main_(); }// 图
 namespace leet_998 { void main_(); }
 
 namespace leet_1002 { void main_(); }
+
+namespace leet_1013 { void main_(); }
 
 namespace leet_1022 { void main_(); }
 namespace leet_1025 { void main_(); }// dp
@@ -699,6 +703,7 @@ namespace leet_1129 { void main_(); }// 图， 最小限度的 环 (而不是彻
 namespace leet_1130 { void main_(); }// dp 29.51%, 50%
 namespace leet_1133 { void main_(); }
 namespace leet_1134 { void main_(); }//...无脑...
+namespace leet_1135 { void main_(); }// 图 最小生成树
 
 namespace leet_1136 { void main_(); }// 拓扑排序
 namespace leet_1139 { void main_(); }
@@ -767,6 +772,7 @@ namespace leet_1325 { void main_(); }
 namespace leet_1328 { void main_(); }
 
 namespace leet_1332 { void main_(); }
+namespace leet_1334 { void main_(); }
 namespace leet_1335 { void main_(); }
 
 namespace leet_1342 { void main_(); }
