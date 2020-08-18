@@ -20,20 +20,21 @@ using std::endl;
 
 
 // N叉树
-class Node {
+class NNode {
 public:
     int val;
-    std::vector<Node*> children;
+    std::vector<NNode*> children;
 
-    Node() {}
+    NNode() {}
 
-    Node(int _val) { val = _val; }
+    NNode(int _val) { val = _val; }
 
-    Node(int _val, std::vector<Node*> _children) {
+    NNode(int _val, std::vector<NNode*> _children) {
         val = _val;
         children = _children;
     }
 };
+
 
 
 

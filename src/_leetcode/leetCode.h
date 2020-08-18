@@ -535,6 +535,8 @@ namespace leet_590 { void main_(); }
 namespace leet_598 { void main_(); }
 namespace leet_600 { void main_(); }
 
+namespace leet_605 { void main_(); }
+
 namespace leet_617 { void main_(); }
 
 namespace leet_628 { void main_(); }
@@ -650,8 +652,11 @@ namespace leet_931 { void main_(); }// dp
 
 namespace leet_938 { void main_(); }
 
+namespace leet_941 { void main_(); }
 namespace leet_942 { void main_(); }// 有趣
 namespace leet_945 { void main_(); }
+
+namespace leet_949 { void main_(); }
 
 namespace leet_959 { void main_(); }// 有趣  并查集 变种
 
@@ -930,7 +935,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_1162::main_();
+    leet_949::main_();
 
     //leet_test::main_();
 

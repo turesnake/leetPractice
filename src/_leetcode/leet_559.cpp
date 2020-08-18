@@ -18,13 +18,13 @@ namespace leet_559 {//~
 class S{
 
     struct Elem{
-        Node    *tp {nullptr};
+        NNode    *tp {nullptr};
         int     deep {1}; //base on 1
     };
 
 public:
 
-    int maxDepth( Node* root ){
+    int maxDepth( NNode* root ){
 
         if( !root ){ return 0; }
         std::deque<Elem> que { Elem{root,1} };
@@ -32,7 +32,7 @@ public:
         while( !que.empty() ){
             auto [tp,deep] = que.front(); 
             maxDeep = std::max( maxDeep, deep );
-            for( Node *cp : tp->children ){
+            for( NNode *cp : tp->children ){
                 if( cp ){ que.push_back( Elem{cp,deep+1} ); }
             }
             que.pop_front();

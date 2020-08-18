@@ -18,13 +18,13 @@ namespace leet_429 {//~
 class S{
 
     struct Elem{
-        Node    *tp {nullptr};
+        NNode    *tp {nullptr};
         int     deep {0}; //base on 0
     };
 
 public:
 
-    std::vector<std::vector<int>> levelOrder( Node* root ){
+    std::vector<std::vector<int>> levelOrder( NNode* root ){
 
         if( !root ){ return {}; }
         std::deque<Elem> que { Elem{root,0} };
@@ -36,7 +36,7 @@ public:
             }
             elems.at(deep).push_back( tp->val );
             //--
-            for( Node *cp : tp->children ){
+            for( NNode *cp : tp->children ){
                 if( cp ){ que.push_back( Elem{cp,deep+1} ); }
             }
             que.pop_front();

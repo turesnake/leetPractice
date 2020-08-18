@@ -19,14 +19,14 @@ class S1{
     std::vector<int> elems {};
 public:
     // root 一定非 nullptr
-    void work( Node *tp ){
+    void work( NNode *tp ){
         elems.push_back( tp->val );
-        for( Node *cp : tp->children ){
+        for( NNode *cp : tp->children ){
             if( cp ){ work(cp); }
         }
     } 
 
-    std::vector<int> preorder( Node* root ){
+    std::vector<int> preorder( NNode* root ){
         if( !root ){ return {}; }
         work(root);
         return elems;
@@ -37,14 +37,14 @@ public:
 // 迭代（stack）
 class S2{
 public:
-    std::vector<int> preorder( Node* root ){
+    std::vector<int> preorder( NNode* root ){
 
         if( !root ){ return {}; }
         std::vector<int> elems {};
-        std::stack<Node*> stk {};
+        std::stack<NNode*> stk {};
         stk.push( root );
         while( !stk.empty() ){
-            Node *tp = stk.top();
+            NNode *tp = stk.top();
             stk.pop();
             elems.push_back(tp->val);
             int N = static_cast<int>(tp->children.size());
