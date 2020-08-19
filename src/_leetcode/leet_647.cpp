@@ -11,6 +11,54 @@
 
 namespace leet_647 {//~
 
+// 最优算法：马拉车
+// 一个最长回文子串，如果长度为 len, 那么它包含的回文个数为 (len+1)/2
+// 通过这个规律，可以获得最优实现
+
+
+// 马拉车算法   100%    63%
+class S2{
+public:
+    // 输入的字符串长度不会超过 1000
+    int countSubstrings( std::string s ){
+
+        int Ns = static_cast<int>(s.size());
+        int N = Ns*2+1;
+
+        std::string ss (N,'#');
+        for( int i=0; i<Ns; i++ ){
+            ss[i*2+1] = s[i];
+        }
+        std::vector<int> w (N,0);// w[0]==0
+        
+        int center = 0;
+        int maxR = 0;
+        int ans = 0;
+
+        for(int i=1; i<N; i++ ){
+            if( i<maxR ){
+                int mirror = center*2-i;
+                w[i] = std::min( w[mirror], maxR-i );
+            }
+
+            int l = i - w[i] - 1;
+            int r = i + w[i] + 1;
+            for(; l>=0 && r<N && ss[l]==ss[r]; l--,r++,w[i]++ ){}
+
+            //--- 更新数据 ---//
+            if( i+w[i] > maxR ){
+                maxR = i+w[i];
+                center = i;
+            }
+            ans += (w[i]+1)/2;// 收集回文个数
+        }
+        return ans;
+
+    }
+};
+
+
+
 
 
 // 动态规划： 27% 78%
@@ -72,12 +120,6 @@ public:
         return sum;
     }
 };
-
-
-// 方法2:中心扩展法
-// 从任意1字母开始，向两侧扩展，直到发现不再是 回文子段 为止。适用于 奇数个字母时
-// 偶数个字母时，可以先用 [i,i+1] 两个字母起始
-
 
 
 

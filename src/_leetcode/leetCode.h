@@ -41,6 +41,15 @@
  * 判断奇偶性，(1)取模：val%2 (2)判断末尾: val&1
  * 
  * -----
+ * std::string a;
+ * std::string b;
+ * int ret = a.compare(b);
+ *    比较 a，b 的字典序
+ *    如果 a，b 相同，返回0
+ *    如果 a 小于 b， 返回 一个负值，大小为字典序差值
+ *    如果 a 大于 b， 返回 一个正值，大小为字典序差值
+ * 
+ * -----
  * a^1  异或1
  *     举例：
  *        (-4)^1 = -3
@@ -97,8 +106,8 @@
  *     此处第三参数，自定义的 比较对象，必须是 '<' 操作的，不能写 '<=' 操作的，会引发错误
  *  
  * 
- * =============== 需要记忆的 固定算法 =================
- * -- 马拉车算法： 字符串，最长回文子串
+ * =============== 需要周期性复习的 算法 =================
+ * -- 马拉车算法： 字符串，最长回文子串  --- done
  * -- KMP算法：   两字符串，最大重复子串
  * -- 匈牙利算法： 无向图，二分图，搜索最大匹配个数（难）   
  * -- 线段树：（未学习）
@@ -881,7 +890,9 @@ namespace leet_m16_11 { void main_(); }
 namespace leet_m16_16 { void main_(); }
 namespace leet_m16_17 { void main_(); }// dp 34.46%，100%
 
+
 namespace leet_m17_04 { void main_(); }
+namespace leet_m17_07 { void main_(); }
 namespace leet_m17_09 { void main_(); }// 特殊的 dp 题
 namespace leet_m17_10 { void main_(); }
 namespace leet_m17_12 { void main_(); }
@@ -935,7 +946,7 @@ inline void leetCode_mian(){
     debug::log("\n\n============= Leet Code: Begin ================>>\n");
 
 
-    leet_949::main_();
+    leet_m17_07::main_();
 
     //leet_test::main_();
 
