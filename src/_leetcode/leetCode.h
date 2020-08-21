@@ -107,7 +107,7 @@
  *  
  * 
  * =============== 需要周期性复习的 算法 =================
- * -- 马拉车算法： 字符串，最长回文子串  --- done
+ * -- 马拉车算法： 字符串，最长回文子串               --- done
  * -- KMP算法：   两字符串，最大重复子串
  * -- 匈牙利算法： 无向图，二分图，搜索最大匹配个数（难）   
  * -- 线段树：（未学习）
@@ -386,6 +386,7 @@ namespace leet_243 { void main_(); }
 namespace leet_244 { void main_(); }
 namespace leet_245 { void main_(); }
 namespace leet_246 { void main_(); }
+namespace leet_247 { void main_(); }
 
 namespace leet_252 { void main_(); }// 区间
 namespace leet_253 { void main_(); }// 区间
@@ -413,6 +414,7 @@ namespace leet_279 { void main_(); }// bfs
 namespace leet_281 { void main_(); }
 namespace leet_283 { void main_(); }
 
+namespace leet_285 { void main_(); }
 namespace leet_287 { void main_(); }// 环
 
 namespace leet_292 { void main_(); }
@@ -713,6 +715,8 @@ namespace leet_1111 { void main_(); }
 namespace leet_1114 { void main_(); }// threads
 namespace leet_1119 { void main_(); }//...无脑...
 
+namespace leet_1121 { void main_(); }
+
 namespace leet_1129 { void main_(); }// 图， 最小限度的 环 (而不是彻底屏蔽环)
 namespace leet_1130 { void main_(); }// dp 29.51%, 50%
 namespace leet_1133 { void main_(); }
@@ -752,6 +756,8 @@ namespace leet_1246 { void main_(); }// dp hard
 
 namespace leet_1252 { void main_(); }
 namespace leet_1255 { void main_(); }
+
+namespace leet_1259 { void main_(); }
 
 namespace leet_1265 { void main_(); }//...无脑...
 

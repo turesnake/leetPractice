@@ -46,7 +46,7 @@ public:
     }
     
     int add(int val) {
-        if( minHeap.size()<Nk ){
+        if( static_cast<int>(minHeap.size())<Nk ){
             minHeap.push( val );// 最多只会缺一个
         }else{
             if( val > minHeap.top() ){
