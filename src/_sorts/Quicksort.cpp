@@ -26,7 +26,8 @@ int partition( std::vector<int> &v_, int fst_, int lst_ ){
             std::swap( v_.at(left), v_.at(right) );
         }
     }
-    // now left == right
+    // now left,right 指向同一个位置, 就是 pivot 应该放置的 "中间" 位置
+    // 将 pivot 真的交换到这个位置上来
     std::swap( v_.at(pivotIdx), v_.at(left) );
     return left;
 }
